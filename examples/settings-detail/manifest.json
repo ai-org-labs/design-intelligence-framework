@@ -1,0 +1,49 @@
+{
+  "artifacts": [
+    {
+      "path": "check.mjs",
+      "sha256": "34c8c259a4b1e8357be8ab636aba385891378ec90e7eeefdaef019a159587a59"
+    },
+    {
+      "path": "checks.json",
+      "sha256": "7baa5093353fa2ad46f38f7fd2052a9a145beafb5e2eb0e40f5b80b8b915f269"
+    },
+    {
+      "path": "preview.html",
+      "sha256": "0c58970e5c8b64346b004706c092372176e134c33af06e220970805c9677efb1"
+    },
+    {
+      "path": "preview.js",
+      "sha256": "39adf23b4777fd1b6ac90e460d098f39f36fa67380566cf5830d30d30f48d9e3"
+    },
+    {
+      "path": "proposal.md",
+      "sha256": "713481825b53bc284b10401b0f3d37d3d4c8b9e761560eb84154881402937132"
+    },
+    {
+      "path": "renders/default-1280.png",
+      "sha256": "5fdab2f2e5b1734358432d9ee4accd5c6dc03e94ac95be9b6fd64d3e5d9fd62f"
+    },
+    {
+      "path": "renders/default-320.png",
+      "sha256": "b7dbecdb1da215c0e0fe5f3bf11f51322a9588a02057b083ef2344289482dc54"
+    },
+    {
+      "path": "renders/default-390.png",
+      "sha256": "00da9399f6d43f81f04593e64ad38116ff62f732dfcf3b9372229b5782927f51"
+    },
+    {
+      "path": "renders/error-1280.png",
+      "sha256": "6c99d0e9b1ca7d50a3985bfd1306bce376aebbd910a99a428f6fabe8c498760c"
+    },
+    {
+      "path": "renders/error-320.png",
+      "sha256": "f1eac71b745da3867ad05c466baf0b689a45ff51484f09525620da1750c6cd09"
+    },
+    {
+      "path": "renders/error-390.png",
+      "sha256": "91206df9a0d17b23a117cf61b959297e083764e36d48cbe8fce247e084ae3093"
+    }
+  ],
+  "boundary": "Artifact integrity only; local Web checks are not native or human verification."
+}

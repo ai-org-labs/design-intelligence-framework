@@ -1,0 +1,29 @@
+{
+  "artifact_type": "quality-ledger-event",
+  "ledger_format_version": 1,
+  "event_id": "QLE-CONTROLS-20261011",
+  "recorded_at": "2026-10-10T16:40:12.489Z",
+  "event_type": "evidence_added",
+  "quality_intent_ref": "QIN-EVIDENCE",
+  "work_item_ref": ".aof/tasks/open/TASK-001.json",
+  "claim": "Detailed controls Skill, official platform references and a Web settings prototype are implemented. Local interaction evidence is separate from native OS conformance and human usability.",
+  "evidence_refs": [
+    "examples/settings-detail/checks.json",
+    "examples/settings-detail/proposal.md",
+    "skills/dif-controls/references/sources.md",
+    "benchmarks/controls/README.md"
+  ],
+  "qif_refs": [
+    "docs/quality/dif.quality-gate.json"
+  ],
+  "prior_state": null,
+  "new_state": null,
+  "confidence": null,
+  "semantic_truth_claimed": false,
+  "operator_validated": false,
+  "governance_action": "review-required",
+  "source_task_id": "TASK-001",
+  "source_parent_session_id": null,
+  "source_decision_record_id": null,
+  "notes": "User-authorized knowledge expansion with bundled copy updated. Native/assistive trials unrun; no whole-product compliance claim."
+}

@@ -1,0 +1,157 @@
+{
+  "date": "2026-10-10T16:40:35.721Z",
+  "pass": true,
+  "results": [
+    {
+      "width": 1280,
+      "name": "no horizontal overflow",
+      "pass": true
+    },
+    {
+      "width": 1280,
+      "name": "slider keyboard and exact field stay synchronized",
+      "pass": true
+    },
+    {
+      "width": 1280,
+      "name": "empty precise field retains last valid preview and blocks save",
+      "pass": true
+    },
+    {
+      "width": 1280,
+      "name": "invalid range and off-step input are not silently clamped",
+      "pass": true
+    },
+    {
+      "width": 1280,
+      "name": "save failure retains draft; retry commits",
+      "pass": true
+    },
+    {
+      "width": 1280,
+      "name": "immediate switch failure preserves prior state",
+      "pass": true
+    },
+    {
+      "width": 1280,
+      "name": "reset undo and cancel preserve committed value",
+      "pass": true
+    },
+    {
+      "width": 1280,
+      "name": "leave protects draft and restores focus",
+      "pass": true
+    },
+    {
+      "width": 1280,
+      "name": "single-pointer step and theme/detail controls work",
+      "pass": true
+    },
+    {
+      "width": 1280,
+      "name": "no page errors",
+      "pass": true
+    },
+    {
+      "width": 390,
+      "name": "no horizontal overflow",
+      "pass": true
+    },
+    {
+      "width": 390,
+      "name": "slider keyboard and exact field stay synchronized",
+      "pass": true
+    },
+    {
+      "width": 390,
+      "name": "empty precise field retains last valid preview and blocks save",
+      "pass": true
+    },
+    {
+      "width": 390,
+      "name": "invalid range and off-step input are not silently clamped",
+      "pass": true
+    },
+    {
+      "width": 390,
+      "name": "save failure retains draft; retry commits",
+      "pass": true
+    },
+    {
+      "width": 390,
+      "name": "immediate switch failure preserves prior state",
+      "pass": true
+    },
+    {
+      "width": 390,
+      "name": "reset undo and cancel preserve committed value",
+      "pass": true
+    },
+    {
+      "width": 390,
+      "name": "leave protects draft and restores focus",
+      "pass": true
+    },
+    {
+      "width": 390,
+      "name": "single-pointer step and theme/detail controls work",
+      "pass": true
+    },
+    {
+      "width": 390,
+      "name": "no page errors",
+      "pass": true
+    },
+    {
+      "width": 320,
+      "name": "no horizontal overflow",
+      "pass": true
+    },
+    {
+      "width": 320,
+      "name": "slider keyboard and exact field stay synchronized",
+      "pass": true
+    },
+    {
+      "width": 320,
+      "name": "empty precise field retains last valid preview and blocks save",
+      "pass": true
+    },
+    {
+      "width": 320,
+      "name": "invalid range and off-step input are not silently clamped",
+      "pass": true
+    },
+    {
+      "width": 320,
+      "name": "save failure retains draft; retry commits",
+      "pass": true
+    },
+    {
+      "width": 320,
+      "name": "immediate switch failure preserves prior state",
+      "pass": true
+    },
+    {
+      "width": 320,
+      "name": "reset undo and cancel preserve committed value",
+      "pass": true
+    },
+    {
+      "width": 320,
+      "name": "leave protects draft and restores focus",
+      "pass": true
+    },
+    {
+      "width": 320,
+      "name": "single-pointer step and theme/detail controls work",
+      "pass": true
+    },
+    {
+      "width": 320,
+      "name": "no page errors",
+      "pass": true
+    }
+  ],
+  "boundary": "Local Chromium Web prototype only. No native OS, assistive technology, real keyboard/IME, large-text or human usability evidence. Persistence is localStorage, not a server."
+}

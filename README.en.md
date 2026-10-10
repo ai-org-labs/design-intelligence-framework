@@ -4,6 +4,8 @@ A Skills-first framework for comparing design proposals with explicit constraint
 
 Visual proposals: the standalone `dif-art-direct` skill translates brand meaning into composition, typography and shape, renders comparable directions, and refines a provisional favorite. See the [original three-direction tea-brand study](examples/visual-directions/proposal.md), [local HTML preview](examples/visual-directions/preview.html), and [manual craft trials](benchmarks/visual-craft/README.md). The authored demonstration is not independent proof of aesthetic quality; cross-domain use remains exploratory.
 
+Detailed UI: standalone `dif-controls` covers settings grouping, forms, precision sliders, dependencies, preview/save semantics and recovery. It includes an [official-source register](skills/dif-controls/references/sources.md), [platform distinctions](skills/dif-controls/references/platform-guidance.md) and a [working Web settings study](examples/settings-detail/proposal.md). Native OS behavior and assistive technology require separate verification; CSS px, pt and dp are not interchangeable.
+
 **0.1.0-dev.0, public development preview, Apache-2.0. No stable release yet.** The first vertical slice covers registration/login UX/UI, not authentication infrastructure.
 
 For a real product trial, use the [pilot guide and feedback template](docs/pilot.md). Start with one flow and record human feedback before applying changes.

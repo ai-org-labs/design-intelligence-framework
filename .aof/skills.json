@@ -118,7 +118,7 @@
       "name": "dif-ux-ui",
       "owner_ref": "builder",
       "version": "0.1.0-dev.0",
-      "purpose": "Detail registration/login flows, responsive screens, component states and mockup specifications for selected design candidates.",
+      "purpose": "Detail flows, settings/forms, responsive screens, component states and mockups; finalized package scope starts with authentication.",
       "applicable_role_refs": [
         "builder"
       ],
@@ -156,7 +156,29 @@
       "validation_rules": [
         "Run tools/check-skills.mjs; host behavior requires separate trials"
       ]
+    },
+    {
+      "skill_id": "dif-controls",
+      "name": "dif-controls",
+      "owner_ref": "builder",
+      "version": "0.1.0-dev.0",
+      "purpose": "Design detailed settings and forms with platform-scoped control choice, persistence and recovery.",
+      "applicable_role_refs": [
+        "builder"
+      ],
+      "required_capability_refs": [],
+      "required_resource_refs": [],
+      "inputs": [
+        "User design request and supplied evidence"
+      ],
+      "expected_outputs": [
+        "skills/dif-controls/SKILL.md",
+        "Screen/state proposals, platform guidance and evidence limits"
+      ],
+      "validation_rules": [
+        "Run tools/check-skills.mjs; host behavior requires separate trials"
+      ]
     }
   ],
-  "updated_at": "2026-10-10T16:15:49.498Z"
+  "updated_at": "2026-10-10T16:38:47.486Z"
 }

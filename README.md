@@ -28,6 +28,7 @@
 | dif-explore | 意味のある差異を持つ候補と比較 |
 | dif-ux-ui | フロー・画面・状態・モックアップ |
 | dif-art-direct | ブランドの意味から構図・文字・形を導き、複数の画面案を比較・推敲 |
+| dif-controls | 設定・フォーム・スライダー等の構成、状態と保存、Web/iOS/Android別の判断 |
 | dif-evaluate | 規則・専門判断・実測を区別したレビュー |
 | dif-improve | 改善版・前後差分・由来の保持 |
 
@@ -36,6 +37,10 @@ CLI、画像生成サービス、サブエージェントは必須ではあり�
 ### 見た目の方向性を提案する
 
 `dif-art-direct` は「ブランドの意味 → 構図・文字・形 → 実際の画面案 → 批評と修正」を扱います。[架空のお茶ブランドの3方向比較](examples/visual-directions/proposal.md)と[操作できるHTML](examples/visual-directions/preview.html)を同梱しています。HTMLはローカルで開けます。PC・狭幅の画像、参照元、改善前後、未検証事項を確認できます。これは作者による実例で、独立評価や全業種への品質保証ではありません。[視覚提案の評価課題](benchmarks/visual-craft/README.md)は機械fixtureとは別に扱います。
+
+### 詳細な設定・フォームを設計する
+
+`dif-controls` は部品の選択、精密入力、依存関係、プレビューと保存、失敗・取消・戻るを扱います。[公式ガイドラインの参照表](skills/dif-controls/references/sources.md)と[Web/iOS/Androidの適用差](skills/dif-controls/references/platform-guidance.md)を同梱しています。[読書環境の設定例](examples/settings-detail/proposal.md)には操作できるWeb試作とエラー状態の画像があります。ネイティブOS・支援技術の検証は別に必要です。認証以外の利用は探索的拡張で、Finalize契約の範囲を自動的に広げません。
 
 ## 補助CLI
 

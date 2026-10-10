@@ -84,6 +84,31 @@
                 ]
               }
             ]
+          },
+          {
+            "id": "controls-behavior",
+            "name": "Design precise controls and recoverable states",
+            "trigger": "User requests settings or form design",
+            "outcomes": [
+              "Concrete control/state proposals with scoped platform guidance"
+            ],
+            "failure_behaviors": [
+              "Report missing runtime evidence and preserve unknown native outcomes"
+            ],
+            "realized_by": [
+              "controls"
+            ],
+            "scenarios": [
+              {
+                "id": "controls-scenario",
+                "name": "Separate preview, persistence and recovery",
+                "type": "gherkin",
+                "specification": "Given settings with precise and immediate controls\nWhen detailed UI is requested\nThen explain control choice, platform, preview, save and failed-state recovery",
+                "verified_by": [
+                  "controls-trials"
+                ]
+              }
+            ]
           }
         ],
         "qualities": [
@@ -342,6 +367,21 @@
       "implemented_by": [
         "art-direction-source"
       ]
+    },
+    {
+      "id": "controls",
+      "name": "Detailed controls and platform guidance Skill",
+      "kind": "application",
+      "responsibilities": [
+        "Choose and compose settings/form controls",
+        "Specify state, precision, persistence and platform boundaries"
+      ],
+      "interfaces": [
+        "Local files"
+      ],
+      "implemented_by": [
+        "controls-source"
+      ]
     }
   ],
   "realizations": [
@@ -374,6 +414,12 @@
       "name": "skills/dif-art-direct/SKILL.md",
       "kind": "source",
       "location": "skills/dif-art-direct/SKILL.md"
+    },
+    {
+      "id": "controls-source",
+      "name": "skills/dif-controls/SKILL.md",
+      "kind": "source",
+      "location": "skills/dif-controls/SKILL.md"
     }
   ],
   "verifications": [
@@ -415,6 +461,14 @@
       "level": "acceptance",
       "method": "Run manual visual trials and obtain separate human assessment; authored demonstration is not independent evidence",
       "location": "benchmarks/visual-craft/README.md",
+      "result": "unknown"
+    },
+    {
+      "id": "controls-trials",
+      "name": "Detailed-control usefulness and native behavior",
+      "level": "acceptance",
+      "method": "Run platform-scoped manual trials and native-device checks; local Web prototype does not establish native conformance",
+      "location": "benchmarks/controls/README.md",
       "result": "unknown"
     }
   ],
@@ -512,6 +566,13 @@
       "to": "art-direction",
       "type": "depends_on",
       "label": "optional visual proposal specialist"
+    },
+    {
+      "id": "skills-to-controls",
+      "from": "skills",
+      "to": "controls",
+      "type": "depends_on",
+      "label": "optional detailed UI specialist"
     }
   ]
 }

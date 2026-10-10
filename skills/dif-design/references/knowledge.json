@@ -3,11 +3,113 @@
   "scope": "public",
   "promotionPolicy": "Organization/project/request rules coexist; conflict must be surfaced. Private knowledge is not automatically promoted. Human approval is required for reusable knowledge registration.",
   "items": [
-    {"id":"wcag-contrast","type":"standard","version":"WCAG 2.2, 2024-12-12","source":"https://www.w3.org/TR/2024/REC-WCAG22-20241212/#contrast-minimum","appliesTo":"Web text, with criterion-specific exceptions","principle":"Normal text generally needs 4.5:1 contrast; large text 3:1. Evaluate exceptions explicitly.","boundary":"DIF computes opaque sRGB declarations only; this is not whole-page WCAG conformance."},
-    {"id":"wcag-keyboard","type":"standard","version":"WCAG 2.2, 2024-12-12","source":"https://www.w3.org/TR/2024/REC-WCAG22-20241212/#keyboard","appliesTo":"Web interaction","principle":"Plan keyboard access and visible focus for essential controls.","boundary":"Model booleans are declarations, not browser/assistive-technology tests."},
-    {"id":"wcag-auth","type":"standard","version":"WCAG 2.2, 2024-12-12","source":"https://www.w3.org/TR/2024/REC-WCAG22-20241212/#accessible-authentication-minimum","appliesTo":"Authentication steps","principle":"Avoid unaided cognitive-function tests; support appropriate assistance or alternatives.","boundary":"Review the full criterion and exceptions for the actual system."},
-    {"id":"recovery","type":"expert-inference","version":"DIF 0.1","source":"DIF design hypothesis","appliesTo":"Registration/login","principle":"Preserve safe input, explain recovery and separate retry from starting over.","boundary":"Expected usability benefit requires user research."},
-    {"id":"hig","type":"reference-only","version":"not pinned; MVP extension","source":"https://developer.apple.com/design/human-interface-guidelines/","appliesTo":"Future iOS/iPadOS-specific design","principle":"Consult current platform guidance before making platform conformance claims.","boundary":"Not an implemented platform evaluator."},
-    {"id":"material","type":"reference-only","version":"not pinned; MVP extension","source":"https://m3.material.io/","appliesTo":"Future Android-specific design","principle":"Consult the applicable Material version for platform-specific behavior.","boundary":"Not an implemented platform evaluator."}
+    {
+      "id": "wcag-contrast",
+      "type": "standard",
+      "version": "WCAG 2.2, 2024-12-12",
+      "source": "https://www.w3.org/TR/2024/REC-WCAG22-20241212/#contrast-minimum",
+      "appliesTo": "Web text, with criterion-specific exceptions",
+      "principle": "Normal text generally needs 4.5:1 contrast; large text 3:1. Evaluate exceptions explicitly.",
+      "boundary": "DIF computes opaque sRGB declarations only; this is not whole-page WCAG conformance."
+    },
+    {
+      "id": "wcag-keyboard",
+      "type": "standard",
+      "version": "WCAG 2.2, 2024-12-12",
+      "source": "https://www.w3.org/TR/2024/REC-WCAG22-20241212/#keyboard",
+      "appliesTo": "Web interaction",
+      "principle": "Plan keyboard access and visible focus for essential controls.",
+      "boundary": "Model booleans are declarations, not browser/assistive-technology tests."
+    },
+    {
+      "id": "wcag-auth",
+      "type": "standard",
+      "version": "WCAG 2.2, 2024-12-12",
+      "source": "https://www.w3.org/TR/2024/REC-WCAG22-20241212/#accessible-authentication-minimum",
+      "appliesTo": "Authentication steps",
+      "principle": "Avoid unaided cognitive-function tests; support appropriate assistance or alternatives.",
+      "boundary": "Review the full criterion and exceptions for the actual system."
+    },
+    {
+      "id": "recovery",
+      "type": "expert-inference",
+      "version": "DIF 0.1",
+      "source": "DIF design hypothesis",
+      "appliesTo": "Registration/login",
+      "principle": "Preserve safe input, explain recovery and separate retry from starting over.",
+      "boundary": "Expected usability benefit requires user research."
+    },
+    {
+      "id": "hig",
+      "type": "reference-only",
+      "version": "Living guidance; source research 2026-10-11; not an immutable release",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/",
+      "appliesTo": "Platform-specific proposals and reviews, scoped to the target OS/library",
+      "principle": "Consult current platform guidance before making platform conformance claims.",
+      "boundary": "Selected detailed-control sources inspected; not a platform conformance evaluator. See dif-controls source register."
+    },
+    {
+      "id": "material",
+      "type": "reference-only",
+      "version": "Living guidance; source research 2026-10-11; not an immutable release",
+      "source": "https://m3.material.io/",
+      "appliesTo": "Platform-specific proposals and reviews, scoped to the target OS/library",
+      "principle": "Consult the applicable Material version for platform-specific behavior.",
+      "boundary": "Selected detailed-control sources inspected; not a platform conformance evaluator. See dif-controls source register."
+    },
+    {
+      "id": "web-target-minimum",
+      "type": "standard",
+      "version": "WCAG 2.2 SC 2.5.8",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html",
+      "appliesTo": "Web pointer targets",
+      "principle": "24 by 24 CSS px or applicable criterion exceptions including spacing; do not equate this minimum with native pt/dp guidance.",
+      "boundary": "Understanding is informative; inspect the normative criterion and exceptions. No automatic compliance judgment is implemented."
+    },
+    {
+      "id": "web-drag-alternative",
+      "type": "standard",
+      "version": "WCAG 2.2 SC 2.5.7",
+      "source": "https://www.w3.org/WAI/WCAG22/Understanding/dragging-movements.html",
+      "appliesTo": "Web author-defined dragging",
+      "principle": "Provide a single-pointer non-drag alternative subject to the criterion exceptions; keyboard support is a separate requirement.",
+      "boundary": "A slider value field or other equivalent pointer path needs actual runtime verification."
+    },
+    {
+      "id": "apple-controls",
+      "type": "reference-only",
+      "version": "Apple HIG; accessed 2026-10-11",
+      "source": "https://developer.apple.com/design/human-interface-guidelines/sliders",
+      "appliesTo": "Apple platform sliders with platform-specific exceptions",
+      "principle": "Consider exact-value input or a stepper alongside a slider; distinguish iOS/iPadOS system audio volume from generic app parameters.",
+      "boundary": "Do not generalize macOS or other platform sections to iOS. Source guidance is not native-device evidence."
+    },
+    {
+      "id": "android-targets",
+      "type": "reference-only",
+      "version": "Compose guidance; accessed 2026-10-11",
+      "source": "https://developer.android.com/develop/ui/compose/accessibility/api-defaults",
+      "appliesTo": "Android Compose interaction areas",
+      "principle": "Use the applicable 48dp minimum-target guidance and inspect expanded-hit-area overlap; rendered icon size is not the hit area.",
+      "boundary": "Logical dp, not Web CSS px or physical screenshot pixels; actual semantics and targets still need testing."
+    },
+    {
+      "id": "material-switch",
+      "type": "reference-only",
+      "version": "Material 3; accessed 2026-10-11",
+      "source": "https://m3.material.io/components/switch/guidelines",
+      "appliesTo": "Material standalone binary settings",
+      "principle": "A switch represents an immediate effect; use other selection controls for mutually exclusive choices or multiple draft choices requiring save.",
+      "boundary": "Not a universal OS rule. Persisted state and failed changes require explicit design."
+    },
+    {
+      "id": "control-state-recovery",
+      "type": "expert-inference",
+      "version": "DIF controls synthesis 2026-10-11",
+      "source": "DIF control design guide",
+      "appliesTo": "Settings and forms",
+      "principle": "Separate valid preview, raw draft input and committed value. Preserve drafts on failed save and specify back/reset/undo behavior.",
+      "boundary": "User-requested knowledge expansion; not an empirical performance claim or an external standard."
+    }
   ]
 }
