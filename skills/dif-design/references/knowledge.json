@@ -173,6 +173,15 @@
       "appliesTo": "Font, plugin, framework and UI architecture decisions",
       "principle": "Inspect the current stack, connect choices to product requirements and preserve responsibility, state and persistence boundaries in architecture decisions.",
       "boundary": "Documented proposals do not establish actual compatibility, native fidelity, production architecture or human adoption."
+    },
+    {
+      "id": "component-customization",
+      "type": "expert-inference",
+      "version": "DIF synthesis 2026-10-11",
+      "source": "DIF component-system guide",
+      "appliesTo": "Reusable UI and design-system maintenance",
+      "principle": "Define shared semantic components, sanctioned token overrides, state ownership and migration boundaries; demonstrate change propagation across real consumers.",
+      "boundary": "A catalogue or token file does not establish consistent use, accessibility or measured maintenance savings."
     }
   ]
 }

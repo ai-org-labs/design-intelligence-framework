@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-10T17:44:28.348Z",
+  "pass": true,
+  "observed": [
+    "Two numeric consumers generated from shared component",
+    "Brand and shared radius changes reach both consumers",
+    "Raw invalid draft preserved across customization",
+    "Validation and save still operate",
+    "Default theme restored without losing value"
+  ],
+  "boundary": "Local Chromium demonstration only; no external consumer migration, native component library, independent maintainability study or complete theme accessibility evidence."
+}

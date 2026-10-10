@@ -6,7 +6,7 @@
     },
     {
       "path": "adaptive-checks.json",
-      "sha256": "4b470c2a0a95780e22fd998ee4800199d813c7cb169c402c7bb8baea6cdb3a6c"
+      "sha256": "4e819d4a601d9c6fdf6fd09c741a2dfaf8be2896e6598d71502c274f0b8d376d"
     },
     {
       "path": "check.mjs",
@@ -14,63 +14,87 @@
     },
     {
       "path": "checks.json",
-      "sha256": "fba40d5fb057229859809557dc4382567626ffecfb67c5a6daf9a5317c96c8cb"
+      "sha256": "1dd4b685807ecddeefc869c6d07a92221df4be163e5b87b8ea0dcad5c4f88467"
+    },
+    {
+      "path": "component-check.mjs",
+      "sha256": "d33634aa31c8265d30c8e359cc878faba8c0fa4627be107cd6da3fadce840979"
+    },
+    {
+      "path": "component-checks.json",
+      "sha256": "70513f635fe1ba53bf97c06f1a18ed58bc0e2601b9cad1443e0bd0874d662a03"
+    },
+    {
+      "path": "components.md",
+      "sha256": "ad2840ae405fae2df8b1d23ee4a064a8d3d311c9073ade22e22985b858196586"
     },
     {
       "path": "implementation-fit.md",
-      "sha256": "eb0a54a2451972aba8d1fc8baf1943a427414876b94d05e5e0c767cacd65aa27"
+      "sha256": "2a150c6c6a24e7799b6f504aed43a788c058e5aab6d87ff69f89dcda740cabb1"
+    },
+    {
+      "path": "numeric-control.js",
+      "sha256": "0496584091fa8e39e36e8e72c39f10668a27c778e8179417947a15b387fc95df"
     },
     {
       "path": "preview.html",
-      "sha256": "f2f9cb9c8252048a6ef89cac6aa2537e9d76aebac6b6b09f6be6d2087cdb8ed3"
+      "sha256": "902024022da5e85d7a2fd9ac6ce0c8c2b2edd9ecc74a72533d04ed67c9ffb563"
     },
     {
       "path": "preview.js",
-      "sha256": "d8d4e66daddd19863ba52372c272d63efdd583c0584550e9b74293a222ad4903"
+      "sha256": "7b791503380a1624544c6f0f537df22ad6849d100b17dbd25f0272afb9997a35"
     },
     {
       "path": "proposal.md",
-      "sha256": "05d0f94a82ffa316cae27522ba883e345994238257c659b240f728d2567b96f9"
+      "sha256": "84b2e7ada30702083ec34c1c99f8cdedfd51a4935cbaaab6590975dd39a7f119"
     },
     {
       "path": "renders/dark-390.png",
-      "sha256": "81cc92e333b2b4eb4dcdccaba49fe0710dc9a325d2f60edfb5dc1ab485ef8eb8"
+      "sha256": "c7e1b9cace02db001bbc2e72eab9ca947ace6be9c96cd4b21e472c60172ba256"
     },
     {
       "path": "renders/default-1280.png",
-      "sha256": "02396d747f62da187d6175b4687e4830fc1067e88bfe24a7d216988b301b46ee"
+      "sha256": "1fc6aff8ac165baaddcc530029f3654dfbed6858d1786794c110407eec865c97"
     },
     {
       "path": "renders/default-320.png",
-      "sha256": "dd21c3694848ecd08a104fdf9f1840a0ced4b4a4e6381653a499e6eef8d7cde6"
+      "sha256": "ff02742f470b566704ca2384be0c5f99066a23e5e0e8b241454dc70052fe1cb5"
     },
     {
       "path": "renders/default-390.png",
-      "sha256": "caa19c3a104cbc02b21f75f96b526e0f434909f887e27a2b04aabff6cd6cd899"
+      "sha256": "d843e9ce0b5d1722134f22269d4c7aec4ec85bd61820623b25463efd3d7f4202"
     },
     {
       "path": "renders/error-1280.png",
-      "sha256": "9b70453d756db77cb9b00766de23290828773ed34820451536b08df4052f4a68"
+      "sha256": "314fc7b2e1ec5193eab2ff9a86921410df283db7531769c5b6ef4528c115a659"
     },
     {
       "path": "renders/error-320.png",
-      "sha256": "da575303e262a5f5ba2283a436a3bcb23b8cda65fd9d935a3cebbce91f50b6e6"
+      "sha256": "a47de1994880bde11ced43875929fcf49e558efef7a8bfc52f790e4faee2e074"
     },
     {
       "path": "renders/error-390.png",
-      "sha256": "ea9d253494d4856aa566c2209017c4b2ac93c61ae16bac89095d46195d0bf68c"
+      "sha256": "5becccbda7486a6eb16bbcb0e27cefd0afa1150c2b339dc2eff7ae02bd44f139"
+    },
+    {
+      "path": "renders/forest-390.png",
+      "sha256": "187efb958b9056ed6cea35add02e011b959c36d784a6e3a1aa0e072fa4325abd"
     },
     {
       "path": "renders/landscape-844.png",
-      "sha256": "7e6f850203cf5f96d38f5584266fbeb118da49d6dcb3f6ce1c92ea946c8d0c7d"
+      "sha256": "e8267a2bde997691375940c0fa3cb3b06117aab50c4949d85862f479fa3ae128"
     },
     {
       "path": "renders/light-390.png",
-      "sha256": "afcd318661cdc5087150d0b89ba17f66c73954019a87a44cb19ffae57718c96d"
+      "sha256": "6ad396e48c2d952ad12cda01cf25fd963d11bf62a0aeb407908163b462118a4e"
     },
     {
       "path": "renders/text-200-390.png",
-      "sha256": "57cf3520b34e86df580eeec1e9b108b23553aa698f0a4d40a030cca95922c344"
+      "sha256": "705bda09bef36cee964372275c9be82de38a69394714098019c7798d2d8e43d6"
+    },
+    {
+      "path": "styles.css",
+      "sha256": "070b6c4197671c059c6e8da1fd832f02da942604133e18d20f1d455568c28e8f"
     }
   ],
   "boundary": "Artifact integrity only; local Web checks are not native or human verification."

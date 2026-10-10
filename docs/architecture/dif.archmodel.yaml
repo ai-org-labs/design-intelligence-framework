@@ -303,7 +303,8 @@
       "kind": "application",
       "responsibilities": [
         "Compare design alternatives",
-        "Compare typography, dependency and framework fit; retain proposed architecture decisions and evidence boundaries"
+        "Compare typography, dependency and framework fit; retain proposed architecture decisions and evidence boundaries",
+        "Specify reusable component contracts, customization boundaries and change propagation"
       ],
       "interfaces": [
         "Local files"

@@ -80,3 +80,5 @@ archmodel原本からMermaidとSVGを再生成します。図の手修正は原�
 画面適応と仕上げ：[設計ガイド](skills/dif-ux-ui/references/adaptive-finish.md)で画面幅・高さ、解像度/DPR、回転、文字拡大、配色、質感、動き軽減を扱います。[設定画面の実例](examples/settings-detail/proposal.md)には明暗と横向きの画像、Webでの観測と未検証の区別があります。
 
 [実装適合ガイド](skills/dif-design/references/implementation-fit.md)はフォント、プラグイン、フレームワーク、状態と責務分割を製品要件から比較します。[設定画面への判断例](examples/settings-detail/implementation-fit.md)を同梱。導入済み・提案・未検証を区別します。
+
+[部品設計・カスタマイズ](skills/dif-design/references/component-system.md)：共有トークン、部品の契約、変更の伝播と移行を扱います。[動く共通部品の実例](examples/settings-detail/components.md)を追加しました。

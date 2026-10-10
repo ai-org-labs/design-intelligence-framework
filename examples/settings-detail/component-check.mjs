@@ -1,0 +1,30 @@
+import {createRequire} from 'node:module';
+import {fileURLToPath,pathToFileURL} from 'node:url';
+import {writeFile} from 'node:fs/promises';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+const [runtime,executablePath]=process.argv.slice(2);
+if(!runtime||!executablePath)throw Error('Supply local Playwright and Chromium');
+const {chromium}=createRequire(import.meta.url)(path.resolve(runtime)),root=path.dirname(fileURLToPath(import.meta.url));
+const browser=await chromium.launch({executablePath,headless:true});let pass=false;
+try{
+ const page=await browser.newPage({viewport:{width:390,height:900}});page.on('dialog',d=>d.accept());
+ await page.goto(pathToFileURL(path.join(root,'preview.html')).href);
+ assert.equal(await page.locator('[data-numeric-control] .controls').count(),2);
+ await page.locator('#scale-value').fill('');
+ await page.locator('#brand').selectOption('forest');
+ assert.equal(await page.locator('#scale-value').inputValue(),'');
+ for(const id of ['scale','spacing'])assert.equal(await page.locator(`#${id}-value`).evaluate(e=>getComputedStyle(e).borderRadius),'4px');
+ await page.evaluate(()=>document.documentElement.style.setProperty('--control-radius','12px'));
+ for(const id of ['scale','spacing'])assert.equal(await page.locator(`#${id}-value`).evaluate(e=>getComputedStyle(e).borderRadius),'12px');
+ await page.locator('#save').click();assert.equal(await page.locator('#scale-value').getAttribute('aria-invalid'),'true');
+ await page.locator('#scale-value').fill('125');await page.locator('#save').click();await page.waitForFunction(()=>!document.getElementById('save').disabled);
+ assert.equal(await page.locator('#dirty').innerText(),'保存済み');
+ await page.evaluate(()=>document.documentElement.style.removeProperty('--control-radius'));
+ await page.locator('#brand').selectOption('default');
+ assert.equal(await page.locator('#scale-value').inputValue(),'125');
+ assert.equal(await page.locator('#scale-value').evaluate(e=>getComputedStyle(e).borderRadius),'8px');
+ await page.locator('#brand').selectOption('forest');
+ await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:path.join(root,'renders/forest-390.png'),fullPage:true});
+ pass=true;
+}finally{await browser.close();await writeFile(path.join(root,'component-checks.json'),JSON.stringify({date:new Date().toISOString(),pass,observed:pass?['Two numeric consumers generated from shared component','Brand and shared radius changes reach both consumers','Raw invalid draft preserved across customization','Validation and save still operate','Default theme restored without losing value']:[],boundary:'Local Chromium demonstration only; no external consumer migration, native component library, independent maintainability study or complete theme accessibility evidence.'},null,2)+'\n');}

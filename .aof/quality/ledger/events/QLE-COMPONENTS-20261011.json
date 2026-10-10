@@ -1,0 +1,28 @@
+{
+  "artifact_type": "quality-ledger-event",
+  "ledger_format_version": 1,
+  "event_id": "QLE-COMPONENTS-20261011",
+  "recorded_at": "2026-10-10T17:43:47.935841+00:00",
+  "event_type": "evidence_added",
+  "quality_intent_ref": "QIN-EVIDENCE",
+  "work_item_ref": ".aof/tasks/open/TASK-001.json",
+  "claim": "Reusable numeric controls and shared styles demonstrate customization with retained draft state in a local Web example.",
+  "evidence_refs": [
+    "examples/settings-detail/component-checks.json",
+    "examples/settings-detail/components.md",
+    "docs/quality/component-system.md"
+  ],
+  "qif_refs": [
+    "docs/quality/dif.quality-gate.json"
+  ],
+  "prior_state": null,
+  "new_state": null,
+  "confidence": null,
+  "semantic_truth_claimed": false,
+  "operator_validated": false,
+  "governance_action": "review-required",
+  "source_task_id": "TASK-001",
+  "source_parent_session_id": null,
+  "source_decision_record_id": null,
+  "notes": "Not a complete production component library. Human adoption and maintenance benefits remain unverified."
+}

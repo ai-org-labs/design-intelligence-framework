@@ -20,3 +20,5 @@ $('cancel').onclick=()=>{clearErrors();setForm(saved);undo=null;$('undo').hidden
 function leave(){setForm(saved);clearErrors();$('editor').hidden=true;$('index').hidden=false;$('index-summary').textContent=`${saved.name} / 文字 ${saved.scale}% / 行間 ${saved.spacing}%`;$('open').focus();}
 $('back').onclick=()=>{if(dirty())$('leave').showModal();else leave();};$('keep').onclick=()=>{$('leave').close();$('back').focus();};$('discard').onclick=()=>{$('leave').close();leave();};$('open').onclick=()=>{$('index').hidden=true;$('editor').hidden=false;setForm(saved);$('back').focus();};window.addEventListener('beforeunload',e=>{if(dirty()||busy){e.preventDefault();e.returnValue='';}});matchMedia('(prefers-color-scheme: dark)').addEventListener('change',render);
 setForm(saved);guideRender();$('guide-state').textContent=`${guide?'ON':'OFF'}・${persisted?'保存済み':'初期値'}`;if(loadFailed){$('save-state').textContent='保存済み設定を読み込めませんでした。初期値で表示しています。';$('guide-state').textContent='保存状態を確認できません。初期値OFFで表示しています。';}
+
+$('brand').onchange=()=>{document.documentElement.dataset.brand=$('brand').value==='forest'?'forest':'default';};
