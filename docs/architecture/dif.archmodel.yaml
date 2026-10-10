@@ -374,7 +374,8 @@
       "kind": "application",
       "responsibilities": [
         "Choose and compose settings/form controls",
-        "Specify state, precision, persistence and platform boundaries"
+        "Specify state, precision, persistence and platform boundaries",
+        "Specify adaptive space, density, appearance and motion with bounded runtime evidence"
       ],
       "interfaces": [
         "Local files"

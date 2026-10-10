@@ -9,6 +9,8 @@ Run `dif-controls` standalone with a realistic brief and the relevant platform s
 | C3 | Android panel with tiny drawn switches and sliders | Actual hit area vs icon, 48dp context, no overlapping expansion, immediate switch vs saved multi-selection |
 | C4 | Invalid/empty numeric input, IME composition and decimal locale | Preserve intermediate input, do not coerce empty to zero, validation timing and recovery |
 | C5 | Preview changed, remote save failed, user navigates back and resets | Last committed state, retained draft, retry, reset scope and undo, async race policy |
+| C7 | Portrait draft + modal → landscape, tablet split view, short-height keyboard | Preserve values/focus/commit state; native recreation separate from viewport resize |
+| C8 | 200% text, DPR 1/3, light/dark/forced colors, interrupted motion | Distinguish density/layout; inspect detail crops, semantic colors and reduced-motion feedback; no emulator-as-device claim |
 | C6 | Source inaccessible, mockup only, unknown OS | Report limits; do not invent guideline compliance or native verification |
 
 Evaluate independently: task grouping, control fit, state completeness, platform applicability, accessibility plan, recovery, visual readability and evidence honesty. For each use missing / weak / useful / strong with artifact references; no summed quality score. Record false positives and ignored exceptions, especially target sizing. Human adoption and native-device outcomes remain separate.

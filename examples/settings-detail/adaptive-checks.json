@@ -1,0 +1,140 @@
+{
+  "date": "2026-10-10T17:36:51.999Z",
+  "pass": true,
+  "results": [
+    {
+      "name": "breakpoint boundaries and short/wide windows reflow",
+      "pass": true,
+      "observations": [
+        [
+          320,
+          900
+        ],
+        [
+          679,
+          900
+        ],
+        [
+          680,
+          900
+        ],
+        [
+          681,
+          900
+        ],
+        [
+          999,
+          900
+        ],
+        [
+          1000,
+          900
+        ],
+        [
+          1001,
+          900
+        ],
+        [
+          2560,
+          1080
+        ],
+        [
+          568,
+          320
+        ]
+      ]
+    },
+    {
+      "name": "portrait/landscape resize preserves raw draft and focus",
+      "pass": true
+    },
+    {
+      "name": "open confirmation survives rotation and remains dismissible",
+      "pass": true
+    },
+    {
+      "name": "200% root-font stress has no page overflow and save remains reachable",
+      "pass": true,
+      "observations": "CSS root-font stress only; not browser zoom or native Dynamic Type"
+    },
+    {
+      "name": "light/dark system themes update and selected opaque text pairs contrast",
+      "pass": true,
+      "observations": [
+        {
+          "colorScheme": "light",
+          "name": "body",
+          "ratio": 13.041243675879587
+        },
+        {
+          "colorScheme": "light",
+          "name": "help",
+          "ratio": 6.288783061356102
+        },
+        {
+          "colorScheme": "light",
+          "name": "save",
+          "ratio": 6.187997949115269
+        },
+        {
+          "colorScheme": "light",
+          "name": "paper",
+          "ratio": 12.357745279762277
+        },
+        {
+          "colorScheme": "dark",
+          "name": "body",
+          "ratio": 15.734542642667561
+        },
+        {
+          "colorScheme": "dark",
+          "name": "help",
+          "ratio": 8.088690402143408
+        },
+        {
+          "colorScheme": "dark",
+          "name": "save",
+          "ratio": 8.157356613516741
+        },
+        {
+          "colorScheme": "dark",
+          "name": "paper",
+          "ratio": 11.400320481267041
+        }
+      ]
+    },
+    {
+      "name": "reduced motion removes button movement without changing action",
+      "pass": true
+    },
+    {
+      "name": "DPR changes physical screenshot size without changing logical layout",
+      "pass": true,
+      "observations": [
+        {
+          "dpr": 1,
+          "width": 390,
+          "formWidth": 358,
+          "overflow": false
+        },
+        {
+          "dpr": 2,
+          "width": 390,
+          "formWidth": 358,
+          "overflow": false
+        },
+        {
+          "dpr": 3,
+          "width": 390,
+          "formWidth": 358,
+          "overflow": false
+        }
+      ]
+    },
+    {
+      "name": "no page errors",
+      "pass": true
+    }
+  ],
+  "boundary": "Local Chromium emulation and selected computed style checks only. Not physical rotation, native recreation, browser zoom, assistive technology, forced-colors validation, full contrast/WCAG conformance, P3/HDR fidelity, animation performance or human preference evidence."
+}

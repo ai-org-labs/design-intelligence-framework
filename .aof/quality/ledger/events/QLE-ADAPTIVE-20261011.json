@@ -1,0 +1,29 @@
+{
+  "artifact_type": "quality-ledger-event",
+  "ledger_format_version": 1,
+  "event_id": "QLE-ADAPTIVE-20261011",
+  "recorded_at": "2026-10-10T17:38:00.909187+00:00",
+  "event_type": "evidence_added",
+  "quality_intent_ref": "QIN-EVIDENCE",
+  "work_item_ref": ".aof/tasks/open/TASK-001.json",
+  "claim": "Adaptive design and finish guidance and a Web prototype are implemented; local emulation evidence is bounded, not native or human quality validation.",
+  "evidence_refs": [
+    "examples/settings-detail/adaptive-checks.json",
+    "examples/settings-detail/proposal.md",
+    "skills/dif-ux-ui/references/adaptive-finish.md",
+    "docs/quality/adaptive-finish.md"
+  ],
+  "qif_refs": [
+    "docs/quality/dif.quality-gate.json"
+  ],
+  "prior_state": null,
+  "new_state": null,
+  "confidence": null,
+  "semantic_truth_claimed": false,
+  "operator_validated": false,
+  "governance_action": "review-required",
+  "source_task_id": "TASK-001",
+  "source_parent_session_id": null,
+  "source_decision_record_id": null,
+  "notes": "User-authorized scope expansion. Bundled knowledge synchronized. Physical-device rotation, browser zoom, forced-colors and independent trials remain unverified."
+}

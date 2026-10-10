@@ -16,6 +16,8 @@ Produce a mockup using available vector/image tools and link screen/component ID
 
 When visual appeal is in scope, use the [visual craft guide](references/visual-craft.md) to turn the intended impression into comparable screen studies, critique specific visual decisions, and refine the strongest direction before presenting it. Keep a provisional recommendation separate from human adoption.
 
+For responsive, density/resolution, rotation, animation, color or material/detail work, use [adaptive finish](references/adaptive-finish.md). Specify transformations across width and height, state preservation, logical versus physical pixels, semantic theme tokens, motion/reduced-motion behavior and component detail treatment. Show evidence in the relevant environments; a desktop/narrow pair alone is insufficient for those claims.
+
 Output flows, screen/component tables, image or explicitly unavailable status, assumptions and implementation risks. No CLI, renderer or companion skill is mandatory for text work; stop at declared budget.
 
 For dense settings or detailed controls, optionally use `dif-controls` when installed. Independently specify each control's choice rationale, value/unit/range/step, current/default state, dependencies, preview/commit timing, persistence, failure recovery and leave behavior. Identify Web versus native platform and current guidance; do not equate CSS px, pt and dp or infer accessibility conformance from static layouts. Include populated and error/dependency states instead of only the clean screen.

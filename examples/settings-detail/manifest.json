@@ -1,48 +1,72 @@
 {
   "artifacts": [
     {
+      "path": "adaptive-check.mjs",
+      "sha256": "fab1af5f6be8dc5ae1108df0f6f56326365e23d7130179faa9cac5971a0adc38"
+    },
+    {
+      "path": "adaptive-checks.json",
+      "sha256": "4b470c2a0a95780e22fd998ee4800199d813c7cb169c402c7bb8baea6cdb3a6c"
+    },
+    {
       "path": "check.mjs",
       "sha256": "34c8c259a4b1e8357be8ab636aba385891378ec90e7eeefdaef019a159587a59"
     },
     {
       "path": "checks.json",
-      "sha256": "7baa5093353fa2ad46f38f7fd2052a9a145beafb5e2eb0e40f5b80b8b915f269"
+      "sha256": "fba40d5fb057229859809557dc4382567626ffecfb67c5a6daf9a5317c96c8cb"
     },
     {
       "path": "preview.html",
-      "sha256": "0c58970e5c8b64346b004706c092372176e134c33af06e220970805c9677efb1"
+      "sha256": "f2f9cb9c8252048a6ef89cac6aa2537e9d76aebac6b6b09f6be6d2087cdb8ed3"
     },
     {
       "path": "preview.js",
-      "sha256": "39adf23b4777fd1b6ac90e460d098f39f36fa67380566cf5830d30d30f48d9e3"
+      "sha256": "d8d4e66daddd19863ba52372c272d63efdd583c0584550e9b74293a222ad4903"
     },
     {
       "path": "proposal.md",
-      "sha256": "713481825b53bc284b10401b0f3d37d3d4c8b9e761560eb84154881402937132"
+      "sha256": "5727a93bfb2f269252119d5766b65a7cedf35227c18beb20cdea738fbc47f885"
+    },
+    {
+      "path": "renders/dark-390.png",
+      "sha256": "81cc92e333b2b4eb4dcdccaba49fe0710dc9a325d2f60edfb5dc1ab485ef8eb8"
     },
     {
       "path": "renders/default-1280.png",
-      "sha256": "5fdab2f2e5b1734358432d9ee4accd5c6dc03e94ac95be9b6fd64d3e5d9fd62f"
+      "sha256": "02396d747f62da187d6175b4687e4830fc1067e88bfe24a7d216988b301b46ee"
     },
     {
       "path": "renders/default-320.png",
-      "sha256": "b7dbecdb1da215c0e0fe5f3bf11f51322a9588a02057b083ef2344289482dc54"
+      "sha256": "dd21c3694848ecd08a104fdf9f1840a0ced4b4a4e6381653a499e6eef8d7cde6"
     },
     {
       "path": "renders/default-390.png",
-      "sha256": "00da9399f6d43f81f04593e64ad38116ff62f732dfcf3b9372229b5782927f51"
+      "sha256": "caa19c3a104cbc02b21f75f96b526e0f434909f887e27a2b04aabff6cd6cd899"
     },
     {
       "path": "renders/error-1280.png",
-      "sha256": "6c99d0e9b1ca7d50a3985bfd1306bce376aebbd910a99a428f6fabe8c498760c"
+      "sha256": "9b70453d756db77cb9b00766de23290828773ed34820451536b08df4052f4a68"
     },
     {
       "path": "renders/error-320.png",
-      "sha256": "f1eac71b745da3867ad05c466baf0b689a45ff51484f09525620da1750c6cd09"
+      "sha256": "da575303e262a5f5ba2283a436a3bcb23b8cda65fd9d935a3cebbce91f50b6e6"
     },
     {
       "path": "renders/error-390.png",
-      "sha256": "91206df9a0d17b23a117cf61b959297e083764e36d48cbe8fce247e084ae3093"
+      "sha256": "ea9d253494d4856aa566c2209017c4b2ac93c61ae16bac89095d46195d0bf68c"
+    },
+    {
+      "path": "renders/landscape-844.png",
+      "sha256": "7e6f850203cf5f96d38f5584266fbeb118da49d6dcb3f6ce1c92ea946c8d0c7d"
+    },
+    {
+      "path": "renders/light-390.png",
+      "sha256": "afcd318661cdc5087150d0b89ba17f66c73954019a87a44cb19ffae57718c96d"
+    },
+    {
+      "path": "renders/text-200-390.png",
+      "sha256": "57cf3520b34e86df580eeec1e9b108b23553aa698f0a4d40a030cca95922c344"
     }
   ],
   "boundary": "Artifact integrity only; local Web checks are not native or human verification."
