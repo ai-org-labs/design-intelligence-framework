@@ -16,3 +16,5 @@ Run `dif-controls` standalone with a realistic brief and the relevant platform s
 Evaluate independently: task grouping, control fit, state completeness, platform applicability, accessibility plan, recovery, visual readability and evidence honesty. For each use missing / weak / useful / strong with artifact references; no summed quality score. Record false positives and ignored exceptions, especially target sizing. Human adoption and native-device outcomes remain separate.
 
 Status: authored Web sample `examples/settings-detail` exercises local state transitions. These prompts have not been independently run. iOS/Android device trials, assistive technology, keyboard/IME on devices and user success rates remain unmeasured.
+
+Additional unrun trial: given an existing product manifest, Japanese/Latin content and a proposed UI plugin, compare typography/fallback and plugin/framework fit. Include keeping the current stack; inspect state ownership and migration cost. Mark unsupported version/license/rendering claims unknown. Do not install dependencies or claim adoption solely from the recommendation.

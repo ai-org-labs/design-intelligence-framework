@@ -89,3 +89,5 @@ flowchart LR
 ![横向き相当の短い画面](renders/landscape-844.png)
 
 再実行：`node examples/settings-detail/adaptive-check.mjs <installed-playwright-directory> <chromium-executable>`。高コントラスト用CSSも用意したが、forced-colorsの視認性・操作は未検証。残課題を通過扱いにしない。
+
+[フォント・依存・フレームワーク・責務分割の判断例](implementation-fit.md)：現状と製品化時の提案、未検証事項を区別しています。

@@ -17,6 +17,10 @@
       "sha256": "fba40d5fb057229859809557dc4382567626ffecfb67c5a6daf9a5317c96c8cb"
     },
     {
+      "path": "implementation-fit.md",
+      "sha256": "eb0a54a2451972aba8d1fc8baf1943a427414876b94d05e5e0c767cacd65aa27"
+    },
+    {
       "path": "preview.html",
       "sha256": "f2f9cb9c8252048a6ef89cac6aa2537e9d76aebac6b6b09f6be6d2087cdb8ed3"
     },
@@ -26,7 +30,7 @@
     },
     {
       "path": "proposal.md",
-      "sha256": "5727a93bfb2f269252119d5766b65a7cedf35227c18beb20cdea738fbc47f885"
+      "sha256": "05d0f94a82ffa316cae27522ba883e345994238257c659b240f728d2567b96f9"
     },
     {
       "path": "renders/dark-390.png",

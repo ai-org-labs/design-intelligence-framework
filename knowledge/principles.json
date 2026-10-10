@@ -155,6 +155,24 @@
       "appliesTo": "Detailed design proposals and review",
       "principle": "Specify transformations, density, text growth, semantic palette, material details and interruptible motion; demonstrate critical transitions.",
       "boundary": "User-authorized synthesis; emulator, author critique and real user/device findings must remain separate."
+    },
+    {
+      "id": "typography-delivery",
+      "type": "reference-only",
+      "version": "Source accessed 2026-10-11",
+      "source": "https://web.dev/learn/performance/optimize-web-fonts",
+      "appliesTo": "Web font delivery",
+      "principle": "Compare font loading policy, subset coverage and fallback behavior against the actual content and delivery constraints.",
+      "boundary": "Does not prove rendered glyph selection, license permissions or measured performance."
+    },
+    {
+      "id": "implementation-fit",
+      "type": "expert-inference",
+      "version": "DIF synthesis 2026-10-11",
+      "source": "DIF implementation-fit guide",
+      "appliesTo": "Font, plugin, framework and UI architecture decisions",
+      "principle": "Inspect the current stack, connect choices to product requirements and preserve responsibility, state and persistence boundaries in architecture decisions.",
+      "boundary": "Documented proposals do not establish actual compatibility, native fidelity, production architecture or human adoption."
     }
   ]
 }

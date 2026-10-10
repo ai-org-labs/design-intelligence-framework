@@ -302,7 +302,8 @@
       "name": "Skill orchestrator",
       "kind": "application",
       "responsibilities": [
-        "Compare design alternatives"
+        "Compare design alternatives",
+        "Compare typography, dependency and framework fit; retain proposed architecture decisions and evidence boundaries"
       ],
       "interfaces": [
         "Local files"
@@ -359,7 +360,8 @@
       "kind": "application",
       "responsibilities": [
         "Translate brand meaning to visual mechanisms",
-        "Compare and refine rendered screen proposals"
+        "Compare and refine rendered screen proposals",
+        "Specify typography roles, fallback and implementation constraints"
       ],
       "interfaces": [
         "Local files"
