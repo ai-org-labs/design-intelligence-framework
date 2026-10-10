@@ -134,7 +134,29 @@
       "validation_rules": [
         "Run tools/check-skills.mjs; host behavior requires separate trials"
       ]
+    },
+    {
+      "skill_id": "dif-art-direct",
+      "name": "dif-art-direct",
+      "owner_ref": "builder",
+      "version": "0.1.0-dev.0",
+      "purpose": "Translate brand meaning into concrete visual directions, compare screens and refine actual artifacts.",
+      "applicable_role_refs": [
+        "builder"
+      ],
+      "required_capability_refs": [],
+      "required_resource_refs": [],
+      "inputs": [
+        "User design request and supplied evidence"
+      ],
+      "expected_outputs": [
+        "skills/dif-art-direct/SKILL.md",
+        "Comparable visual proposals, reference provenance and explicit uncertainty"
+      ],
+      "validation_rules": [
+        "Run tools/check-skills.mjs; host behavior requires separate trials"
+      ]
     }
   ],
-  "updated_at": "2026-10-10T13:17:26.000Z"
+  "updated_at": "2026-10-10T16:15:49.498Z"
 }

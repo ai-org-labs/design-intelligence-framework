@@ -2,6 +2,8 @@
 
 A Skills-first framework for comparing design proposals with explicit constraints, evidence and uncertainty. Humans make adoption decisions. [日本語](README.md)
 
+Visual proposals: the standalone `dif-art-direct` skill translates brand meaning into composition, typography and shape, renders comparable directions, and refines a provisional favorite. See the [original three-direction tea-brand study](examples/visual-directions/proposal.md), [local HTML preview](examples/visual-directions/preview.html), and [manual craft trials](benchmarks/visual-craft/README.md). The authored demonstration is not independent proof of aesthetic quality; cross-domain use remains exploratory.
+
 **0.1.0-dev.0, public development preview, Apache-2.0. No stable release yet.** The first vertical slice covers registration/login UX/UI, not authentication infrastructure.
 
 For a real product trial, use the [pilot guide and feedback template](docs/pilot.md). Start with one flow and record human feedback before applying changes.

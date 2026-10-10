@@ -8,7 +8,7 @@
       "title": "DIF registration/login MVP stable readiness",
       "domain": "design-tooling",
       "artifactType": "skills-and-cli",
-      "context": "New local development preview based on requirements v0.3; no public release yet.",
+      "context": "Public development preview based on requirements v0.3; stable and npm publication remain pending. Visual-direction work is an exploratory extension with authored evidence.",
       "stakeholderImpact": [
         "Designers",
         "People using proposed interfaces"

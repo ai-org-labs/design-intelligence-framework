@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-10T16:15:54.041Z",
+  "renderer": "Local Chromium through optional Playwright",
+  "results": [
+    {
+      "direction": "A",
+      "width": 1280,
+      "overflow": false,
+      "targetReached": true,
+      "detailOpened": true,
+      "detailClosed": true
+    },
+    {
+      "direction": "A",
+      "width": 390,
+      "overflow": false,
+      "targetReached": true,
+      "detailOpened": true,
+      "detailClosed": true
+    },
+    {
+      "direction": "B",
+      "width": 1280,
+      "overflow": false,
+      "targetReached": true,
+      "detailOpened": true,
+      "detailClosed": true
+    },
+    {
+      "direction": "B",
+      "width": 390,
+      "overflow": false,
+      "targetReached": true,
+      "detailOpened": true,
+      "detailClosed": true
+    },
+    {
+      "direction": "C",
+      "width": 1280,
+      "overflow": false,
+      "targetReached": true,
+      "detailOpened": true,
+      "detailClosed": true
+    },
+    {
+      "direction": "C",
+      "width": 390,
+      "overflow": false,
+      "targetReached": true,
+      "detailOpened": true,
+      "detailClosed": true
+    }
+  ],
+  "pass": true,
+  "boundary": "Local HTML prototype layout/interaction checks only; no preference, conversion, assistive-technology or native-device evidence. Visual critique is by the author, not independent."
+}

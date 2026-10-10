@@ -14,4 +14,6 @@ Specify layout hierarchy, labels, focus order, keyboard interactions, disabled/l
 
 Produce a mockup using available vector/image tools and link screen/component IDs. An SVG is acceptable; text is a fallback specification, not a completed image. Do not claim responsive/assistive behavior was tested from static artwork. Avoid extra personal data and distinguish design intention from real security evidence.
 
+When visual appeal is in scope, use the [visual craft guide](references/visual-craft.md) to turn the intended impression into comparable screen studies, critique specific visual decisions, and refine the strongest direction before presenting it. Keep a provisional recommendation separate from human adoption.
+
 Output flows, screen/component tables, image or explicitly unavailable status, assumptions and implementation risks. No CLI, renderer or companion skill is mandatory for text work; stop at declared budget.

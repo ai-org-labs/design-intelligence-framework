@@ -1,0 +1,62 @@
+{
+  "generated_at": "2026-10-10T16:17:25.238Z",
+  "artifacts": [
+    {
+      "path": "board.html",
+      "sha256": "8fe2e6bdaed08cbc6034c190f6bf4f6e5a039ec755c38f8981016ec84e5888cd"
+    },
+    {
+      "path": "checks.json",
+      "sha256": "92ddf9f52f9b979412ecfb562a0d29f94af490316db739db39f144df8c74759b"
+    },
+    {
+      "path": "preview.html",
+      "sha256": "9377b1d46510f1ce31b3513e516bea6e63c2ca85a1fbc7c55c988c8fad33b311"
+    },
+    {
+      "path": "proposal.md",
+      "sha256": "773846bbdb821868d911c764e5a163cd37434957fb1eff317a22c55f8bf5223e"
+    },
+    {
+      "path": "render.mjs",
+      "sha256": "a00aa6de68ee2cc547eff7b7d2399bf5a29939658fc5437037c26be5083d96f0"
+    },
+    {
+      "path": "renders/A-1280.png",
+      "sha256": "dcaf628999218637fd1b2cac4a10a6d8d43840582a76c0d4e077d69012fa9b0f"
+    },
+    {
+      "path": "renders/A-390.png",
+      "sha256": "ece63d6ce7257f5a816b5c23d46531cdd1255c0c1d1e5ca6bc2dedf0d93e6c50"
+    },
+    {
+      "path": "renders/A-before-1280.png",
+      "sha256": "ffb390876460d769a4e0caa57cb2d3475728b7493d0c3f52e95c70758569219d"
+    },
+    {
+      "path": "renders/B-1280.png",
+      "sha256": "99e94669ab2830c0daa72ea5253ba7013492275306d71358fa22d8756e0ab06e"
+    },
+    {
+      "path": "renders/B-390.png",
+      "sha256": "4b1585a57e302713875c3c596bf077704f56a03d47794d7aa9fb714fb69cbb2d"
+    },
+    {
+      "path": "renders/C-1280.png",
+      "sha256": "b5f2f6f874f6f4e9a8b3710f27fe8f3c5ea277f2f32f6c7f6e5a3572b02681dc"
+    },
+    {
+      "path": "renders/C-390.png",
+      "sha256": "42e435c487be08a5855012eedced0109e0f06bd0f3b12f81d4c7f25dd55cf337"
+    },
+    {
+      "path": "renders/comparison.png",
+      "sha256": "260b405fd1eecbaa9282348c712315725d51403afc502df13e861bd9d8259a41"
+    },
+    {
+      "path": "review.md",
+      "sha256": "40f7a7bd634784bca55943cfa2f10941ee99d73f16d9b8d0bf7a1f592b70c648"
+    }
+  ],
+  "boundary": "Artifact fingerprints only; not an aesthetic evaluation."
+}

@@ -1,0 +1,28 @@
+{
+  "artifact_type": "quality-ledger-event",
+  "ledger_format_version": 1,
+  "event_id": "QLE-VISUAL-20261011",
+  "recorded_at": "2026-10-10T16:17:25.238Z",
+  "event_type": "evidence_added",
+  "quality_intent_ref": "QIN-EVIDENCE",
+  "work_item_ref": ".aof/tasks/open/TASK-001.json",
+  "claim": "Art-direction Skill and original visual proposals are implemented; local HTML interaction checks and author visual critique are recorded. Independent aesthetic usefulness remains unproven.",
+  "evidence_refs": [
+    "examples/visual-directions/checks.json",
+    "examples/visual-directions/review.md",
+    "benchmarks/visual-craft/README.md"
+  ],
+  "qif_refs": [
+    "docs/quality/dif.quality-gate.json"
+  ],
+  "prior_state": null,
+  "new_state": null,
+  "confidence": null,
+  "semantic_truth_claimed": false,
+  "operator_validated": false,
+  "governance_action": "review-required",
+  "source_task_id": "TASK-001",
+  "source_parent_session_id": null,
+  "source_decision_record_id": null,
+  "notes": "Authored demonstration, not blind trial. Human preference and adoption pending."
+}

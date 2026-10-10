@@ -17,7 +17,7 @@
 
 ## Skills単体で使う
 
-`skills/dif-design/` を、Agent Skills対応環境のSkillディレクトリへフォルダごとコピーします。`references/`も同梱してください。統合Skillだけでテキスト提案・レビュー・改善ができます。必要に応じて他の5つのSkillもコピーできます。
+`skills/dif-design/` を、Agent Skills対応環境のSkillディレクトリへフォルダごとコピーします。`references/`も同梱してください。統合Skillだけでテキスト提案・レビュー・改善ができます。必要に応じて他の専門Skillもコピーできます。
 
 > dif-designを使って、会員登録とログインを複数案で提案してください。対象者・認証方式が未定の部分は仮説を分け、比較理由と未評価項目を示してください。
 
@@ -27,10 +27,15 @@
 | dif-intake | 要求・制約・矛盾・仮説 |
 | dif-explore | 意味のある差異を持つ候補と比較 |
 | dif-ux-ui | フロー・画面・状態・モックアップ |
+| dif-art-direct | ブランドの意味から構図・文字・形を導き、複数の画面案を比較・推敲 |
 | dif-evaluate | 規則・専門判断・実測を区別したレビュー |
 | dif-improve | 改善版・前後差分・由来の保持 |
 
 CLI、画像生成サービス、サブエージェントは必須ではありません。画像が生成できなければ代替仕様を返しますが、提案パッケージは未完成です。Agent Skillsの書式を確認しており、Codex/Claude Code等での正式互換性はまだ実証していません。
+
+### 見た目の方向性を提案する
+
+`dif-art-direct` は「ブランドの意味 → 構図・文字・形 → 実際の画面案 → 批評と修正」を扱います。[架空のお茶ブランドの3方向比較](examples/visual-directions/proposal.md)と[操作できるHTML](examples/visual-directions/preview.html)を同梱しています。HTMLはローカルで開けます。PC・狭幅の画像、参照元、改善前後、未検証事項を確認できます。これは作者による実例で、独立評価や全業種への品質保証ではありません。[視覚提案の評価課題](benchmarks/visual-craft/README.md)は機械fixtureとは別に扱います。
 
 ## 補助CLI
 

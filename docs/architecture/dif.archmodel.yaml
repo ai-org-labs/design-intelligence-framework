@@ -59,6 +59,31 @@
                 ]
               }
             ]
+          },
+          {
+            "id": "visual-proposal-behavior",
+            "name": "Translate meaning into visual directions",
+            "trigger": "User requests visual proposals or stronger visual appeal",
+            "outcomes": [
+              "Comparable screen proposals and a reasoned refinement with explicit limits"
+            ],
+            "failure_behaviors": [
+              "Report unavailable imagery and unobserved references without fabricated proof"
+            ],
+            "realized_by": [
+              "art-direction"
+            ],
+            "scenarios": [
+              {
+                "id": "visual-proposal-scenario",
+                "name": "Compare and refine visual directions",
+                "type": "gherkin",
+                "specification": "Given a brand brief and shared content\nWhen visual directions are requested\nThen produce comparable screens, critique and a revised proposal with adoption pending",
+                "verified_by": [
+                  "visual-trials"
+                ]
+              }
+            ]
           }
         ],
         "qualities": [
@@ -302,6 +327,21 @@
       "implemented_by": [
         "projection-source"
       ]
+    },
+    {
+      "id": "art-direction",
+      "name": "Visual proposal and refinement Skill",
+      "kind": "application",
+      "responsibilities": [
+        "Translate brand meaning to visual mechanisms",
+        "Compare and refine rendered screen proposals"
+      ],
+      "interfaces": [
+        "Local files"
+      ],
+      "implemented_by": [
+        "art-direction-source"
+      ]
     }
   ],
   "realizations": [
@@ -328,6 +368,12 @@
       "name": "tools/architecture.mjs",
       "kind": "source",
       "location": "tools/architecture.mjs"
+    },
+    {
+      "id": "art-direction-source",
+      "name": "skills/dif-art-direct/SKILL.md",
+      "kind": "source",
+      "location": "skills/dif-art-direct/SKILL.md"
     }
   ],
   "verifications": [
@@ -361,6 +407,14 @@
       "level": "acceptance",
       "method": "Run npm run verify; map-tests additionally requires pinned upstream providers",
       "location": "evidence/architecture.json",
+      "result": "unknown"
+    },
+    {
+      "id": "visual-trials",
+      "name": "Visual proposal usefulness and craft",
+      "level": "acceptance",
+      "method": "Run manual visual trials and obtain separate human assessment; authored demonstration is not independent evidence",
+      "location": "benchmarks/visual-craft/README.md",
       "result": "unknown"
     }
   ],
@@ -451,6 +505,13 @@
       "to": "validator",
       "type": "depends_on",
       "label": "reflect validator contract"
+    },
+    {
+      "id": "skills-to-art-direction",
+      "from": "skills",
+      "to": "art-direction",
+      "type": "depends_on",
+      "label": "optional visual proposal specialist"
     }
   ]
 }
