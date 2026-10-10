@@ -368,7 +368,8 @@
         "Local files"
       ],
       "implemented_by": [
-        "art-direction-source"
+        "art-direction-source",
+        "four-studies-source"
       ]
     },
     {
@@ -424,6 +425,12 @@
       "name": "skills/dif-controls/SKILL.md",
       "kind": "source",
       "location": "skills/dif-controls/SKILL.md"
+    },
+    {
+      "id": "four-studies-source",
+      "name": "Four authored design studies",
+      "kind": "source",
+      "location": "examples/four-studies/studies.archmodel.yaml"
     }
   ],
   "verifications": [

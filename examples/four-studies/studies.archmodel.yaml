@@ -1,0 +1,426 @@
+{
+  "version": "0.1",
+  "product": {
+    "id": "four-studies",
+    "name": "DIF Four Design Studies",
+    "purpose": "Review four concrete design hypotheses",
+    "primary_users": [
+      "Requester",
+      "Reviewer"
+    ],
+    "user_value": "Inspect visual and interaction proposals with evidence limits",
+    "scope": [
+      "Four fictional local Web studies"
+    ],
+    "out_of_scope": [
+      "Real bank operations",
+      "M5 firmware",
+      "Automatic adoption"
+    ],
+    "capabilities": [
+      {
+        "id": "menu-cap",
+        "name": "Casa Tutti menu",
+        "purpose": "Family groups choose dishes without losing price/category context",
+        "actor": [
+          "Reviewer"
+        ],
+        "inputs": [
+          "Fictional brief and sample data"
+        ],
+        "outputs": [
+          "Interactive Web study and explicit evidence limits"
+        ],
+        "behaviors": [
+          {
+            "id": "menu-behavior",
+            "name": "Family groups choose dishes without losing price/category context",
+            "trigger": "Reviewer opens the study",
+            "outcomes": [
+              "Review proposed states and visual treatment"
+            ],
+            "failure_behaviors": [
+              "Preserve unknown device and human outcomes; do not fabricate completion"
+            ],
+            "realized_by": [
+              "menu-ui"
+            ],
+            "scenarios": [
+              {
+                "id": "menu-scenario",
+                "name": "Evaluate the authored Casa Tutti menu",
+                "type": "gherkin",
+                "specification": "Given fictional study data\nWhen a reviewer exercises the sample\nThen expose relevant states and preserve evidence boundaries",
+                "verified_by": [
+                  "study-review"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "shared-behavior",
+            "name": "Reuse presentation without mixing domain state",
+            "trigger": "A study renders repeated presentation",
+            "outcomes": [
+              "Shared presentation with feature-owned state"
+            ],
+            "failure_behaviors": [
+              "Do not infer shared business semantics from matching appearance"
+            ],
+            "realized_by": [
+              "shared"
+            ],
+            "scenarios": [
+              {
+                "id": "shared-scenario",
+                "name": "Shared presentation boundaries",
+                "type": "gherkin",
+                "specification": "Given different domain studies\nWhen common presentation is used\nThen keep banking and archive state in their own features",
+                "verified_by": [
+                  "study-review"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "device-cap",
+        "name": "AER device homepage",
+        "purpose": "Explain a fictional device through form and purpose without invented specifications",
+        "actor": [
+          "Reviewer"
+        ],
+        "inputs": [
+          "Fictional brief and sample data"
+        ],
+        "outputs": [
+          "Interactive Web study and explicit evidence limits"
+        ],
+        "behaviors": [
+          {
+            "id": "device-behavior",
+            "name": "Explain a fictional device through form and purpose without invented specifications",
+            "trigger": "Reviewer opens the study",
+            "outcomes": [
+              "Review proposed states and visual treatment"
+            ],
+            "failure_behaviors": [
+              "Preserve unknown device and human outcomes; do not fabricate completion"
+            ],
+            "realized_by": [
+              "device-ui"
+            ],
+            "scenarios": [
+              {
+                "id": "device-scenario",
+                "name": "Evaluate the authored AER device homepage",
+                "type": "gherkin",
+                "specification": "Given fictional study data\nWhen a reviewer exercises the sample\nThen expose relevant states and preserve evidence boundaries",
+                "verified_by": [
+                  "study-review"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "monster-cap",
+        "name": "FIELDNOTE archive",
+        "purpose": "Explore a 320 by 240 catalogue and preserve recording failure boundaries",
+        "actor": [
+          "Reviewer"
+        ],
+        "inputs": [
+          "Fictional brief and sample data"
+        ],
+        "outputs": [
+          "Interactive Web study and explicit evidence limits"
+        ],
+        "behaviors": [
+          {
+            "id": "monster-behavior",
+            "name": "Explore a 320 by 240 catalogue and preserve recording failure boundaries",
+            "trigger": "Reviewer opens the study",
+            "outcomes": [
+              "Review proposed states and visual treatment"
+            ],
+            "failure_behaviors": [
+              "Preserve unknown device and human outcomes; do not fabricate completion"
+            ],
+            "realized_by": [
+              "monster-ui"
+            ],
+            "scenarios": [
+              {
+                "id": "monster-scenario",
+                "name": "Evaluate the authored FIELDNOTE archive",
+                "type": "gherkin",
+                "specification": "Given fictional study data\nWhen a reviewer exercises the sample\nThen expose relevant states and preserve evidence boundaries",
+                "verified_by": [
+                  "study-review"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "bank-cap",
+        "name": "NAGI deposit flow",
+        "purpose": "Keep login, expected funds, pending settlement and confirmed balance distinct",
+        "actor": [
+          "Reviewer"
+        ],
+        "inputs": [
+          "Fictional brief and sample data"
+        ],
+        "outputs": [
+          "Interactive Web study and explicit evidence limits"
+        ],
+        "behaviors": [
+          {
+            "id": "bank-behavior",
+            "name": "Keep login, expected funds, pending settlement and confirmed balance distinct",
+            "trigger": "Reviewer opens the study",
+            "outcomes": [
+              "Review proposed states and visual treatment"
+            ],
+            "failure_behaviors": [
+              "Preserve unknown device and human outcomes; do not fabricate completion"
+            ],
+            "realized_by": [
+              "bank-ui"
+            ],
+            "scenarios": [
+              {
+                "id": "bank-scenario",
+                "name": "Evaluate the authored NAGI deposit flow",
+                "type": "gherkin",
+                "specification": "Given fictional study data\nWhen a reviewer exercises the sample\nThen expose relevant states and preserve evidence boundaries",
+                "verified_by": [
+                  "study-review"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "menu-ui",
+      "name": "Casa Tutti menu",
+      "kind": "application",
+      "responsibilities": [
+        "Family groups choose dishes without losing price/category context"
+      ],
+      "interfaces": [
+        "Local HTML/CSS/JS"
+      ],
+      "implemented_by": [
+        "menu-source"
+      ]
+    },
+    {
+      "id": "device-ui",
+      "name": "AER device homepage",
+      "kind": "application",
+      "responsibilities": [
+        "Explain a fictional device through form and purpose without invented specifications"
+      ],
+      "interfaces": [
+        "Local HTML/CSS/JS"
+      ],
+      "implemented_by": [
+        "device-source"
+      ]
+    },
+    {
+      "id": "monster-ui",
+      "name": "FIELDNOTE archive",
+      "kind": "application",
+      "responsibilities": [
+        "Explore a 320 by 240 catalogue and preserve recording failure boundaries"
+      ],
+      "interfaces": [
+        "Local HTML/CSS/JS"
+      ],
+      "implemented_by": [
+        "monster-source"
+      ]
+    },
+    {
+      "id": "bank-ui",
+      "name": "NAGI deposit flow",
+      "kind": "application",
+      "responsibilities": [
+        "Keep login, expected funds, pending settlement and confirmed balance distinct"
+      ],
+      "interfaces": [
+        "Local HTML/CSS/JS"
+      ],
+      "implemented_by": [
+        "bank-source"
+      ]
+    },
+    {
+      "id": "shared",
+      "name": "Shared presentation helpers",
+      "kind": "application",
+      "responsibilities": [
+        "Provide DOM primitives, dialogs, vector motifs and focus/motion defaults"
+      ],
+      "interfaces": [
+        "Local JavaScript and CSS"
+      ],
+      "implemented_by": [
+        "shared-source"
+      ]
+    }
+  ],
+  "realizations": [
+    {
+      "id": "menu-source",
+      "name": "menu.html",
+      "kind": "source",
+      "location": "examples/four-studies/menu.html"
+    },
+    {
+      "id": "device-source",
+      "name": "device.html",
+      "kind": "source",
+      "location": "examples/four-studies/device.html"
+    },
+    {
+      "id": "monster-source",
+      "name": "monster.html",
+      "kind": "source",
+      "location": "examples/four-studies/monster.html"
+    },
+    {
+      "id": "bank-source",
+      "name": "bank.html",
+      "kind": "source",
+      "location": "examples/four-studies/bank.html"
+    },
+    {
+      "id": "shared-source",
+      "name": "common.js and base.css",
+      "kind": "source",
+      "location": "examples/four-studies/common.js"
+    }
+  ],
+  "verifications": [
+    {
+      "id": "study-review",
+      "name": "Human and target-environment study validation",
+      "level": "acceptance",
+      "method": "Use authored checks as limited evidence; independently assess usability, appeal and target runtime",
+      "location": "examples/four-studies/checks.json",
+      "result": "unknown"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "menu-direction",
+      "name": "Casa Tutti menu direction",
+      "context": "Family groups choose dishes without losing price/category context",
+      "decision": "Warm illustrated menu with category filters and shared dish cards",
+      "alternatives": [
+        "Photography-led menu requiring real food imagery"
+      ],
+      "reason": "Make the primary task and its uncertainty visible",
+      "trade_off": [
+        "Authored demonstration, not independent user or hardware evidence"
+      ],
+      "decision_status": "proposed",
+      "affects": [
+        "menu-ui"
+      ]
+    },
+    {
+      "id": "device-direction",
+      "name": "AER device homepage direction",
+      "context": "Explain a fictional device through form and purpose without invented specifications",
+      "decision": "Quiet product-led composition with original vector hardware",
+      "alternatives": [
+        "Technical specification-first homepage"
+      ],
+      "reason": "Make the primary task and its uncertainty visible",
+      "trade_off": [
+        "Authored demonstration, not independent user or hardware evidence"
+      ],
+      "decision_status": "proposed",
+      "affects": [
+        "device-ui"
+      ]
+    },
+    {
+      "id": "monster-direction",
+      "name": "FIELDNOTE archive direction",
+      "context": "Explore a 320 by 240 catalogue and preserve recording failure boundaries",
+      "decision": "Readable field catalogue on a fixed 320x240 screen with local record feedback",
+      "alternatives": [
+        "Dense dark game HUD"
+      ],
+      "reason": "Make the primary task and its uncertainty visible",
+      "trade_off": [
+        "Authored demonstration, not independent user or hardware evidence"
+      ],
+      "decision_status": "proposed",
+      "affects": [
+        "monster-ui"
+      ]
+    },
+    {
+      "id": "bank-direction",
+      "name": "NAGI deposit flow direction",
+      "context": "Keep login, expected funds, pending settlement and confirmed balance distinct",
+      "decision": "External transfer instructions; confirmation requires a mock bank event",
+      "alternatives": [
+        "Connected-bank guided deposit requiring validated integrations"
+      ],
+      "reason": "Make the primary task and its uncertainty visible",
+      "trade_off": [
+        "Authored demonstration, not independent user or hardware evidence"
+      ],
+      "decision_status": "proposed",
+      "affects": [
+        "bank-ui"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "id": "menu-shared",
+      "from": "menu-ui",
+      "to": "shared",
+      "type": "depends_on",
+      "label": "presentation only"
+    },
+    {
+      "id": "device-shared",
+      "from": "device-ui",
+      "to": "shared",
+      "type": "depends_on",
+      "label": "presentation only"
+    },
+    {
+      "id": "monster-shared",
+      "from": "monster-ui",
+      "to": "shared",
+      "type": "depends_on",
+      "label": "presentation only"
+    },
+    {
+      "id": "bank-shared",
+      "from": "bank-ui",
+      "to": "shared",
+      "type": "depends_on",
+      "label": "presentation only"
+    }
+  ]
+}

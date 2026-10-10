@@ -1,0 +1,2 @@
+document.querySelectorAll('[data-finish]').forEach(b=>b.onclick=()=>{document.body.dataset.finish=b.dataset.finish;document.querySelectorAll('[data-finish]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));});
+const specs=()=>DIF.dialog('device-dialog','AER One / コンセプト仕様',['想定する操作：ダイヤルを回す・押す、光で状態を知る。接続機器や用途は今後の設計対象です。','材質案：マットな金属外装、控えめな発光表示。画像はオリジナルのSVGイラストです。','サイズ・バッテリー・通信方式・価格・発売時期は未定です。性能を測定した実機や販売中の製品ではありません。']);document.getElementById('details').onclick=specs;document.getElementById('nav-spec').onclick=specs;

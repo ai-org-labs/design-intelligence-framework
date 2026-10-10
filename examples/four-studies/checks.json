@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-10T17:57:50.247Z",
+  "pass": true,
+  "results": [
+    {
+      "name": "menu: wide/narrow reflow and no runtime errors",
+      "pass": true
+    },
+    {
+      "name": "device: wide/narrow reflow and no runtime errors",
+      "pass": true
+    },
+    {
+      "name": "monster: wide/narrow reflow and no runtime errors",
+      "pass": true
+    },
+    {
+      "name": "bank: wide/narrow reflow and no runtime errors",
+      "pass": true
+    },
+    {
+      "name": "menu filters, price data and allergy explanation",
+      "pass": true
+    },
+    {
+      "name": "device finish and actual concept specification",
+      "pass": true
+    },
+    {
+      "name": "monster screen dimensions, detail and recoverable recording",
+      "pass": true
+    },
+    {
+      "name": "bank login failure and recovery",
+      "pass": true
+    },
+    {
+      "name": "bank invalid expected amount does not advance",
+      "pass": true
+    },
+    {
+      "name": "bank refresh/failure cannot fabricate settlement",
+      "pass": true
+    },
+    {
+      "name": "bank settlement event applies once and receipt agrees with balance",
+      "pass": true
+    }
+  ],
+  "boundary": "Authored Chromium Web studies only. No independent DIF agent trial, real banking, passkey authentication, M5 firmware/touch testing, human usability, typography coverage or whole-product accessibility evidence."
+}

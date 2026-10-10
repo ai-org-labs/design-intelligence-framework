@@ -1,0 +1,69 @@
+%% archmap: {"view":"layers"}
+flowchart LR
+  s0["DIF Four Design Studies"]
+  s1["Casa Tutti menu"]
+  s2["Family groups choose dishes without losing price/category context"]
+  s3["Evaluate the authored Casa Tutti menu"]
+  s4["Reuse presentation without mixing domain state"]
+  s5["Shared presentation boundaries"]
+  s6["AER device homepage"]
+  s7["Explain a fictional device through form and purpose without invented specifications"]
+  s8["Evaluate the authored AER device homepage"]
+  s9["FIELDNOTE archive"]
+  s10["Explore a 320 by 240 catalogue and preserve recording failure boundaries"]
+  s11["Evaluate the authored FIELDNOTE archive"]
+  s12["NAGI deposit flow"]
+  s13["Keep login, expected funds, pending settlement and confirmed balance distinct"]
+  s14["Evaluate the authored NAGI deposit flow"]
+  s15["Casa Tutti menu direction"]
+  s16["AER device homepage direction"]
+  s17["FIELDNOTE archive direction"]
+  s18["NAGI deposit flow direction"]
+  s19["Casa Tutti menu"]
+  s20["AER device homepage"]
+  s21["FIELDNOTE archive"]
+  s22["NAGI deposit flow"]
+  s23["Shared presentation helpers"]
+  s24["menu.html"]
+  s25["device.html"]
+  s26["monster.html"]
+  s27["bank.html"]
+  s28["common.js and base.css"]
+  s29["Human and target-environment study validation"]
+  s0 -->|"has"| s1
+  s1 -->|"has"| s2
+  s2 -->|"realizedBy"| s19
+  s2 -->|"has"| s3
+  s3 -->|"verifiedBy"| s29
+  s1 -->|"has"| s4
+  s4 -->|"realizedBy"| s23
+  s4 -->|"has"| s5
+  s5 -->|"verifiedBy"| s29
+  s0 -->|"has"| s6
+  s6 -->|"has"| s7
+  s7 -->|"realizedBy"| s20
+  s7 -->|"has"| s8
+  s8 -->|"verifiedBy"| s29
+  s0 -->|"has"| s9
+  s9 -->|"has"| s10
+  s10 -->|"realizedBy"| s21
+  s10 -->|"has"| s11
+  s11 -->|"verifiedBy"| s29
+  s0 -->|"has"| s12
+  s12 -->|"has"| s13
+  s13 -->|"realizedBy"| s22
+  s13 -->|"has"| s14
+  s14 -->|"verifiedBy"| s29
+  s15 -->|"affects"| s19
+  s16 -->|"affects"| s20
+  s17 -->|"affects"| s21
+  s18 -->|"affects"| s22
+  s19 -->|"implementedBy"| s24
+  s20 -->|"implementedBy"| s25
+  s21 -->|"implementedBy"| s26
+  s22 -->|"implementedBy"| s27
+  s23 -->|"implementedBy"| s28
+  s19 -->|"depends_on"| s23
+  s20 -->|"depends_on"| s23
+  s21 -->|"depends_on"| s23
+  s22 -->|"depends_on"| s23

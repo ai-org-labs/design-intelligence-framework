@@ -82,3 +82,5 @@ archmodel原本からMermaidとSVGを再生成します。図の手修正は原�
 [実装適合ガイド](skills/dif-design/references/implementation-fit.md)はフォント、プラグイン、フレームワーク、状態と責務分割を製品要件から比較します。[設定画面への判断例](examples/settings-detail/implementation-fit.md)を同梱。導入済み・提案・未検証を区別します。
 
 [部品設計・カスタマイズ](skills/dif-design/references/component-system.md)：共有トークン、部品の契約、変更の伝播と移行を扱います。[動く共通部品の実例](examples/settings-detail/components.md)を追加しました。
+
+[4つのDIFサンプル](examples/four-studies/index.html)：イタリアンのメニュー、架空デバイスメーカー、小型モンスター図鑑、銀行のログイン〜入金完了。[設計・操作・評価記録](examples/four-studies/README.md)を同梱しています。

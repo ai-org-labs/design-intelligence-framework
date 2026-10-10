@@ -34,3 +34,5 @@ Mechanical checks cover shape, typed references, declared constraints and colors
 [Adaptive finish guide](skills/dif-ux-ui/references/adaptive-finish.md): window width/height, density, orientation, text growth, semantic color, material details and reduced motion. The [settings study](examples/settings-detail/proposal.md) records browser observations separately from unverified native and human outcomes.
 
 [Implementation fit](skills/dif-design/references/implementation-fit.md) connects typography, plugins, frameworks and architecture to product constraints. The [authored settings decision example](examples/settings-detail/implementation-fit.md) separates current code from proposed production boundaries.
+
+[Four authored design studies](examples/four-studies/index.html): family restaurant menu, fictional device maker, small monster archive and bank login-to-deposit flow. [Design and evidence notes](examples/four-studies/README.md) separate browser observations from native, banking and human validation.

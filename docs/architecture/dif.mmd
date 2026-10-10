@@ -36,52 +36,53 @@ flowchart LR
   n33["projection-source: tools/architecture.mjs"]
   n34["art-direction-source: skills/dif-art-direct/SKILL.md"]
   n35["controls-source: skills/dif-controls/SKILL.md"]
-  n36["skill-contract: Contract and references are packaged"]
-  n37["negative-tests: Reject incomplete artifacts and invalid evidence"]
-  n38["history-tests: Retain provenance and require attributable decisions"]
-  n39["map-tests: Parse the archmodel and render ArchMap projections"]
-  n40["visual-trials: Visual proposal usefulness and craft"]
-  n41["controls-trials: Detailed-control usefulness and native behavior"]
+  n36["four-studies-source: Four authored design studies"]
+  n37["skill-contract: Contract and references are packaged"]
+  n38["negative-tests: Reject incomplete artifacts and invalid evidence"]
+  n39["history-tests: Retain provenance and require attributable decisions"]
+  n40["map-tests: Parse the archmodel and render ArchMap projections"]
+  n41["visual-trials: Visual proposal usefulness and craft"]
+  n42["controls-trials: Detailed-control usefulness and native behavior"]
   n0 -->|"has"| n1
   n1 -->|"has"| n2
   n2 -->|"realizedBy"| n24
   n2 -->|"has"| n3
-  n3 -->|"verifiedBy"| n36
+  n3 -->|"verifiedBy"| n37
   n1 -->|"has"| n4
   n4 -->|"realizedBy"| n28
   n4 -->|"has"| n5
-  n5 -->|"verifiedBy"| n40
+  n5 -->|"verifiedBy"| n41
   n1 -->|"has"| n6
   n6 -->|"realizedBy"| n29
   n6 -->|"has"| n7
-  n7 -->|"verifiedBy"| n41
+  n7 -->|"verifiedBy"| n42
   n1 -->|"has"| n8
   n8 -->|"realizedBy"| n24
-  n8 -->|"verifiedBy"| n36
+  n8 -->|"verifiedBy"| n37
   n0 -->|"has"| n9
   n9 -->|"has"| n10
   n10 -->|"realizedBy"| n25
   n10 -->|"has"| n11
-  n11 -->|"verifiedBy"| n37
+  n11 -->|"verifiedBy"| n38
   n9 -->|"has"| n12
   n12 -->|"realizedBy"| n25
-  n12 -->|"verifiedBy"| n37
+  n12 -->|"verifiedBy"| n38
   n0 -->|"has"| n13
   n13 -->|"has"| n14
   n14 -->|"realizedBy"| n26
   n14 -->|"has"| n15
-  n15 -->|"verifiedBy"| n38
+  n15 -->|"verifiedBy"| n39
   n13 -->|"has"| n16
   n16 -->|"realizedBy"| n26
-  n16 -->|"verifiedBy"| n38
+  n16 -->|"verifiedBy"| n39
   n0 -->|"has"| n17
   n17 -->|"has"| n18
   n18 -->|"realizedBy"| n27
   n18 -->|"has"| n19
-  n19 -->|"verifiedBy"| n39
+  n19 -->|"verifiedBy"| n40
   n17 -->|"has"| n20
   n20 -->|"realizedBy"| n27
-  n20 -->|"verifiedBy"| n39
+  n20 -->|"verifiedBy"| n40
   n21 -->|"appliesTo"| n0
   n21 -->|"appliesTo"| n1
   n21 -->|"appliesTo"| n9
@@ -89,8 +90,8 @@ flowchart LR
   n21 -->|"realizedBy"| n25
   n21 -->|"realizedBy"| n26
   n21 -->|"realizedBy"| n24
-  n21 -->|"verifiedBy"| n37
   n21 -->|"verifiedBy"| n38
+  n21 -->|"verifiedBy"| n39
   n22 -->|"affects"| n0
   n22 -->|"affects"| n24
   n22 -->|"affects"| n25
@@ -101,6 +102,7 @@ flowchart LR
   n26 -->|"implementedBy"| n32
   n27 -->|"implementedBy"| n33
   n28 -->|"implementedBy"| n34
+  n28 -->|"implementedBy"| n36
   n29 -->|"implementedBy"| n35
   n24 -->|"depends_on"| n25
   n26 -->|"depends_on"| n25

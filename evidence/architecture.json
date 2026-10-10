@@ -1,8 +1,8 @@
 {
   "command": "npm run architecture -- <archmodel-checkout> <archmap-checkout>",
   "diagnostics": [],
-  "entities": 42,
-  "edges": 65,
+  "entities": 43,
+  "edges": 66,
   "rendered": [
     "docs/architecture/dif.svg",
     "docs/architecture/design-map.svg",
