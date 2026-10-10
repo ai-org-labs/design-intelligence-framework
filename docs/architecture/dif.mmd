@@ -1,0 +1,87 @@
+%% archmap: {"view":"layers"}
+flowchart LR
+  n0["dif: Design Intelligence Framework"]
+  n1["propose: Compare design alternatives"]
+  n2["propose-behavior: Compare design alternatives"]
+  n3["propose-scenario: Contract and references are packaged"]
+  n4["propose-quality: Evidence-aware Compare design alternatives"]
+  n5["validate: Inspect evidence and deliverables"]
+  n6["validate-behavior: Inspect evidence and deliverables"]
+  n7["validate-scenario: Reject incomplete artifacts and invalid evidence"]
+  n8["validate-quality: Evidence-aware Inspect evidence and deliverables"]
+  n9["improve: Track improvements and human decisions"]
+  n10["improve-behavior: Track improvements and human decisions"]
+  n11["improve-scenario: Retain provenance and require attributable decisions"]
+  n12["improve-quality: Evidence-aware Track improvements and human decisions"]
+  n13["architecture: Inspect the architecture map"]
+  n14["architecture-behavior: Inspect the architecture map"]
+  n15["architecture-scenario: Parse the archmodel and render ArchMap projections"]
+  n16["architecture-quality: Evidence-aware Inspect the architecture map"]
+  n17["human-control: Human adoption and truthful evidence"]
+  n18["skills-first: Skills first; CLI optional"]
+  n19["semantic-model: Archmodel source and ArchMap projection"]
+  n20["skills: Skill orchestrator"]
+  n21["validator: Design validator"]
+  n22["history: Change and decision recorder"]
+  n23["projection: Architecture projection"]
+  n24["skills-source: skills/dif-design/SKILL.md"]
+  n25["validator-source: src/validate.mjs"]
+  n26["history-source: src/report.mjs"]
+  n27["projection-source: tools/architecture.mjs"]
+  n28["skill-contract: Contract and references are packaged"]
+  n29["negative-tests: Reject incomplete artifacts and invalid evidence"]
+  n30["history-tests: Retain provenance and require attributable decisions"]
+  n31["map-tests: Parse the archmodel and render ArchMap projections"]
+  n0 -->|"has"| n1
+  n1 -->|"has"| n2
+  n2 -->|"realizedBy"| n20
+  n2 -->|"has"| n3
+  n3 -->|"verifiedBy"| n28
+  n1 -->|"has"| n4
+  n4 -->|"realizedBy"| n20
+  n4 -->|"verifiedBy"| n28
+  n0 -->|"has"| n5
+  n5 -->|"has"| n6
+  n6 -->|"realizedBy"| n21
+  n6 -->|"has"| n7
+  n7 -->|"verifiedBy"| n29
+  n5 -->|"has"| n8
+  n8 -->|"realizedBy"| n21
+  n8 -->|"verifiedBy"| n29
+  n0 -->|"has"| n9
+  n9 -->|"has"| n10
+  n10 -->|"realizedBy"| n22
+  n10 -->|"has"| n11
+  n11 -->|"verifiedBy"| n30
+  n9 -->|"has"| n12
+  n12 -->|"realizedBy"| n22
+  n12 -->|"verifiedBy"| n30
+  n0 -->|"has"| n13
+  n13 -->|"has"| n14
+  n14 -->|"realizedBy"| n23
+  n14 -->|"has"| n15
+  n15 -->|"verifiedBy"| n31
+  n13 -->|"has"| n16
+  n16 -->|"realizedBy"| n23
+  n16 -->|"verifiedBy"| n31
+  n17 -->|"appliesTo"| n0
+  n17 -->|"appliesTo"| n1
+  n17 -->|"appliesTo"| n5
+  n17 -->|"appliesTo"| n9
+  n17 -->|"realizedBy"| n21
+  n17 -->|"realizedBy"| n22
+  n17 -->|"realizedBy"| n20
+  n17 -->|"verifiedBy"| n29
+  n17 -->|"verifiedBy"| n30
+  n18 -->|"affects"| n0
+  n18 -->|"affects"| n20
+  n18 -->|"affects"| n21
+  n19 -->|"affects"| n0
+  n19 -->|"affects"| n23
+  n20 -->|"implementedBy"| n24
+  n21 -->|"implementedBy"| n25
+  n22 -->|"implementedBy"| n26
+  n23 -->|"implementedBy"| n27
+  n20 -->|"depends_on"| n21
+  n22 -->|"depends_on"| n21
+  n23 -->|"depends_on"| n21

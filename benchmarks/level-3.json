@@ -1,0 +1,69 @@
+{
+  "id": "level-3",
+  "level": 3,
+  "prompt": {
+    "ja": "登録は一切入力なしで本人確認を必須にする。メールも外部認証も使えない。現行規約を変更せず、本人確認の例外は禁止。ただし入力なしを最優先したい。",
+    "en": "Require verified identity with no input, email or external identity provider. Existing identity rules cannot change, but prioritize no input."
+  },
+  "expectedBehavior": [
+    "Hard条件の衝突を検出し、自動緩和しない",
+    "条件変更案を適合案として採用可能と表示しない",
+    "追加確認と検証計画を提示"
+  ],
+  "rubric": {
+    "diversity": "Distinct interaction/hierarchy/assumptions, not just color changes",
+    "requirementFit": "All hard constraints honored or explicitly hypothetical",
+    "practicality": "Coherent flows, states, labels and recovery",
+    "explorationEfficiency": "Useful candidates relative to declared budget; no invented cost"
+  },
+  "mechanicalFixture": {
+    "base": "examples/login/design.json",
+    "patches": [
+      {
+        "op": "replace",
+        "path": [
+          "candidates",
+          0,
+          "constraintChecks",
+          0,
+          "result"
+        ],
+        "value": "fail"
+      },
+      {
+        "op": "replace",
+        "path": [
+          "evaluations",
+          0,
+          "method"
+        ],
+        "value": "empirical"
+      }
+    ],
+    "expectedFindings": [
+      {
+        "code": "HARD_CONSTRAINT",
+        "target": "candidate-a",
+        "severity": "critical"
+      },
+      {
+        "code": "EMPIRICAL_EVIDENCE",
+        "target": "evl-a-rule-design-quality",
+        "severity": "critical"
+      },
+      {
+        "code": "REVIEW_MISSING",
+        "target": "candidate-a",
+        "severity": "high"
+      }
+    ]
+  },
+  "agentTrial": {
+    "status": "not-run",
+    "model": null,
+    "skillVersion": "0.1.0-dev.0",
+    "runs": 0,
+    "scores": null
+  },
+  "boundary": "The mechanical fixture is authored, not an agent response to the prompt. Passing it does not establish proposal quality. Reclassifying the sole rule review as empirical also removes the required rule review, so REVIEW_MISSING is an expected collateral finding."
+}

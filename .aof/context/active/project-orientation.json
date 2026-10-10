@@ -1,0 +1,394 @@
+{
+  "orientation_type": "project-orientation",
+  "project_type": "skills-first-design-framework",
+  "domain_summary": "DIF supports evidence-aware UX/UI proposals and human comparison. Initial scope: registration/login.",
+  "repo_boundaries": [
+    "skills",
+    "src",
+    "bin",
+    "schemas",
+    "test",
+    "tools",
+    "examples",
+    "benchmarks",
+    "docs",
+    "knowledge",
+    ".aof",
+    "evidence"
+  ],
+  "protected_areas": [
+    "External publication, credentials and production systems"
+  ],
+  "required_commands": [
+    "npm run verify",
+    "npm run benchmark",
+    "npm run architecture -- <archmodel> <archmap>"
+  ],
+  "verification_entrypoints": [
+    "test/dif.test.mjs",
+    "tools/benchmark.mjs",
+    "tools/provider-check.mjs"
+  ],
+  "release_constraints": [
+    "Stable-only publication; independent review and host/pilot evidence pending"
+  ],
+  "human_owner": "Requesting project owner; release sign-off owner not yet explicitly designated",
+  "approval_boundary": "Local development and tests authorized by user request. Human design adoption, important exceptions and public release need actual decisions.",
+  "command_registry_ref": ".aof/command-registry.json",
+  "command_routing_summary": {
+    "detail_ref": "docs/cli-reference.md",
+    "categories": [
+      {
+        "category": "read",
+        "purpose": "Inspect current runtime state, registries, and operator-facing summaries."
+      },
+      {
+        "category": "verify",
+        "purpose": "Validate integrity, drift, and benchmark-grade compliance."
+      },
+      {
+        "category": "write",
+        "purpose": "Write canonical runtime artifacts, decisions, and state transitions."
+      },
+      {
+        "category": "execute",
+        "purpose": "Advance the runtime, orchestration, or repair path."
+      },
+      {
+        "category": "observe",
+        "purpose": "Export or visualize evidence, metrics, lineage, and analytics."
+      }
+    ],
+    "top_commands": [
+      {
+        "command": "command-register",
+        "category": "read",
+        "safety_level": "safe_read",
+        "approval_policy": {
+          "default_run_permission": "preapproved",
+          "requires_per_run_approval_for": [
+            "git push",
+            "npm publish",
+            "deploy",
+            "external service write",
+            "secrets access",
+            "billing operation",
+            "destructive operation",
+            "production mutation",
+            "irreversible operation"
+          ]
+        },
+        "purpose": "Read the command registry so operators and AI can route without loading the full CLI reference."
+      },
+      {
+        "command": "command-routing-audit",
+        "category": "verify",
+        "safety_level": "safe_read",
+        "approval_policy": {
+          "default_run_permission": "preapproved",
+          "requires_per_run_approval_for": [
+            "git push",
+            "npm publish",
+            "deploy",
+            "external service write",
+            "secrets access",
+            "billing operation",
+            "destructive operation",
+            "production mutation",
+            "irreversible operation"
+          ]
+        },
+        "purpose": "Verify that bootstrap, orientation, and command registry routing surfaces remain aligned."
+      },
+      {
+        "command": "council-exec",
+        "category": "execute",
+        "safety_level": "external_write",
+        "approval_policy": {
+          "default_run_permission": "requires_approval",
+          "requires_per_run_approval_for": [
+            "git push",
+            "npm publish",
+            "deploy",
+            "external service write",
+            "secrets access",
+            "billing operation",
+            "destructive operation",
+            "production mutation",
+            "irreversible operation"
+          ]
+        },
+        "purpose": "Execute a council stage and optionally invoke model-backed seats."
+      },
+      {
+        "command": "evidence-drill-down",
+        "category": "read",
+        "safety_level": "safe_read",
+        "approval_policy": {
+          "default_run_permission": "preapproved",
+          "requires_per_run_approval_for": [
+            "git push",
+            "npm publish",
+            "deploy",
+            "external service write",
+            "secrets access",
+            "billing operation",
+            "destructive operation",
+            "production mutation",
+            "irreversible operation"
+          ]
+        },
+        "purpose": "Read the bounded answer-to-proof packet below the operator brief."
+      },
+      {
+        "command": "init",
+        "category": "execute",
+        "safety_level": "project_write",
+        "approval_policy": {
+          "default_run_permission": "requires_approval",
+          "requires_per_run_approval_for": [
+            "git push",
+            "npm publish",
+            "deploy",
+            "external service write",
+            "secrets access",
+            "billing operation",
+            "destructive operation",
+            "production mutation",
+            "irreversible operation"
+          ]
+        },
+        "purpose": "Seed a project with the canonical AOF runtime skeleton and recognition packet."
+      },
+      {
+        "command": "mission-control",
+        "category": "execute",
+        "safety_level": "project_write",
+        "approval_policy": {
+          "default_run_permission": "requires_approval",
+          "requires_per_run_approval_for": [
+            "git push",
+            "npm publish",
+            "deploy",
+            "external service write",
+            "secrets access",
+            "billing operation",
+            "destructive operation",
+            "production mutation",
+            "irreversible operation"
+          ]
+        },
+        "purpose": "Refresh the current visibility packet and start the Mission Control viewer session from one operator entrypoint."
+      },
+      {
+        "command": "need-validation-benchmark",
+        "category": "verify",
+        "safety_level": "safe_read",
+        "approval_policy": {
+          "default_run_permission": "preapproved",
+          "requires_per_run_approval_for": [
+            "git push",
+            "npm publish",
+            "deploy",
+            "external service write",
+            "secrets access",
+            "billing operation",
+            "destructive operation",
+            "production mutation",
+            "irreversible operation"
+          ]
+        },
+        "purpose": "Benchmark whether Need Validation rejects, reframes, and gates project creation correctly."
+      },
+      {
+        "command": "operator-brief",
+        "category": "read",
+        "safety_level": "safe_read",
+        "approval_policy": {
+          "default_run_permission": "preapproved",
+          "requires_per_run_approval_for": [
+            "git push",
+            "npm publish",
+            "deploy",
+            "external service write",
+            "secrets access",
+            "billing operation",
+            "destructive operation",
+            "production mutation",
+            "irreversible operation"
+          ]
+        },
+        "purpose": "Read the compact operator-facing brief derived from current runtime situation assessment."
+      },
+      {
+        "command": "operator-progress",
+        "category": "read",
+        "safety_level": "safe_read",
+        "approval_policy": {
+          "default_run_permission": "preapproved",
+          "requires_per_run_approval_for": [
+            "git push",
+            "npm publish",
+            "deploy",
+            "external service write",
+            "secrets access",
+            "billing operation",
+            "destructive operation",
+            "production mutation",
+            "irreversible operation"
+          ]
+        },
+        "purpose": "Read the bounded operator progress packet that explains what changed since the last checkpoint."
+      },
+      {
+        "command": "organization-status",
+        "category": "read",
+        "safety_level": "safe_read",
+        "approval_policy": {
+          "default_run_permission": "preapproved",
+          "requires_per_run_approval_for": [
+            "git push",
+            "npm publish",
+            "deploy",
+            "external service write",
+            "secrets access",
+            "billing operation",
+            "destructive operation",
+            "production mutation",
+            "irreversible operation"
+          ]
+        },
+        "purpose": "Read the operator-facing organization summary and active goals."
+      },
+      {
+        "command": "organization-verify",
+        "category": "verify",
+        "safety_level": "safe_read",
+        "approval_policy": {
+          "default_run_permission": "preapproved",
+          "requires_per_run_approval_for": [
+            "git push",
+            "npm publish",
+            "deploy",
+            "external service write",
+            "secrets access",
+            "billing operation",
+            "destructive operation",
+            "production mutation",
+            "irreversible operation"
+          ]
+        },
+        "purpose": "Verify bootstrap, organization, capability, and command-routing integrity."
+      },
+      {
+        "command": "release-state-audit",
+        "category": "verify",
+        "safety_level": "safe_read",
+        "approval_policy": {
+          "default_run_permission": "preapproved",
+          "requires_per_run_approval_for": [
+            "git push",
+            "npm publish",
+            "deploy",
+            "external service write",
+            "secrets access",
+            "billing operation",
+            "destructive operation",
+            "production mutation",
+            "irreversible operation"
+          ]
+        },
+        "purpose": "Verify that active release refs and governed release surfaces remain aligned."
+      },
+      {
+        "command": "run",
+        "category": "execute",
+        "safety_level": "safe_local_write",
+        "approval_policy": {
+          "default_run_permission": "preapproved",
+          "requires_per_run_approval_for": [
+            "git push",
+            "npm publish",
+            "deploy",
+            "external service write",
+            "secrets access",
+            "billing operation",
+            "destructive operation",
+            "production mutation",
+            "irreversible operation"
+          ]
+        },
+        "purpose": "Start an AOF runtime session from a user request."
+      },
+      {
+        "command": "situation-assess",
+        "category": "read",
+        "safety_level": "safe_read",
+        "approval_policy": {
+          "default_run_permission": "preapproved",
+          "requires_per_run_approval_for": [
+            "git push",
+            "npm publish",
+            "deploy",
+            "external service write",
+            "secrets access",
+            "billing operation",
+            "destructive operation",
+            "production mutation",
+            "irreversible operation"
+          ]
+        },
+        "purpose": "Diagnose the current runtime situation, truth conflicts, and best next operating move."
+      },
+      {
+        "command": "tree-position",
+        "category": "read",
+        "safety_level": "safe_read",
+        "approval_policy": {
+          "default_run_permission": "preapproved",
+          "requires_per_run_approval_for": [
+            "git push",
+            "npm publish",
+            "deploy",
+            "external service write",
+            "secrets access",
+            "billing operation",
+            "destructive operation",
+            "production mutation",
+            "irreversible operation"
+          ]
+        },
+        "purpose": "Read the bounded trunk-and-branch position packet for the current frontier."
+      },
+      {
+        "command": "upgrade",
+        "category": "execute",
+        "safety_level": "project_write",
+        "approval_policy": {
+          "default_run_permission": "requires_approval",
+          "requires_per_run_approval_for": [
+            "git push",
+            "npm publish",
+            "deploy",
+            "external service write",
+            "secrets access",
+            "billing operation",
+            "destructive operation",
+            "production mutation",
+            "irreversible operation"
+          ]
+        },
+        "purpose": "Upgrade an existing AOF installation to the current bootstrap shape."
+      }
+    ],
+    "runtime_flow": [
+      "Read the command register first to route without loading the full CLI reference.",
+      "Use read commands to inspect runtime state before changing artifacts.",
+      "Use verify commands before claiming correctness or release readiness.",
+      "Use write commands to persist canonical artifacts and governed state changes.",
+      "Use execute commands to move the runtime or orchestration loop forward.",
+      "Use observe commands when exporting visibility, metrics, or analytical outputs."
+    ]
+  },
+  "updated_at": "2026-10-10T13:17:26.000Z"
+}

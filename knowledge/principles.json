@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "scope": "public",
+  "promotionPolicy": "Organization/project/request rules coexist; conflict must be surfaced. Private knowledge is not automatically promoted. Human approval is required for reusable knowledge registration.",
+  "items": [
+    {"id":"wcag-contrast","type":"standard","version":"WCAG 2.2, 2024-12-12","source":"https://www.w3.org/TR/2024/REC-WCAG22-20241212/#contrast-minimum","appliesTo":"Web text, with criterion-specific exceptions","principle":"Normal text generally needs 4.5:1 contrast; large text 3:1. Evaluate exceptions explicitly.","boundary":"DIF computes opaque sRGB declarations only; this is not whole-page WCAG conformance."},
+    {"id":"wcag-keyboard","type":"standard","version":"WCAG 2.2, 2024-12-12","source":"https://www.w3.org/TR/2024/REC-WCAG22-20241212/#keyboard","appliesTo":"Web interaction","principle":"Plan keyboard access and visible focus for essential controls.","boundary":"Model booleans are declarations, not browser/assistive-technology tests."},
+    {"id":"wcag-auth","type":"standard","version":"WCAG 2.2, 2024-12-12","source":"https://www.w3.org/TR/2024/REC-WCAG22-20241212/#accessible-authentication-minimum","appliesTo":"Authentication steps","principle":"Avoid unaided cognitive-function tests; support appropriate assistance or alternatives.","boundary":"Review the full criterion and exceptions for the actual system."},
+    {"id":"recovery","type":"expert-inference","version":"DIF 0.1","source":"DIF design hypothesis","appliesTo":"Registration/login","principle":"Preserve safe input, explain recovery and separate retry from starting over.","boundary":"Expected usability benefit requires user research."},
+    {"id":"hig","type":"reference-only","version":"not pinned; MVP extension","source":"https://developer.apple.com/design/human-interface-guidelines/","appliesTo":"Future iOS/iPadOS-specific design","principle":"Consult current platform guidance before making platform conformance claims.","boundary":"Not an implemented platform evaluator."},
+    {"id":"material","type":"reference-only","version":"not pinned; MVP extension","source":"https://m3.material.io/","appliesTo":"Future Android-specific design","principle":"Consult the applicable Material version for platform-specific behavior.","boundary":"Not an implemented platform evaluator."}
+  ]
+}

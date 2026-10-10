@@ -1,0 +1,8 @@
+{
+  "runtime": "Node v22.22.3",
+  "method": "npm pack --ignore-scripts; npm install --omit=dev --offline into a separate /tmp folder; invoke packed bin/dif.mjs on packed examples/login/design.json --gate enforce",
+  "installExitCode": 0,
+  "validateExitCode": 0,
+  "result": "ready-for-human-review",
+  "boundary": "Local tarball installation only; no npm registry publication or AI host compatibility tested."
+}

@@ -1,0 +1,60 @@
+{
+  "runtime": "v22.22.3",
+  "pass": true,
+  "fingerprints": {
+    "src/validate.mjs": "bd1d3899d234c8854ee929cbf687ed9225ae2cd63159888d286c69698d0323ce",
+    "src/report.mjs": "124f883cdf9297d9b2e954847e5b3566dd9c8b71f926034723803bceb337c122",
+    "bin/dif.mjs": "903309c1ac32334dba4bf66797c974e63d31e2c38eaa6d5ef51ae4144925945c",
+    "schemas/design.schema.json": "7c7f1cd737fb5acd5461bf2b8073e48acb0bb4b70a52f0ae61ea7752b107b9a1",
+    "test/dif.test.mjs": "8ea2d7a60528fdc20b0703d7f1faee4c9dde33d6e648be5c94ad73b7a206d901",
+    "examples/login/design.json": "eac962d4c8512d553de65af8b82355b85e9c5e34ef36ce50c0dc11d53aa3e9e0",
+    "package-lock.json": "503d3ba09b712859d21adde11589596844fd8c2e8f2de3826bbff7d44243c8c4"
+  },
+  "runs": [
+    {
+      "command": [
+        "node",
+        "--test"
+      ],
+      "exitCode": 0,
+      "stdout": "TAP version 13\n# Subtest: complete local artifact set is ready for human review, never automatically approved\nok 1 - complete local artifact set is ready for human review, never automatically approved\n  ---\n  duration_ms: 18.361125\n  type: 'test'\n  ...\n# Subtest: without files, completion remains incomplete even for valid declarations\nok 2 - without files, completion remains incomplete even for valid declarations\n  ---\n  duration_ms: 1.648125\n  type: 'test'\n  ...\n# Subtest: duplicate global IDs\nok 3 - duplicate global IDs\n  ---\n  duration_ms: 1.784625\n  type: 'test'\n  ...\n# Subtest: wrong reference kind\nok 4 - wrong reference kind\n  ---\n  duration_ms: 1.682084\n  type: 'test'\n  ...\n# Subtest: cross-candidate screen\nok 5 - cross-candidate screen\n  ---\n  duration_ms: 1.351625\n  type: 'test'\n  ...\n# Subtest: invalid transition\nok 6 - invalid transition\n  ---\n  duration_ms: 1.225417\n  type: 'test'\n  ...\n# Subtest: missing accessible name\nok 7 - missing accessible name\n  ---\n  duration_ms: 1.416541\n  type: 'test'\n  ...\n# Subtest: keyboard blocked\nok 8 - keyboard blocked\n  ---\n  duration_ms: 1.204917\n  type: 'test'\n  ...\n# Subtest: focus hidden\nok 9 - focus hidden\n  ---\n  duration_ms: 1.501792\n  type: 'test'\n  ...\n# Subtest: low contrast\nok 10 - low contrast\n  ---\n  duration_ms: 1.691167\n  type: 'test'\n  ...\n# Subtest: invalid color is schema error\nok 11 - invalid color is schema error\n  ---\n  duration_ms: 0.446083\n  type: 'test'\n  ...\n# Subtest: hard constraint failure\nok 12 - hard constraint failure\n  ---\n  duration_ms: 1.84275\n  type: 'test'\n  ...\n# Subtest: hard constraint unknown\nok 13 - hard constraint unknown\n  ---\n  duration_ms: 1.963084\n  type: 'test'\n  ...\n# Subtest: unchecked constraint\nok 14 - unchecked constraint\n  ---\n  duration_ms: 1.761959\n  type: 'test'\n  ...\n# Subtest: fake unknown score\nok 15 - fake unknown score\n  ---\n  duration_ms: 2.870209\n  type: 'test'\n  ...\n# Subtest: fake empirical proof\nok 16 - fake empirical proof\n  ---\n  duration_ms: 1.9685\n  type: 'test'\n  ...\n# Subtest: evidence-free judgment\nok 17 - evidence-free judgment\n  ---\n  duration_ms: 1.321625\n  type: 'test'\n  ...\n# Subtest: hypothesis confirmed without observation\nok 18 - hypothesis confirmed without observation\n  ---\n  duration_ms: 1.226625\n  type: 'test'\n  ...\n# Subtest: invented approval\nok 19 - invented approval\n  ---\n  duration_ms: 1.151458\n  type: 'test'\n  ...\n# Subtest: unapproved adoption\nok 20 - unapproved adoption\n  ---\n  duration_ms: 1.152792\n  type: 'test'\n  ...\n# Subtest: cyclic lineage\nok 21 - cyclic lineage\n  ---\n  duration_ms: 1.195667\n  type: 'test'\n  ...\n# Subtest: missing image\nok 22 - missing image\n  ---\n  duration_ms: 0.877625\n  type: 'test'\n  ...\n# Subtest: stale evaluation\nok 23 - stale evaluation\n  ---\n  duration_ms: 1.096834\n  type: 'test'\n  ...\n# Subtest: future evaluation\nok 24 - future evaluation\n  ---\n  duration_ms: 1.319291\n  type: 'test'\n  ...\n# Subtest: missing independent axis\nok 25 - missing independent axis\n  ---\n  duration_ms: 1.164708\n  type: 'test'\n  ...\n# Subtest: missing expert review\nok 26 - missing expert review\n  ---\n  duration_ms: 1.102792\n  type: 'test'\n  ...\n# Subtest: no comparable shortlist\nok 27 - no comparable shortlist\n  ---\n  duration_ms: 1.229083\n  type: 'test'\n  ...\n# Subtest: budget exhausted\nok 28 - budget exhausted\n  ---\n  duration_ms: 1.260625\n  type: 'test'\n  ...\n# Subtest: tool limit exceeded\nok 29 - tool limit exceeded\n  ---\n  duration_ms: 2.962875\n  type: 'test'\n  ...\n# Subtest: missing artifact digest\nok 30 - missing artifact digest\n  ---\n  duration_ms: 1.022458\n  type: 'test'\n  ...\n# Subtest: artifact tampering\nok 31 - artifact tampering\n  ---\n  duration_ms: 1.140709\n  type: 'test'\n  ...\n# Subtest: schema rejects malformed collection\nok 32 - schema rejects malformed collection\n  ---\n  duration_ms: 0.291583\n  type: 'test'\n  ...\n# Subtest: unknown fields rejected\nok 33 - unknown fields rejected\n  ---\n  duration_ms: 0.273625\n  type: 'test'\n  ...\n# Subtest: contrast formula matches known black/white extremes and threshold\nok 34 - contrast formula matches known black/white extremes and threshold\n  ---\n  duration_ms: 0.054625\n  type: 'test'\n  ...\n# Subtest: malformed JSON-like inputs yield diagnostics, not exceptions\nok 35 - malformed JSON-like inputs yield diagnostics, not exceptions\n  ---\n  duration_ms: 0.214292\n  type: 'test'\n  ...\n# Subtest: artifacts cannot escape package through path or symlink\nok 36 - artifacts cannot escape package through path or symlink\n  ---\n  duration_ms: 9.088416\n  type: 'test'\n  ...\n# Subtest: text file is not a mockup even with a matching digest\nok 37 - text file is not a mockup even with a matching digest\n  ---\n  duration_ms: 1.097417\n  type: 'test'\n  ...\n# Subtest: diff follows references to impacted screen, flow and review\nok 38 - diff follows references to impacted screen, flow and review\n  ---\n  duration_ms: 2.325916\n  type: 'test'\n  ...\n# Subtest: reports retain independent methods and unknown scores\nok 39 - reports retain independent methods and unknown scores\n  ---\n  duration_ms: 1.920291\n  type: 'test'\n  ...\n# Subtest: CLI defaults to warn; enforce fails protected negative example; invalid mode fails\nok 40 - CLI defaults to warn; enforce fails protected negative example; invalid mode fails\n  ---\n  duration_ms: 616.840875\n  type: 'test'\n  ...\n# Subtest: init creates valid explore model and refuses overwrite\nok 41 - init creates valid explore model and refuses overwrite\n  ---\n  duration_ms: 385.448916\n  type: 'test'\n  ...\n# Subtest: human-supplied decision record round trips without changing original\nok 42 - human-supplied decision record round trips without changing original\n  ---\n  duration_ms: 566.154959\n  type: 'test'\n  ...\n# Subtest: must requirements cannot silently disappear from a shortlisted option\nok 43 - must requirements cannot silently disappear from a shortlisted option\n  ---\n  duration_ms: 1.826791\n  type: 'test'\n  ...\n# Subtest: declared hard conflicts cannot both be claimed satisfied\nok 44 - declared hard conflicts cannot both be claimed satisfied\n  ---\n  duration_ms: 1.51975\n  type: 'test'\n  ...\n1..44\n# tests 44\n# suites 0\n# pass 44\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 1866.099792\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "command": [
+        "node",
+        "tools/check-skills.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "Skill metadata, referenced resources and bundled contracts passed. Host behavior not proven.\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "command": [
+        "node",
+        "bin/dif.mjs",
+        "validate",
+        "examples/login/design.json",
+        "--gate",
+        "enforce"
+      ],
+      "exitCode": 0,
+      "stdout": "{\n  \"schemaVersion\": \"0.1\",\n  \"valid\": true,\n  \"stage\": \"finalize\",\n  \"completion\": \"ready-for-human-review\",\n  \"findings\": [],\n  \"boundary\": \"Checks structure, references, declared properties and artifact integrity. Human semantic review, real accessibility, user outcomes and approval authenticity are not proven.\"\n}\n",
+      "stderr": "",
+      "error": null
+    },
+    {
+      "command": [
+        "node",
+        "tools/benchmark.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "{\n  \"suite\": \"DIF authored mechanical fixtures v0.1\",\n  \"runtime\": \"v22.22.3\",\n  \"skillVersion\": \"0.1.0-dev.0\",\n  \"gate\": {\n    \"status\": \"provisional-development-only\",\n    \"expectedRecall\": 1,\n    \"expectedPrecision\": 1,\n    \"maxCriticalMisses\": 0\n  },\n  \"positiveControlPassed\": true,\n  \"results\": [\n    {\n      \"case\": \"level-1\",\n      \"truePositive\": 1,\n      \"falsePositive\": 0,\n      \"falseNegative\": 0,\n      \"precision\": 1,\n      \"recall\": 1,\n      \"criticalMisses\": 0,\n      \"severityAccuracy\": null,\n      \"proposalMetrics\": null,\n      \"agentTrials\": 0,\n      \"pass\": true\n    },\n    {\n      \"case\": \"level-2\",\n      \"truePositive\": 2,\n      \"falsePositive\": 0,\n      \"falseNegative\": 0,\n      \"precision\": 1,\n      \"recall\": 1,\n      \"criticalMisses\": 0,\n      \"severityAccuracy\": null,\n      \"proposalMetrics\": null,\n      \"agentTrials\": 0,\n      \"pass\": true\n    },\n    {\n      \"case\": \"level-3\",\n      \"truePositive\": 3,\n      \"falsePositive\": 0,\n      \"falseNegative\": 0,\n      \"precision\": 1,\n      \"recall\": 1,\n      \"criticalMisses\": 0,\n      \"severityAccuracy\": null,\n      \"proposalMetrics\": null,\n      \"agentTrials\": 0,\n      \"pass\": true\n    }\n  ],\n  \"pass\": true,\n  \"boundary\": \"These are exact-rule fixtures with authored mutations, not held-out design tasks or AI ability measurements. Severity classification, diversity, practicality and exploration efficiency are unevaluated; scores are null.\"\n}\n",
+      "stderr": "",
+      "error": null
+    }
+  ],
+  "boundary": "Local machine checks and authored fixtures only; independent Skill effectiveness, host compatibility and semantic design quality unproven."
+}

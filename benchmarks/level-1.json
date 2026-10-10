@@ -1,0 +1,48 @@
+{
+  "id": "level-1",
+  "level": 1,
+  "prompt": {
+    "ja": "会員登録とログインを使いやすく設計してください。",
+    "en": "Design an easy registration and login experience."
+  },
+  "expectedBehavior": [
+    "対象者・認証基盤・利用端末の不足を仮説にする",
+    "従来案と操作方式の異なる案を比較",
+    "画像未生成時は不完全と記載"
+  ],
+  "rubric": {
+    "diversity": "Distinct interaction/hierarchy/assumptions, not just color changes",
+    "requirementFit": "All hard constraints honored or explicitly hypothetical",
+    "practicality": "Coherent flows, states, labels and recovery",
+    "explorationEfficiency": "Useful candidates relative to declared budget; no invented cost"
+  },
+  "mechanicalFixture": {
+    "base": "examples/login/design.json",
+    "patches": [
+      {
+        "op": "replace",
+        "path": [
+          "components",
+          0,
+          "label"
+        ],
+        "value": ""
+      }
+    ],
+    "expectedFindings": [
+      {
+        "code": "ACCESSIBLE_NAME",
+        "target": "a-signup-email",
+        "severity": "high"
+      }
+    ]
+  },
+  "agentTrial": {
+    "status": "not-run",
+    "model": null,
+    "skillVersion": "0.1.0-dev.0",
+    "runs": 0,
+    "scores": null
+  },
+  "boundary": "The mechanical fixture is authored, not an agent response to the prompt. Passing it does not establish proposal quality."
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "id": "aof",
+    "repository": "https://github.com/ai-org-labs/ai-organization-framework",
+    "commit": "e9761e6675c54819229e435d804be335567a5052",
+    "version": "12.2.0",
+    "localWorkingTreeDirty": false,
+    "boundary": "Clean git archive of the pinned commit used after initial bootstrap from a dirty working copy. No unrelated source changes incorporated. Framework is not a mandatory Skill runtime dependency."
+  },
+  {
+    "id": "qif",
+    "repository": "https://github.com/ai-org-labs/quality-intent-framework",
+    "commit": "5faf1dea00e189e5a5c36c0f04a02209234872a9",
+    "version": "0.6.44",
+    "localWorkingTreeDirty": false,
+    "boundary": "Observed local source; pin reproduction to this revision and account for any local changes. No framework is a mandatory Skills runtime dependency."
+  },
+  {
+    "id": "archmodel",
+    "repository": "https://github.com/ai-org-labs/archmodel",
+    "commit": "c78d4e15853b3755a1add43d02bf7659c92bae9f",
+    "version": "0.1.1",
+    "localWorkingTreeDirty": false,
+    "boundary": "Observed local source; pin reproduction to this revision and account for any local changes. No framework is a mandatory Skills runtime dependency."
+  },
+  {
+    "id": "archmap",
+    "repository": "https://github.com/ai-org-labs/archmap-mermaid",
+    "commit": "9174cfa4f5da3e3eafc65be254e6482eb34ccf66",
+    "version": "0.1.5",
+    "localWorkingTreeDirty": false,
+    "boundary": "Observed local source; pin reproduction to this revision and account for any local changes. No framework is a mandatory Skills runtime dependency."
+  }
+]

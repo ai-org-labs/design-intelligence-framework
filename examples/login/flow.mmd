@@ -1,0 +1,22 @@
+%% archmap: {"view":"screens"}
+flowchart LR
+  a_signup["Create your account"]
+  a_login["Welcome back"]
+  a_recovery["Reset your password"]
+  a_success["You are signed in"]
+  b_signup["Start with your email"]
+  b_login["Check your inbox"]
+  b_recovery["Link expired?"]
+  b_success["You are signed in"]
+  a_signup -->|"Already registered / link sent"| a_login
+  a_signup -->|"Verified new account"| a_success
+  a_login -->|"Forgot password / expired link"| a_recovery
+  a_recovery -->|"Recovery verified"| a_login
+  a_login -->|"Authentication verified"| a_success
+  a_login -->|"Invalid credential / retry: inline error state"| a_login
+  b_signup -->|"Already registered / link sent"| b_login
+  b_signup -->|"Verified new account"| b_success
+  b_login -->|"Forgot password / expired link"| b_recovery
+  b_recovery -->|"Recovery verified"| b_login
+  b_login -->|"Authentication verified"| b_success
+  b_login -->|"Invalid credential / retry: inline error state"| b_login

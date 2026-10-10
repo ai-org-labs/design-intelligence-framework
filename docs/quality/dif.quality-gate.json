@@ -1,0 +1,374 @@
+{
+  "packageType": "quality-gate",
+  "runtimeVersion": "0.6.44",
+  "packageId": "QIF-DIF-MVP",
+  "evaluationTargets": [
+    {
+      "id": "TGT-DIF",
+      "title": "DIF registration/login MVP stable readiness",
+      "domain": "design-tooling",
+      "artifactType": "skills-and-cli",
+      "context": "New local development preview based on requirements v0.3; no public release yet.",
+      "stakeholderImpact": [
+        "Designers",
+        "People using proposed interfaces"
+      ],
+      "operationalImpact": "False confidence could lead people to adopt unverified or constraint-violating designs."
+    }
+  ],
+  "qualityIntents": [
+    {
+      "id": "QIN-DELIVERABLE",
+      "statement": "A design package must not be complete without its required image and consistent artifacts.",
+      "lossBoundary": "Missing/fallback image or inconsistent files falsely labeled complete.",
+      "lossBoundarySeverity": "high"
+    },
+    {
+      "id": "QIN-EVIDENCE",
+      "statement": "Rule judgments, expert inference and empirical evidence must remain distinguishable.",
+      "lossBoundary": "Unknown or inferred results presented as empirical proof.",
+      "lossBoundarySeverity": "high"
+    },
+    {
+      "id": "QIN-AUTHORITY",
+      "statement": "Human adoption and hard constraints must not be bypassed.",
+      "lossBoundary": "AI fabricates human approval or silently treats a violating alternative as compliant.",
+      "lossBoundarySeverity": "high"
+    }
+  ],
+  "qualityAspects": [
+    {
+      "id": "ASPECT-DIF",
+      "name": "auditability",
+      "purpose": "Make incomplete design evidence visible",
+      "interpretation": "discovery-lens-only",
+      "discoveryQuestions": [
+        "Could this output be mistaken for a verified design?"
+      ],
+      "typicalConcerns": [
+        "Missing artifacts hidden by a passing check"
+      ],
+      "possibleLossBoundaries": [
+        "Never label unverified evidence empirical"
+      ],
+      "evidenceExamples": [
+        "Negative acceptance tests",
+        "Independent human review"
+      ],
+      "antiPatterns": [
+        "Treat passing checks as user value"
+      ]
+    }
+  ],
+  "evaluationPerspectives": [
+    {
+      "id": "PER-DIF",
+      "perspective": "release decision",
+      "rationale": "Distinguish local implementation from stable publication",
+      "linkedAspectRefs": [
+        "ASPECT-DIF"
+      ],
+      "linkedIntentRefs": [
+        "QIN-DELIVERABLE",
+        "QIN-EVIDENCE",
+        "QIN-AUTHORITY"
+      ]
+    }
+  ],
+  "confidencePolicies": [
+    {
+      "id": "CONF-DIF",
+      "evidenceAggregationRule": "minimum-evidence-confidence",
+      "verdictAggregationRule": "minimum-evidence-confidence",
+      "reviewRunAggregationRule": "minimum-verdict-confidence",
+      "rounding": "nearest-0.01"
+    }
+  ],
+  "evaluationTimingRules": [
+    {
+      "id": "TIME-DIF",
+      "title": "Review before stable release",
+      "appliesToIntentRefs": [
+        "QIN-DELIVERABLE",
+        "QIN-EVIDENCE",
+        "QIN-AUTHORITY"
+      ],
+      "timing": "pre-release",
+      "triggerConditions": [
+        "Proposed stable publication"
+      ],
+      "requiredBeforeDecision": true,
+      "latestAllowedStage": "Before npm or GitHub stable release",
+      "antiPatterns": [
+        "Publish from self-review alone"
+      ]
+    }
+  ],
+  "evaluationTimingDecisions": [
+    {
+      "id": "TIMING-DIF",
+      "targetRef": "TGT-DIF",
+      "timingRuleRefs": [
+        "TIME-DIF"
+      ],
+      "selectedTiming": "pre-release",
+      "decisionRationale": "Development self-review completed with Pending verdict; independent pre-release review still missing.",
+      "evidenceRefs": [
+        "EVID-DIF"
+      ],
+      "appliesBeforeGateDecisionRef": "GATE-DIF",
+      "confidence": 0.3,
+      "owner": "DIF maintainer",
+      "status": "completed",
+      "governanceTriggerRefs": [
+        "GOV-DIF"
+      ]
+    }
+  ],
+  "evidenceRetentionPolicies": [
+    {
+      "id": "RET-DIF",
+      "title": "Keep local development evidence with source versions",
+      "appliesToEvidenceTypes": [
+        "design-review"
+      ],
+      "retentionPeriod": "Project lifetime; review before public export",
+      "sensitivity": "internal",
+      "integrityProtection": "checksum",
+      "accessControl": "internal-only",
+      "disposalRule": "Human maintainer reviews sensitive data before removal or export",
+      "owner": "DIF maintainer",
+      "antiPatterns": [
+        "Copy private project material into public knowledge"
+      ]
+    }
+  ],
+  "evidenceTypeVocabulary": [
+    {
+      "id": "TYPE-DIF",
+      "evidenceType": "design-review",
+      "purpose": "Record bounded self-review without claiming independence",
+      "sourceCategory": "agent-generated",
+      "expectedIndependence": "low",
+      "trustRequired": false,
+      "findingEvidenceRequired": false,
+      "antiPatterns": [
+        "Self-review interpreted as external validation"
+      ]
+    }
+  ],
+  "evidenceOrigins": [
+    {
+      "id": "ORIGIN-DIF",
+      "originKind": "synthetic",
+      "sourceArtifact": "docs/quality/pre-implementation.md",
+      "observationWindow": "2026-10-10 local development session",
+      "environment": "Local workspace, no production execution",
+      "generatedBy": "Codex primary builder",
+      "verifiedBy": [
+        "not independently verified; pending human review"
+      ],
+      "transformationSummary": "User requirements converted to explicit loss boundaries and development gate; no user outcomes measured",
+      "status": "draft"
+    }
+  ],
+  "evidenceItems": [
+    {
+      "id": "EVID-DIF",
+      "targetRef": "TGT-DIF",
+      "evidenceType": "design-review",
+      "finding": "Requirements and implementation plan identify missing deliverables, fabricated evidence and false approval as protected failures. Independent trials are still missing.",
+      "polarity": "neutral",
+      "independence": "low",
+      "confidence": 0.3,
+      "weight": 1,
+      "evaluatorRole": "builder self-review",
+      "retention": "Project lifetime",
+      "retentionPolicyRef": "RET-DIF",
+      "artifactReference": "docs/quality/pre-implementation.md"
+    }
+  ],
+  "quantitativeEvidenceRecords": [],
+  "qualityGateRules": [
+    {
+      "id": "RULE-DIF",
+      "title": "No stable claim from fixtures/self-review alone",
+      "appliesToIntentRefs": [
+        "QIN-DELIVERABLE",
+        "QIN-EVIDENCE",
+        "QIN-AUTHORITY"
+      ],
+      "requiredEvidenceTypes": [
+        "design-review"
+      ],
+      "blockingConditions": [
+        "Missing independent benchmark and host compatibility evidence",
+        "Unresolved high-severity evidence uncertainty",
+        "No accountable human release decision"
+      ]
+    }
+  ],
+  "qualityGateDecisions": [
+    {
+      "id": "GATE-DIF",
+      "targetRef": "TGT-DIF",
+      "gateRuleRefs": [
+        "RULE-DIF"
+      ],
+      "decision": "Pending",
+      "intentVerdicts": [
+        {
+          "intentRef": "QIN-DELIVERABLE",
+          "decision": "inconclusive",
+          "confidence": 0.3,
+          "confidencePolicyRef": "CONF-DIF",
+          "evidenceRefs": [
+            "EVID-DIF"
+          ],
+          "weight": 1,
+          "residualRisk": "Mechanical negative cases do not establish general skill behavior or semantic validity."
+        },
+        {
+          "intentRef": "QIN-EVIDENCE",
+          "decision": "inconclusive",
+          "confidence": 0.3,
+          "confidencePolicyRef": "CONF-DIF",
+          "evidenceRefs": [
+            "EVID-DIF"
+          ],
+          "weight": 1,
+          "residualRisk": "Mechanical negative cases do not establish general skill behavior or semantic validity."
+        },
+        {
+          "intentRef": "QIN-AUTHORITY",
+          "decision": "inconclusive",
+          "confidence": 0.3,
+          "confidencePolicyRef": "CONF-DIF",
+          "evidenceRefs": [
+            "EVID-DIF"
+          ],
+          "weight": 1,
+          "residualRisk": "Mechanical negative cases do not establish general skill behavior or semantic validity."
+        }
+      ],
+      "confidence": 0.3,
+      "confidencePolicyRef": "CONF-DIF",
+      "residualRisks": [
+        "Independent reviewers and real pilot outcomes unavailable"
+      ],
+      "missingEvidence": [
+        "Independent held-out Skill trials",
+        "Codex and Claude Code compatibility trials",
+        "Human stable gate sign-off"
+      ],
+      "governanceTriggerRefs": [
+        "GOV-DIF",
+        "GOV-DIF-CONFIDENCE"
+      ]
+    }
+  ],
+  "qualityReports": [
+    {
+      "id": "REPORT-DIF",
+      "title": "DIF development readiness boundary",
+      "targetRef": "TGT-DIF",
+      "gateDecisionRefs": [
+        "GATE-DIF"
+      ],
+      "reportPurpose": "Keep local implementation and stable acceptance distinct",
+      "generatedBy": "builder self-review",
+      "status": "draft",
+      "summary": "Pending. Deterministic validation is useful evidence only for scoped structural claims.",
+      "reportedScores": [
+        {
+          "id": "SCORE-DIF",
+          "label": "Low-confidence evidence summary",
+          "scoreType": "confidence-summary",
+          "value": 0.3,
+          "interpretation": "report-summary-only",
+          "gateDecisionRefs": [
+            "GATE-DIF"
+          ],
+          "intentRefs": [
+            "QIN-DELIVERABLE",
+            "QIN-EVIDENCE",
+            "QIN-AUTHORITY"
+          ],
+          "evidenceRefs": [
+            "EVID-DIF"
+          ],
+          "calculationNote": "Minimum declared self-review confidence; not calibrated probability or design quality."
+        }
+      ],
+      "sections": [
+        {
+          "id": "SECTION-DIF",
+          "heading": "Pending stable release",
+          "narrative": "Independent quality and compatibility evidence remain missing.",
+          "gateDecisionRefs": [
+            "GATE-DIF"
+          ],
+          "intentRefs": [
+            "QIN-DELIVERABLE",
+            "QIN-EVIDENCE",
+            "QIN-AUTHORITY"
+          ],
+          "evidenceRefs": [
+            "EVID-DIF"
+          ]
+        }
+      ],
+      "limitations": [
+        "Not proof of usefulness or conformance"
+      ],
+      "antiPatterns": [
+        "Turn test counts into quality scores"
+      ]
+    }
+  ],
+  "governanceTriggers": [
+    {
+      "id": "GOV-DIF",
+      "triggerType": "weak-evidence",
+      "reason": "Only authored artifacts and local mechanical checks; independent usefulness not established",
+      "sourceGateDecisionRef": "GATE-DIF",
+      "affectedTargetRef": "TGT-DIF",
+      "severity": "high",
+      "requiredAction": "Keep stable release Pending and collect independent review and host/pilot evidence",
+      "owner": "DIF maintainer",
+      "status": "open"
+    },
+    {
+      "id": "GOV-DIF-CONFIDENCE",
+      "triggerType": "low-confidence",
+      "reason": "Only authored artifacts and local mechanical checks; independent usefulness not established",
+      "sourceGateDecisionRef": "GATE-DIF",
+      "affectedTargetRef": "TGT-DIF",
+      "severity": "high",
+      "requiredAction": "Keep stable release Pending and collect independent review and host/pilot evidence",
+      "owner": "DIF maintainer",
+      "status": "open"
+    }
+  ],
+  "governanceEvents": [],
+  "verifierBoundary": {
+    "checks": [
+      "Package structure",
+      "Explicit pending gate",
+      "Reference and confidence reproducibility"
+    ],
+    "doesNotClaim": [
+      "Semantic design quality",
+      "Skill effectiveness",
+      "Human approval authenticity",
+      "Production security",
+      "semantic truth"
+    ],
+    "semanticValidityRequires": [
+      "Independent review",
+      "Held-out host trials",
+      "Real design pilot",
+      "Accountable human release decision"
+    ]
+  }
+}

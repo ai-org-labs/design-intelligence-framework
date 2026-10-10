@@ -1,0 +1,26 @@
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {pathToFileURL} from 'node:url';
+import path from 'node:path';
+const [archmodelDir=process.env.ARCHMODEL_DIR,archmapDir=process.env.ARCHMAP_DIR]=process.argv.slice(2);
+if(!archmodelDir || !archmapDir)throw Error('Set ARCHMODEL_DIR and ARCHMAP_DIR to built checkouts matching docs/architecture/providers.json, or pass both directories.');
+const {JSDOM}=await import('jsdom');
+const dom=new JSDOM('<!doctype html><html><body></body></html>');
+globalThis.window=dom.window;globalThis.document=dom.window.document;globalThis.DOMParser=dom.window.DOMParser;
+const am=await import(pathToFileURL(path.resolve(archmodelDir,'dist/archmodel.js')));
+const map=await import(pathToFileURL(path.resolve(archmapDir,'dist/archmap-mermaid.js')));
+const source=await readFile('docs/architecture/dif.archmodel.yaml','utf8');
+const model=am.parseModel(source), diagnostics=am.validateModel(model);
+if(diagnostics.length)throw Error(JSON.stringify(diagnostics));
+const label=s=>String(s).replaceAll('&','&amp;').replaceAll('"','&quot;').replace(/[\n\r]/g,' ');
+// Opaque generated node IDs keep user labels/IDs out of Mermaid syntax.
+const ids=new Map(model.entities.map((e,i)=>[e.id,`n${i}`]));
+const mermaid=['%% archmap: {"view":"layers"}','flowchart LR',...model.entities.map(e=>`  ${ids.get(e.id)}["${label(e.id)}: ${label(e.name)}"]`),...model.edges.map(e=>`  ${ids.get(e.from)} -->|"${label(e.relation)}"| ${ids.get(e.to)}`)].join('\n')+'\n';
+const rendered=await map.renderMermaid(mermaid);
+await writeFile('docs/architecture/dif.mmd',mermaid);
+await writeFile('docs/architecture/dif.svg',rendered.svg);
+await writeFile('docs/architecture/design-map.svg',am.renderDesignMap(model).svg);
+const flow=await map.renderMermaid(await readFile('examples/login/flow.mmd','utf8'));
+await writeFile('examples/login/flow.svg',flow.svg);
+await mkdir('evidence',{recursive:true});
+await writeFile('evidence/architecture.json',JSON.stringify({command:'npm run architecture -- <archmodel-checkout> <archmap-checkout>',diagnostics,entities:model.entities.length,edges:model.edges.length,rendered:['docs/architecture/dif.svg','docs/architecture/design-map.svg','examples/login/flow.svg'],boundary:'Canonical upstream parsers/renderers accepted the source. Visual readability and architectural correctness require review.'},null,2)+'\n');
+console.log('ArchModel validated; ArchMap architecture and login flow SVGs generated.');

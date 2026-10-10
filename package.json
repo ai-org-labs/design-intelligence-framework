@@ -1,0 +1,42 @@
+{
+  "name": "design-intelligence-framework",
+  "version": "0.1.0-dev.0",
+  "description": "Skills-first design proposals with evidence-aware validation",
+  "type": "module",
+  "private": true,
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "bin": {
+    "dif": "bin/dif.mjs"
+  },
+  "files": [
+    "bin",
+    "src",
+    "schemas",
+    "skills",
+    "knowledge",
+    "benchmarks",
+    "examples",
+    "README.md",
+    "README.en.md",
+    "LICENSE",
+    "docs",
+    "tools/release-check.mjs",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "verify": "node tools/verify.mjs",
+    "benchmark": "node tools/benchmark.mjs",
+    "architecture": "node tools/architecture.mjs",
+    "prepublishOnly": "node tools/release-check.mjs"
+  },
+  "dependencies": {
+    "ajv": "8.20.0"
+  },
+  "devDependencies": {
+    "jsdom": "26.1.0"
+  }
+}

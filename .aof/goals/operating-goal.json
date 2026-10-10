@@ -1,0 +1,9 @@
+{
+  "goal_type": "operating-goal",
+  "content": "Build and verify the registration/login vertical slice without premature stable claims.",
+  "updated_at": "2026-10-10T13:17:26.000Z",
+  "agreed_with_human": null,
+  "source_session_id": null,
+  "source_decision_record_id": null,
+  "declared_complete_at": null
+}

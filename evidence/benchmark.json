@@ -1,0 +1,55 @@
+{
+  "suite": "DIF authored mechanical fixtures v0.1",
+  "runtime": "v22.22.3",
+  "skillVersion": "0.1.0-dev.0",
+  "gate": {
+    "status": "provisional-development-only",
+    "expectedRecall": 1,
+    "expectedPrecision": 1,
+    "maxCriticalMisses": 0
+  },
+  "positiveControlPassed": true,
+  "results": [
+    {
+      "case": "level-1",
+      "truePositive": 1,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "precision": 1,
+      "recall": 1,
+      "criticalMisses": 0,
+      "severityAccuracy": null,
+      "proposalMetrics": null,
+      "agentTrials": 0,
+      "pass": true
+    },
+    {
+      "case": "level-2",
+      "truePositive": 2,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "precision": 1,
+      "recall": 1,
+      "criticalMisses": 0,
+      "severityAccuracy": null,
+      "proposalMetrics": null,
+      "agentTrials": 0,
+      "pass": true
+    },
+    {
+      "case": "level-3",
+      "truePositive": 3,
+      "falsePositive": 0,
+      "falseNegative": 0,
+      "precision": 1,
+      "recall": 1,
+      "criticalMisses": 0,
+      "severityAccuracy": null,
+      "proposalMetrics": null,
+      "agentTrials": 0,
+      "pass": true
+    }
+  ],
+  "pass": true,
+  "boundary": "These are exact-rule fixtures with authored mutations, not held-out design tasks or AI ability measurements. Severity classification, diversity, practicality and exploration efficiency are unevaluated; scores are null."
+}

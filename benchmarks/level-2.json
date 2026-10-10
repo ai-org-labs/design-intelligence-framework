@@ -1,0 +1,62 @@
+{
+  "id": "level-2",
+  "level": 2,
+  "prompt": {
+    "ja": "高齢者を含む既存ユーザー向け。メール・パスワード認証を維持し、モバイルで片手操作。日本語・英語対応。キーボード操作、パスワード管理ツール、復旧導線を必須とする。",
+    "en": "Keep email/password for existing users including older adults. Support one-handed mobile use, Japanese/English, keyboard and password managers, with recovery."
+  },
+  "expectedBehavior": [
+    "メール限定案は認証制約に不適合と明示",
+    "ラベル・入力補助・復旧・言語拡張を具体化",
+    "品質/実現可能性/価値を別軸で提示"
+  ],
+  "rubric": {
+    "diversity": "Distinct interaction/hierarchy/assumptions, not just color changes",
+    "requirementFit": "All hard constraints honored or explicitly hypothetical",
+    "practicality": "Coherent flows, states, labels and recovery",
+    "explorationEfficiency": "Useful candidates relative to declared budget; no invented cost"
+  },
+  "mechanicalFixture": {
+    "base": "examples/login/design.json",
+    "patches": [
+      {
+        "op": "replace",
+        "path": [
+          "components",
+          0,
+          "foreground"
+        ],
+        "value": "#AAAAAA"
+      },
+      {
+        "op": "replace",
+        "path": [
+          "components",
+          0,
+          "keyboardAccessible"
+        ],
+        "value": false
+      }
+    ],
+    "expectedFindings": [
+      {
+        "code": "CONTRAST",
+        "target": "a-signup-email",
+        "severity": "high"
+      },
+      {
+        "code": "KEYBOARD",
+        "target": "a-signup-email",
+        "severity": "high"
+      }
+    ]
+  },
+  "agentTrial": {
+    "status": "not-run",
+    "model": null,
+    "skillVersion": "0.1.0-dev.0",
+    "runs": 0,
+    "scores": null
+  },
+  "boundary": "The mechanical fixture is authored, not an agent response to the prompt. Passing it does not establish proposal quality."
+}

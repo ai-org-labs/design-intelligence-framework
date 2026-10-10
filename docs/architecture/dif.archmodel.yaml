@@ -1,0 +1,456 @@
+{
+  "version": "0.1",
+  "product": {
+    "id": "dif",
+    "name": "Design Intelligence Framework",
+    "purpose": "Help people compare evidence-aware design proposals",
+    "primary_users": [
+      "Designers",
+      "Product teams"
+    ],
+    "user_value": "Understand options, tradeoffs and unverified assumptions before adoption",
+    "scope": [
+      "Skills-first registration/login UX/UI proposals",
+      "Optional validation CLI",
+      "Architecture and quality provenance"
+    ],
+    "out_of_scope": [
+      "Authentication service",
+      "Automatic human approval",
+      "Unverified stable publication"
+    ],
+    "capabilities": [
+      {
+        "id": "propose",
+        "name": "Compare design alternatives",
+        "purpose": "Compare design alternatives",
+        "actor": [
+          "Designer",
+          "Reviewer"
+        ],
+        "inputs": [
+          "Design request or versioned design package"
+        ],
+        "outputs": [
+          "Reviewable artifacts and explicit uncertainty"
+        ],
+        "behaviors": [
+          {
+            "id": "propose-behavior",
+            "name": "Compare design alternatives",
+            "trigger": "Designer requests propose",
+            "outcomes": [
+              "Contract and references are packaged"
+            ],
+            "failure_behaviors": [
+              "Report incomplete/unverified work; do not fabricate evidence"
+            ],
+            "realized_by": [
+              "skills"
+            ],
+            "scenarios": [
+              {
+                "id": "propose-scenario",
+                "name": "Contract and references are packaged",
+                "type": "gherkin",
+                "specification": "Given a design request with explicit constraints\nWhen the designer runs propose\nThen contract and references are packaged",
+                "verified_by": [
+                  "skill-contract"
+                ]
+              }
+            ]
+          }
+        ],
+        "qualities": [
+          {
+            "id": "propose-quality",
+            "name": "Evidence-aware Compare design alternatives",
+            "attribute": "audit",
+            "requirement": "Retain facts, inference, unknowns and source references without implying semantic proof",
+            "realized_by": [
+              "skills"
+            ],
+            "verified_by": [
+              "skill-contract"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "validate",
+        "name": "Inspect evidence and deliverables",
+        "purpose": "Inspect evidence and deliverables",
+        "actor": [
+          "Designer",
+          "Reviewer"
+        ],
+        "inputs": [
+          "Design request or versioned design package"
+        ],
+        "outputs": [
+          "Reviewable artifacts and explicit uncertainty"
+        ],
+        "behaviors": [
+          {
+            "id": "validate-behavior",
+            "name": "Inspect evidence and deliverables",
+            "trigger": "Designer requests validate",
+            "outcomes": [
+              "Reject incomplete artifacts and invalid evidence"
+            ],
+            "failure_behaviors": [
+              "Report incomplete/unverified work; do not fabricate evidence"
+            ],
+            "realized_by": [
+              "validator"
+            ],
+            "scenarios": [
+              {
+                "id": "validate-scenario",
+                "name": "Reject incomplete artifacts and invalid evidence",
+                "type": "gherkin",
+                "specification": "Given a design request with explicit constraints\nWhen the designer runs validate\nThen reject incomplete artifacts and invalid evidence",
+                "verified_by": [
+                  "negative-tests"
+                ]
+              }
+            ]
+          }
+        ],
+        "qualities": [
+          {
+            "id": "validate-quality",
+            "name": "Evidence-aware Inspect evidence and deliverables",
+            "attribute": "audit",
+            "requirement": "Retain facts, inference, unknowns and source references without implying semantic proof",
+            "realized_by": [
+              "validator"
+            ],
+            "verified_by": [
+              "negative-tests"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "improve",
+        "name": "Track improvements and human decisions",
+        "purpose": "Track improvements and human decisions",
+        "actor": [
+          "Designer",
+          "Reviewer"
+        ],
+        "inputs": [
+          "Design request or versioned design package"
+        ],
+        "outputs": [
+          "Reviewable artifacts and explicit uncertainty"
+        ],
+        "behaviors": [
+          {
+            "id": "improve-behavior",
+            "name": "Track improvements and human decisions",
+            "trigger": "Designer requests improve",
+            "outcomes": [
+              "Retain provenance and require attributable decisions"
+            ],
+            "failure_behaviors": [
+              "Report incomplete/unverified work; do not fabricate evidence"
+            ],
+            "realized_by": [
+              "history"
+            ],
+            "scenarios": [
+              {
+                "id": "improve-scenario",
+                "name": "Retain provenance and require attributable decisions",
+                "type": "gherkin",
+                "specification": "Given a design request with explicit constraints\nWhen the designer runs improve\nThen retain provenance and require attributable decisions",
+                "verified_by": [
+                  "history-tests"
+                ]
+              }
+            ]
+          }
+        ],
+        "qualities": [
+          {
+            "id": "improve-quality",
+            "name": "Evidence-aware Track improvements and human decisions",
+            "attribute": "audit",
+            "requirement": "Retain facts, inference, unknowns and source references without implying semantic proof",
+            "realized_by": [
+              "history"
+            ],
+            "verified_by": [
+              "history-tests"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "architecture",
+        "name": "Inspect the architecture map",
+        "purpose": "Inspect the architecture map",
+        "actor": [
+          "Designer",
+          "Reviewer"
+        ],
+        "inputs": [
+          "Design request or versioned design package"
+        ],
+        "outputs": [
+          "Reviewable artifacts and explicit uncertainty"
+        ],
+        "behaviors": [
+          {
+            "id": "architecture-behavior",
+            "name": "Inspect the architecture map",
+            "trigger": "Designer requests architecture",
+            "outcomes": [
+              "Parse the archmodel and render ArchMap projections"
+            ],
+            "failure_behaviors": [
+              "Report incomplete/unverified work; do not fabricate evidence"
+            ],
+            "realized_by": [
+              "projection"
+            ],
+            "scenarios": [
+              {
+                "id": "architecture-scenario",
+                "name": "Parse the archmodel and render ArchMap projections",
+                "type": "gherkin",
+                "specification": "Given a design request with explicit constraints\nWhen the designer runs architecture\nThen parse the archmodel and render archmap projections",
+                "verified_by": [
+                  "map-tests"
+                ]
+              }
+            ]
+          }
+        ],
+        "qualities": [
+          {
+            "id": "architecture-quality",
+            "name": "Evidence-aware Inspect the architecture map",
+            "attribute": "audit",
+            "requirement": "Retain facts, inference, unknowns and source references without implying semantic proof",
+            "realized_by": [
+              "projection"
+            ],
+            "verified_by": [
+              "map-tests"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "skills",
+      "name": "Skill orchestrator",
+      "kind": "application",
+      "responsibilities": [
+        "Compare design alternatives"
+      ],
+      "interfaces": [
+        "Local files"
+      ],
+      "implemented_by": [
+        "skills-source"
+      ]
+    },
+    {
+      "id": "validator",
+      "name": "Design validator",
+      "kind": "application",
+      "responsibilities": [
+        "Inspect evidence and deliverables"
+      ],
+      "interfaces": [
+        "Local files"
+      ],
+      "implemented_by": [
+        "validator-source"
+      ]
+    },
+    {
+      "id": "history",
+      "name": "Change and decision recorder",
+      "kind": "application",
+      "responsibilities": [
+        "Track improvements and human decisions"
+      ],
+      "interfaces": [
+        "Local files"
+      ],
+      "implemented_by": [
+        "history-source"
+      ]
+    },
+    {
+      "id": "projection",
+      "name": "Architecture projection",
+      "kind": "application",
+      "responsibilities": [
+        "Inspect the architecture map"
+      ],
+      "interfaces": [
+        "Local files"
+      ],
+      "implemented_by": [
+        "projection-source"
+      ]
+    }
+  ],
+  "realizations": [
+    {
+      "id": "skills-source",
+      "name": "skills/dif-design/SKILL.md",
+      "kind": "source",
+      "location": "skills/dif-design/SKILL.md"
+    },
+    {
+      "id": "validator-source",
+      "name": "src/validate.mjs",
+      "kind": "source",
+      "location": "src/validate.mjs"
+    },
+    {
+      "id": "history-source",
+      "name": "src/report.mjs",
+      "kind": "source",
+      "location": "src/report.mjs"
+    },
+    {
+      "id": "projection-source",
+      "name": "tools/architecture.mjs",
+      "kind": "source",
+      "location": "tools/architecture.mjs"
+    }
+  ],
+  "verifications": [
+    {
+      "id": "skill-contract",
+      "name": "Contract and references are packaged",
+      "level": "acceptance",
+      "method": "Run npm run verify; map-tests additionally requires pinned upstream providers",
+      "location": "test/dif.test.mjs",
+      "result": "unknown"
+    },
+    {
+      "id": "negative-tests",
+      "name": "Reject incomplete artifacts and invalid evidence",
+      "level": "acceptance",
+      "method": "Run npm run verify; map-tests additionally requires pinned upstream providers",
+      "location": "test/dif.test.mjs",
+      "result": "unknown"
+    },
+    {
+      "id": "history-tests",
+      "name": "Retain provenance and require attributable decisions",
+      "level": "acceptance",
+      "method": "Run npm run verify; map-tests additionally requires pinned upstream providers",
+      "location": "test/dif.test.mjs",
+      "result": "unknown"
+    },
+    {
+      "id": "map-tests",
+      "name": "Parse the archmodel and render ArchMap projections",
+      "level": "acceptance",
+      "method": "Run npm run verify; map-tests additionally requires pinned upstream providers",
+      "location": "evidence/architecture.json",
+      "result": "unknown"
+    }
+  ],
+  "policies": [
+    {
+      "id": "human-control",
+      "name": "Human adoption and truthful evidence",
+      "rules": [
+        "Never infer human adoption",
+        "Missing image means incomplete",
+        "Rule/expert/empirical findings remain separate"
+      ],
+      "applies_to": [
+        "dif",
+        "propose",
+        "validate",
+        "improve"
+      ],
+      "realized_by": [
+        "validator",
+        "history",
+        "skills"
+      ],
+      "verified_by": [
+        "negative-tests",
+        "history-tests"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "id": "skills-first",
+      "name": "Skills first; CLI optional",
+      "context": "Users need text proposals without installing a toolchain",
+      "decision": "Package portable Skills independently of deterministic CLI helpers",
+      "alternatives": [
+        "CLI-only generator",
+        "Hosted model service"
+      ],
+      "reason": "Supports standalone use and avoids provider coupling",
+      "trade_off": [
+        "Host behavior still requires compatibility testing"
+      ],
+      "decision_status": "proposed",
+      "affects": [
+        "dif",
+        "skills",
+        "validator"
+      ]
+    },
+    {
+      "id": "semantic-model",
+      "name": "Archmodel source and ArchMap projection",
+      "context": "Design rationale must survive diagram edits",
+      "decision": "Store canonical architecture as archmodel and regenerate Mermaid/SVG projections",
+      "alternatives": [
+        "Manually maintained disconnected diagrams"
+      ],
+      "reason": "Keeps stable IDs and causal traceability",
+      "trade_off": [
+        "Regeneration needs optional upstream tools"
+      ],
+      "decision_status": "proposed",
+      "affects": [
+        "dif",
+        "projection"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "id": "skills-to-validator",
+      "from": "skills",
+      "to": "validator",
+      "type": "depends_on",
+      "label": "optional mechanical checks"
+    },
+    {
+      "id": "history-validator",
+      "from": "history",
+      "to": "validator",
+      "type": "depends_on",
+      "label": "validate decisions"
+    },
+    {
+      "id": "projection-reads",
+      "from": "projection",
+      "to": "validator",
+      "type": "depends_on",
+      "label": "reflect validator contract"
+    }
+  ]
+}

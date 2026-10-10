@@ -1,0 +1,27 @@
+{
+  "artifact_type": "quality-ledger-event",
+  "ledger_format_version": 1,
+  "event_id": "QLE-MV2FE659-G3VQ7Q",
+  "recorded_at": "2026-10-10T13:24:10.269Z",
+  "event_type": "evidence_added",
+  "quality_intent_ref": "QIN-EVIDENCE",
+  "work_item_ref": ".aof/tasks/open/TASK-001.json",
+  "claim": "Local negative acceptance, example integrity and authored mechanical fixtures are checked. Independent Skill effectiveness and stable readiness remain unproven.",
+  "evidence_refs": [
+    "test/dif.test.mjs",
+    "evidence/benchmark.json"
+  ],
+  "qif_refs": [
+    "docs/quality/dif.quality-gate.json"
+  ],
+  "prior_state": null,
+  "new_state": null,
+  "confidence": null,
+  "semantic_truth_claimed": false,
+  "operator_validated": false,
+  "governance_action": "review-required",
+  "source_task_id": "TASK-001",
+  "source_parent_session_id": null,
+  "source_decision_record_id": null,
+  "notes": null
+}

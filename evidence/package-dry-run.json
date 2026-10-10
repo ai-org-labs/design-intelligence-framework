@@ -1,0 +1,231 @@
+[
+  {
+    "id": "design-intelligence-framework@0.1.0-dev.0",
+    "name": "design-intelligence-framework",
+    "version": "0.1.0-dev.0",
+    "size": 68619,
+    "unpackedSize": 396387,
+    "shasum": "1eb20850eb485ae71dea47913a61ffdeb1427847",
+    "integrity": "sha512-I/Q+t0B6KNS2hyks+lffgAqMe69lUYPqqYS5FIrCPIxwoEHFvPOE2cM4rG6GKTrxD3Wb87FyUO1vLRAGrNS0JA==",
+    "filename": "design-intelligence-framework-0.1.0-dev.0.tgz",
+    "files": [
+      {
+        "path": "LICENSE",
+        "size": 11358,
+        "mode": 420
+      },
+      {
+        "path": "README.en.md",
+        "size": 2914,
+        "mode": 420
+      },
+      {
+        "path": "README.md",
+        "size": 4677,
+        "mode": 420
+      },
+      {
+        "path": "THIRD_PARTY_NOTICES.md",
+        "size": 1392,
+        "mode": 420
+      },
+      {
+        "path": "benchmarks/level-1.json",
+        "size": 1418,
+        "mode": 420
+      },
+      {
+        "path": "benchmarks/level-2.json",
+        "size": 1978,
+        "mode": 420
+      },
+      {
+        "path": "benchmarks/level-3.json",
+        "size": 2245,
+        "mode": 420
+      },
+      {
+        "path": "bin/dif.mjs",
+        "size": 4203,
+        "mode": 493
+      },
+      {
+        "path": "docs/architecture/design-map.svg",
+        "size": 89015,
+        "mode": 420
+      },
+      {
+        "path": "docs/architecture/dif.archmodel.yaml",
+        "size": 13400,
+        "mode": 420
+      },
+      {
+        "path": "docs/architecture/dif.mmd",
+        "size": 3274,
+        "mode": 420
+      },
+      {
+        "path": "docs/architecture/dif.svg",
+        "size": 47400,
+        "mode": 420
+      },
+      {
+        "path": "docs/architecture/providers.json",
+        "size": 1581,
+        "mode": 420
+      },
+      {
+        "path": "docs/architecture/README.md",
+        "size": 1645,
+        "mode": 420
+      },
+      {
+        "path": "docs/decision-record.md",
+        "size": 1616,
+        "mode": 420
+      },
+      {
+        "path": "docs/decisions.md",
+        "size": 2410,
+        "mode": 420
+      },
+      {
+        "path": "docs/quality/dif.quality-gate.json",
+        "size": 11693,
+        "mode": 420
+      },
+      {
+        "path": "docs/quality/pre-implementation.md",
+        "size": 2468,
+        "mode": 420
+      },
+      {
+        "path": "docs/quality/release-status.md",
+        "size": 1836,
+        "mode": 420
+      },
+      {
+        "path": "docs/quality/verification-summary.md",
+        "size": 2032,
+        "mode": 420
+      },
+      {
+        "path": "docs/requirements/coverage.md",
+        "size": 2557,
+        "mode": 420
+      },
+      {
+        "path": "docs/requirements/design-agent-requirements-v0.3.md",
+        "size": 21902,
+        "mode": 420
+      },
+      {
+        "path": "examples/login/before.json",
+        "size": 23734,
+        "mode": 420
+      },
+      {
+        "path": "examples/login/design.json",
+        "size": 26462,
+        "mode": 420
+      },
+      {
+        "path": "examples/login/flow.mmd",
+        "size": 970,
+        "mode": 420
+      },
+      {
+        "path": "examples/login/flow.svg",
+        "size": 20040,
+        "mode": 420
+      },
+      {
+        "path": "examples/login/mockup.svg",
+        "size": 9435,
+        "mode": 420
+      },
+      {
+        "path": "examples/login/proposal.md",
+        "size": 3896,
+        "mode": 420
+      },
+      {
+        "path": "knowledge/principles.json",
+        "size": 2347,
+        "mode": 420
+      },
+      {
+        "path": "package.json",
+        "size": 875,
+        "mode": 420
+      },
+      {
+        "path": "schemas/design.schema.json",
+        "size": 21814,
+        "mode": 420
+      },
+      {
+        "path": "skills/dif-design/references/contract.md",
+        "size": 2079,
+        "mode": 420
+      },
+      {
+        "path": "skills/dif-design/references/design.schema.json",
+        "size": 21814,
+        "mode": 420
+      },
+      {
+        "path": "skills/dif-design/references/knowledge.json",
+        "size": 2347,
+        "mode": 420
+      },
+      {
+        "path": "skills/dif-design/SKILL.md",
+        "size": 3707,
+        "mode": 420
+      },
+      {
+        "path": "skills/dif-evaluate/SKILL.md",
+        "size": 1838,
+        "mode": 420
+      },
+      {
+        "path": "skills/dif-explore/SKILL.md",
+        "size": 1378,
+        "mode": 420
+      },
+      {
+        "path": "skills/dif-improve/SKILL.md",
+        "size": 1598,
+        "mode": 420
+      },
+      {
+        "path": "skills/dif-intake/SKILL.md",
+        "size": 1313,
+        "mode": 420
+      },
+      {
+        "path": "skills/dif-ux-ui/SKILL.md",
+        "size": 1417,
+        "mode": 420
+      },
+      {
+        "path": "src/report.mjs",
+        "size": 2952,
+        "mode": 420
+      },
+      {
+        "path": "src/validate.mjs",
+        "size": 13159,
+        "mode": 420
+      },
+      {
+        "path": "tools/release-check.mjs",
+        "size": 198,
+        "mode": 420
+      }
+    ],
+    "entryCount": 43,
+    "bundled": []
+  }
+]

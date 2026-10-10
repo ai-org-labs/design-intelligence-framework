@@ -1,0 +1,140 @@
+{
+  "skills_type": "aof-skills",
+  "skills_format_version": 1,
+  "organization_ref": ".aof/organization.json",
+  "skills": [
+    {
+      "skill_id": "dif-design",
+      "name": "dif-design",
+      "owner_ref": "builder",
+      "version": "0.1.0-dev.0",
+      "purpose": "Propose, compare, review and improve UX/UI designs with traceable evidence. Use for end-to-end design proposals; initial scope is registration and login across web and mobile.",
+      "applicable_role_refs": [
+        "builder"
+      ],
+      "required_capability_refs": [],
+      "required_resource_refs": [],
+      "inputs": [
+        "User design request and supplied evidence"
+      ],
+      "expected_outputs": [
+        "skills/dif-design/SKILL.md",
+        "Traceable design proposal/review with uncertainty"
+      ],
+      "validation_rules": [
+        "Run tools/check-skills.mjs; host behavior requires separate trials"
+      ]
+    },
+    {
+      "skill_id": "dif-evaluate",
+      "name": "dif-evaluate",
+      "owner_ref": "builder",
+      "version": "0.1.0-dev.0",
+      "purpose": "Review design alternatives or existing UX/UI using separate rule, expert and empirical evidence, with findings and uncertainty.",
+      "applicable_role_refs": [
+        "guardian"
+      ],
+      "required_capability_refs": [],
+      "required_resource_refs": [],
+      "inputs": [
+        "User design request and supplied evidence"
+      ],
+      "expected_outputs": [
+        "skills/dif-evaluate/SKILL.md",
+        "Traceable design proposal/review with uncertainty"
+      ],
+      "validation_rules": [
+        "Run tools/check-skills.mjs; host behavior requires separate trials"
+      ]
+    },
+    {
+      "skill_id": "dif-explore",
+      "name": "dif-explore",
+      "owner_ref": "builder",
+      "version": "0.1.0-dev.0",
+      "purpose": "Generate meaningfully different design alternatives and compare their assumptions, constraints and tradeoffs before visual detailing.",
+      "applicable_role_refs": [
+        "builder"
+      ],
+      "required_capability_refs": [],
+      "required_resource_refs": [],
+      "inputs": [
+        "User design request and supplied evidence"
+      ],
+      "expected_outputs": [
+        "skills/dif-explore/SKILL.md",
+        "Traceable design proposal/review with uncertainty"
+      ],
+      "validation_rules": [
+        "Run tools/check-skills.mjs; host behavior requires separate trials"
+      ]
+    },
+    {
+      "skill_id": "dif-improve",
+      "name": "dif-improve",
+      "owner_ref": "builder",
+      "version": "0.1.0-dev.0",
+      "purpose": "Generate conservative and radical improvements from a design review, retain provenance and compare quality before and after.",
+      "applicable_role_refs": [
+        "builder"
+      ],
+      "required_capability_refs": [],
+      "required_resource_refs": [],
+      "inputs": [
+        "User design request and supplied evidence"
+      ],
+      "expected_outputs": [
+        "skills/dif-improve/SKILL.md",
+        "Traceable design proposal/review with uncertainty"
+      ],
+      "validation_rules": [
+        "Run tools/check-skills.mjs; host behavior requires separate trials"
+      ]
+    },
+    {
+      "skill_id": "dif-intake",
+      "name": "dif-intake",
+      "owner_ref": "builder",
+      "version": "0.1.0-dev.0",
+      "purpose": "Extract design goals, audiences, constraints and assumption branches from requirements or existing UI material, especially registration/login requests.",
+      "applicable_role_refs": [
+        "builder"
+      ],
+      "required_capability_refs": [],
+      "required_resource_refs": [],
+      "inputs": [
+        "User design request and supplied evidence"
+      ],
+      "expected_outputs": [
+        "skills/dif-intake/SKILL.md",
+        "Traceable design proposal/review with uncertainty"
+      ],
+      "validation_rules": [
+        "Run tools/check-skills.mjs; host behavior requires separate trials"
+      ]
+    },
+    {
+      "skill_id": "dif-ux-ui",
+      "name": "dif-ux-ui",
+      "owner_ref": "builder",
+      "version": "0.1.0-dev.0",
+      "purpose": "Detail registration/login flows, responsive screens, component states and mockup specifications for selected design candidates.",
+      "applicable_role_refs": [
+        "builder"
+      ],
+      "required_capability_refs": [],
+      "required_resource_refs": [],
+      "inputs": [
+        "User design request and supplied evidence"
+      ],
+      "expected_outputs": [
+        "skills/dif-ux-ui/SKILL.md",
+        "Traceable design proposal/review with uncertainty"
+      ],
+      "validation_rules": [
+        "Run tools/check-skills.mjs; host behavior requires separate trials"
+      ]
+    }
+  ],
+  "updated_at": "2026-10-10T13:17:26.000Z"
+}

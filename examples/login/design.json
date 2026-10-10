@@ -1,0 +1,994 @@
+{
+  "schemaVersion": "0.1",
+  "id": "login-proposal",
+  "title": "登録・ログイン：比較提案 / Registration and login",
+  "language": "ja",
+  "stage": "finalize",
+  "revision": 2,
+  "mode": "standard",
+  "comparisonAxes": [
+    "入力負担",
+    "復旧しやすさ",
+    "端末・メールへの依存",
+    "実現可能性"
+  ],
+  "risks": [
+    "サンプルはAIが作成した設計提案。人間による採用・意味的整合性レビューは未実施。",
+    "実際の認証、メール配信、端末適合性、支援技術、実ユーザーでの効果は未検証。",
+    "コピー・画面構成は仮説。SVGの静的配置はレスポンシブ実装ではない。"
+  ],
+  "budget": {
+    "maxCandidates": 5,
+    "maxToolCalls": null,
+    "toolCallsUsed": null,
+    "exhausted": false
+  },
+  "requirements": [
+    {
+      "id": "req-access",
+      "text": "新規登録と再ログインが可能な設計を比較する",
+      "source": "benchmarks/level-1.json",
+      "priority": "must"
+    },
+    {
+      "id": "req-recover",
+      "text": "エラーから復旧する導線を説明する",
+      "source": "MVP registration/login slice",
+      "priority": "must"
+    }
+  ],
+  "assumptions": [
+    {
+      "id": "assumption-password",
+      "text": "既存ユーザーはパスワード方式に慣れている",
+      "status": "unverified",
+      "evidenceIds": []
+    },
+    {
+      "id": "assumption-email",
+      "text": "利用中の端末でメールにアクセスできる",
+      "status": "unverified",
+      "evidenceIds": []
+    }
+  ],
+  "constraints": [
+    {
+      "id": "constraint-access",
+      "text": "必須操作のラベルとキーボード操作・可視フォーカスを設計に含める",
+      "kind": "hard",
+      "source": "DIF proposal accessibility baseline",
+      "conflictsWith": []
+    }
+  ],
+  "candidates": [
+    {
+      "id": "candidate-a",
+      "name": "A — Familiar form",
+      "approach": "conventional",
+      "status": "shortlisted",
+      "rationale": "登録とログインを分離し、馴染みのあるメール・パスワード入力を優先。",
+      "assumptionIds": [
+        "assumption-password"
+      ],
+      "requirementIds": [
+        "req-access",
+        "req-recover"
+      ],
+      "parentIds": [],
+      "differences": [
+        "Aは登録/ログインを分離、Bはメールから共通開始",
+        "Aはパスワード、Bはメール確認を中心に設計"
+      ],
+      "tradeoffs": [
+        "パスワード管理負担",
+        "既存の認証基盤へ適合しやすい"
+      ],
+      "constraintChecks": [
+        {
+          "constraintId": "constraint-access",
+          "result": "pass",
+          "rationale": "仕様上のラベル/キーボード/フォーカス設計を確認。実装適合は未検証。",
+          "evidenceIds": [
+            "ev-declarations"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "candidate-b",
+      "name": "B — Email-first guided access",
+      "approach": "innovative",
+      "status": "shortlisted",
+      "rationale": "メール入力を起点に登録と再訪を案内する段階式導線。新規性は本比較内の相対評価。",
+      "assumptionIds": [
+        "assumption-email"
+      ],
+      "requirementIds": [
+        "req-access",
+        "req-recover"
+      ],
+      "parentIds": [],
+      "differences": [
+        "Aは登録/ログインを分離、Bはメールから共通開始",
+        "Aはパスワード、Bはメール確認を中心に設計"
+      ],
+      "tradeoffs": [
+        "メール到達と別画面への移動に依存",
+        "パスワード入力負担を減らす可能性は未検証"
+      ],
+      "constraintChecks": [
+        {
+          "constraintId": "constraint-access",
+          "result": "pass",
+          "rationale": "仕様上のラベル/キーボード/フォーカス設計を確認。実装適合は未検証。",
+          "evidenceIds": [
+            "ev-declarations"
+          ]
+        }
+      ]
+    }
+  ],
+  "flows": [
+    {
+      "id": "flow-a",
+      "candidateId": "candidate-a",
+      "name": "Registration, login and recovery",
+      "screenIds": [
+        "a-signup",
+        "a-login",
+        "a-recovery",
+        "a-success"
+      ],
+      "transitions": [
+        {
+          "from": "a-signup",
+          "to": "a-login",
+          "event": "Already registered / link sent"
+        },
+        {
+          "from": "a-signup",
+          "to": "a-success",
+          "event": "Verified new account"
+        },
+        {
+          "from": "a-login",
+          "to": "a-recovery",
+          "event": "Forgot password / expired link"
+        },
+        {
+          "from": "a-recovery",
+          "to": "a-login",
+          "event": "Recovery verified"
+        },
+        {
+          "from": "a-login",
+          "to": "a-success",
+          "event": "Authentication verified"
+        },
+        {
+          "from": "a-login",
+          "to": "a-login",
+          "event": "Invalid credential / retry: inline error state"
+        }
+      ]
+    },
+    {
+      "id": "flow-b",
+      "candidateId": "candidate-b",
+      "name": "Registration, login and recovery",
+      "screenIds": [
+        "b-signup",
+        "b-login",
+        "b-recovery",
+        "b-success"
+      ],
+      "transitions": [
+        {
+          "from": "b-signup",
+          "to": "b-login",
+          "event": "Already registered / link sent"
+        },
+        {
+          "from": "b-signup",
+          "to": "b-success",
+          "event": "Verified new account"
+        },
+        {
+          "from": "b-login",
+          "to": "b-recovery",
+          "event": "Forgot password / expired link"
+        },
+        {
+          "from": "b-recovery",
+          "to": "b-login",
+          "event": "Recovery verified"
+        },
+        {
+          "from": "b-login",
+          "to": "b-success",
+          "event": "Authentication verified"
+        },
+        {
+          "from": "b-login",
+          "to": "b-login",
+          "event": "Invalid credential / retry: inline error state"
+        }
+      ]
+    }
+  ],
+  "screens": [
+    {
+      "id": "a-signup",
+      "candidateId": "candidate-a",
+      "name": "Create your account",
+      "componentIds": [
+        "a-signup-email",
+        "a-signup-action",
+        "a-signup-password",
+        "a-signup-support"
+      ],
+      "states": [
+        "idle",
+        "loading",
+        "error",
+        "success"
+      ],
+      "responsive": "Narrow: one column, 16px gutters; wide: centered card, max 440px; label wraps in Japanese/English; keep actions in reading order."
+    },
+    {
+      "id": "a-login",
+      "candidateId": "candidate-a",
+      "name": "Welcome back",
+      "componentIds": [
+        "a-login-email",
+        "a-login-action",
+        "a-login-password",
+        "a-login-support"
+      ],
+      "states": [
+        "idle",
+        "loading",
+        "error",
+        "success"
+      ],
+      "responsive": "Narrow: one column, 16px gutters; wide: centered card, max 440px; label wraps in Japanese/English; keep actions in reading order."
+    },
+    {
+      "id": "a-recovery",
+      "candidateId": "candidate-a",
+      "name": "Reset your password",
+      "componentIds": [
+        "a-recovery-email",
+        "a-recovery-action",
+        "a-recovery-support"
+      ],
+      "states": [
+        "idle",
+        "loading",
+        "error",
+        "success"
+      ],
+      "responsive": "Narrow: one column, 16px gutters; wide: centered card, max 440px; label wraps in Japanese/English; keep actions in reading order."
+    },
+    {
+      "id": "a-success",
+      "candidateId": "candidate-a",
+      "name": "You are signed in",
+      "componentIds": [
+        "a-success-text"
+      ],
+      "states": [
+        "success"
+      ],
+      "responsive": "Centered status message; no mandatory motion; wrap text without truncating."
+    },
+    {
+      "id": "b-signup",
+      "candidateId": "candidate-b",
+      "name": "Start with your email",
+      "componentIds": [
+        "b-signup-email",
+        "b-signup-action",
+        "b-signup-support"
+      ],
+      "states": [
+        "idle",
+        "loading",
+        "error",
+        "success"
+      ],
+      "responsive": "Narrow: one column, 16px gutters; wide: centered card, max 440px; label wraps in Japanese/English; keep actions in reading order."
+    },
+    {
+      "id": "b-login",
+      "candidateId": "candidate-b",
+      "name": "Check your inbox",
+      "componentIds": [
+        "b-login-email",
+        "b-login-action",
+        "b-login-support"
+      ],
+      "states": [
+        "idle",
+        "loading",
+        "error",
+        "success"
+      ],
+      "responsive": "Narrow: one column, 16px gutters; wide: centered card, max 440px; label wraps in Japanese/English; keep actions in reading order."
+    },
+    {
+      "id": "b-recovery",
+      "candidateId": "candidate-b",
+      "name": "Link expired?",
+      "componentIds": [
+        "b-recovery-email",
+        "b-recovery-action",
+        "b-recovery-support"
+      ],
+      "states": [
+        "idle",
+        "loading",
+        "error",
+        "success"
+      ],
+      "responsive": "Narrow: one column, 16px gutters; wide: centered card, max 440px; label wraps in Japanese/English; keep actions in reading order."
+    },
+    {
+      "id": "b-success",
+      "candidateId": "candidate-b",
+      "name": "You are signed in",
+      "componentIds": [
+        "b-success-text"
+      ],
+      "states": [
+        "success"
+      ],
+      "responsive": "Centered status message; no mandatory motion; wrap text without truncating."
+    }
+  ],
+  "components": [
+    {
+      "id": "a-signup-email",
+      "candidateId": "candidate-a",
+      "kind": "input",
+      "label": "Email address",
+      "keyboardAccessible": true,
+      "focusVisible": true,
+      "foreground": "#18283B",
+      "background": "#FFFFFF",
+      "minContrast": 4.5,
+      "states": [
+        "idle",
+        "focus",
+        "error",
+        "disabled",
+        "loading"
+      ]
+    },
+    {
+      "id": "a-signup-action",
+      "candidateId": "candidate-a",
+      "kind": "button",
+      "label": "Create account",
+      "keyboardAccessible": true,
+      "focusVisible": true,
+      "foreground": "#FFFFFF",
+      "background": "#244FC4",
+      "minContrast": 4.5,
+      "states": [
+        "idle",
+        "focus",
+        "error",
+        "disabled",
+        "loading"
+      ]
+    },
+    {
+      "id": "a-signup-password",
+      "candidateId": "candidate-a",
+      "kind": "input",
+      "label": "Password",
+      "keyboardAccessible": true,
+      "focusVisible": true,
+      "foreground": "#18283B",
+      "background": "#FFFFFF",
+      "minContrast": 4.5,
+      "states": [
+        "idle",
+        "focus",
+        "error"
+      ]
+    },
+    {
+      "id": "a-login-email",
+      "candidateId": "candidate-a",
+      "kind": "input",
+      "label": "Email address",
+      "keyboardAccessible": true,
+      "focusVisible": true,
+      "foreground": "#18283B",
+      "background": "#FFFFFF",
+      "minContrast": 4.5,
+      "states": [
+        "idle",
+        "focus",
+        "error",
+        "disabled",
+        "loading"
+      ]
+    },
+    {
+      "id": "a-login-action",
+      "candidateId": "candidate-a",
+      "kind": "button",
+      "label": "Sign in",
+      "keyboardAccessible": true,
+      "focusVisible": true,
+      "foreground": "#FFFFFF",
+      "background": "#244FC4",
+      "minContrast": 4.5,
+      "states": [
+        "idle",
+        "focus",
+        "error",
+        "disabled",
+        "loading"
+      ]
+    },
+    {
+      "id": "a-login-password",
+      "candidateId": "candidate-a",
+      "kind": "input",
+      "label": "Password",
+      "keyboardAccessible": true,
+      "focusVisible": true,
+      "foreground": "#18283B",
+      "background": "#FFFFFF",
+      "minContrast": 4.5,
+      "states": [
+        "idle",
+        "focus",
+        "error"
+      ]
+    },
+    {
+      "id": "a-recovery-email",
+      "candidateId": "candidate-a",
+      "kind": "input",
+      "label": "Email address",
+      "keyboardAccessible": true,
+      "focusVisible": true,
+      "foreground": "#18283B",
+      "background": "#FFFFFF",
+      "minContrast": 4.5,
+      "states": [
+        "idle",
+        "focus",
+        "error",
+        "disabled",
+        "loading"
+      ]
+    },
+    {
+      "id": "a-recovery-action",
+      "candidateId": "candidate-a",
+      "kind": "button",
+      "label": "Send reset link",
+      "keyboardAccessible": true,
+      "focusVisible": true,
+      "foreground": "#FFFFFF",
+      "background": "#244FC4",
+      "minContrast": 4.5,
+      "states": [
+        "idle",
+        "focus",
+        "error",
+        "disabled",
+        "loading"
+      ]
+    },
+    {
+      "id": "a-success-text",
+      "candidateId": "candidate-a",
+      "kind": "status",
+      "label": "You are signed in",
+      "keyboardAccessible": null,
+      "focusVisible": null,
+      "foreground": "#18283B",
+      "background": "#FFFFFF",
+      "minContrast": 4.5,
+      "states": [
+        "success"
+      ]
+    },
+    {
+      "id": "b-signup-email",
+      "candidateId": "candidate-b",
+      "kind": "input",
+      "label": "Email address",
+      "keyboardAccessible": true,
+      "focusVisible": true,
+      "foreground": "#18283B",
+      "background": "#FFFFFF",
+      "minContrast": 4.5,
+      "states": [
+        "idle",
+        "focus",
+        "error",
+        "disabled",
+        "loading"
+      ]
+    },
+    {
+      "id": "b-signup-action",
+      "candidateId": "candidate-b",
+      "kind": "button",
+      "label": "Send sign-in link",
+      "keyboardAccessible": true,
+      "focusVisible": true,
+      "foreground": "#FFFFFF",
+      "background": "#244FC4",
+      "minContrast": 4.5,
+      "states": [
+        "idle",
+        "focus",
+        "error",
+        "disabled",
+        "loading"
+      ]
+    },
+    {
+      "id": "b-login-email",
+      "candidateId": "candidate-b",
+      "kind": "input",
+      "label": "Email address",
+      "keyboardAccessible": true,
+      "focusVisible": true,
+      "foreground": "#18283B",
+      "background": "#FFFFFF",
+      "minContrast": 4.5,
+      "states": [
+        "idle",
+        "focus",
+        "error",
+        "disabled",
+        "loading"
+      ]
+    },
+    {
+      "id": "b-login-action",
+      "candidateId": "candidate-b",
+      "kind": "button",
+      "label": "Open email app",
+      "keyboardAccessible": true,
+      "focusVisible": true,
+      "foreground": "#FFFFFF",
+      "background": "#244FC4",
+      "minContrast": 4.5,
+      "states": [
+        "idle",
+        "focus",
+        "error",
+        "disabled",
+        "loading"
+      ]
+    },
+    {
+      "id": "b-recovery-email",
+      "candidateId": "candidate-b",
+      "kind": "input",
+      "label": "Email address",
+      "keyboardAccessible": true,
+      "focusVisible": true,
+      "foreground": "#18283B",
+      "background": "#FFFFFF",
+      "minContrast": 4.5,
+      "states": [
+        "idle",
+        "focus",
+        "error",
+        "disabled",
+        "loading"
+      ]
+    },
+    {
+      "id": "b-recovery-action",
+      "candidateId": "candidate-b",
+      "kind": "button",
+      "label": "Send a new link",
+      "keyboardAccessible": true,
+      "focusVisible": true,
+      "foreground": "#FFFFFF",
+      "background": "#244FC4",
+      "minContrast": 4.5,
+      "states": [
+        "idle",
+        "focus",
+        "error",
+        "disabled",
+        "loading"
+      ]
+    },
+    {
+      "id": "b-success-text",
+      "candidateId": "candidate-b",
+      "kind": "status",
+      "label": "You are signed in",
+      "keyboardAccessible": null,
+      "focusVisible": null,
+      "foreground": "#18283B",
+      "background": "#FFFFFF",
+      "minContrast": 4.5,
+      "states": [
+        "success"
+      ]
+    },
+    {
+      "id": "a-signup-support",
+      "candidateId": "candidate-a",
+      "kind": "link",
+      "label": "Already registered? Sign in",
+      "keyboardAccessible": true,
+      "focusVisible": true,
+      "foreground": "#244FC4",
+      "background": "#FFFFFF",
+      "minContrast": 4.5,
+      "states": [
+        "idle",
+        "focus"
+      ]
+    },
+    {
+      "id": "a-login-support",
+      "candidateId": "candidate-a",
+      "kind": "link",
+      "label": "Forgot password? Reset it",
+      "keyboardAccessible": true,
+      "focusVisible": true,
+      "foreground": "#244FC4",
+      "background": "#FFFFFF",
+      "minContrast": 4.5,
+      "states": [
+        "idle",
+        "focus"
+      ]
+    },
+    {
+      "id": "a-recovery-support",
+      "candidateId": "candidate-a",
+      "kind": "text",
+      "label": "If an account exists, check your inbox.",
+      "keyboardAccessible": null,
+      "focusVisible": null,
+      "foreground": "#244FC4",
+      "background": "#FFFFFF",
+      "minContrast": 4.5,
+      "states": [
+        "idle"
+      ]
+    },
+    {
+      "id": "b-signup-support",
+      "candidateId": "candidate-b",
+      "kind": "text",
+      "label": "New or returning? Start here.",
+      "keyboardAccessible": null,
+      "focusVisible": null,
+      "foreground": "#244FC4",
+      "background": "#FFFFFF",
+      "minContrast": 4.5,
+      "states": [
+        "idle"
+      ]
+    },
+    {
+      "id": "b-login-support",
+      "candidateId": "candidate-b",
+      "kind": "link",
+      "label": "No email? Resend or change address",
+      "keyboardAccessible": true,
+      "focusVisible": true,
+      "foreground": "#244FC4",
+      "background": "#FFFFFF",
+      "minContrast": 4.5,
+      "states": [
+        "idle",
+        "focus"
+      ]
+    },
+    {
+      "id": "b-recovery-support",
+      "candidateId": "candidate-b",
+      "kind": "text",
+      "label": "Old links will no longer work.",
+      "keyboardAccessible": null,
+      "focusVisible": null,
+      "foreground": "#244FC4",
+      "background": "#FFFFFF",
+      "minContrast": 4.5,
+      "states": [
+        "idle"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev-standard",
+      "kind": "standard",
+      "source": "https://www.w3.org/TR/2024/REC-WCAG22-20241212/",
+      "summary": "WCAG 2.2 reference; scoped declaration review, not conformance certification",
+      "limitations": "実装の操作テストは未実施。",
+      "observedAt": "2026-10-10"
+    },
+    {
+      "id": "ev-review",
+      "kind": "expert-inference",
+      "source": "examples/login/proposal.md",
+      "summary": "AI self-review: clear recovery copy and explicit email dependency tradeoffs",
+      "limitations": "Independent reviewer and end users have not confirmed the inference.",
+      "observedAt": "2026-10-10"
+    },
+    {
+      "id": "ev-declarations",
+      "kind": "fact",
+      "source": "examples/login/design.json",
+      "summary": "The authored model includes named controls, focus/keyboard declarations and opaque colors.",
+      "limitations": "Only the content of the design specification is observed. No live UI has been tested.",
+      "observedAt": "2026-10-10"
+    }
+  ],
+  "evaluations": [
+    {
+      "id": "evl-a-rule-design-quality",
+      "targetId": "candidate-a",
+      "method": "rule",
+      "axis": "design-quality",
+      "category": "Accessibility",
+      "characteristic": "Recoverability",
+      "criterion": "Declared labels, keyboard/focus and text contrast",
+      "result": "pass",
+      "score": null,
+      "evidenceIds": [
+        "ev-standard",
+        "ev-declarations"
+      ],
+      "uncertainty": "Static proposal review only. No causal effect or runtime conformance established.",
+      "revision": 2
+    },
+    {
+      "id": "evl-a-expert-design-quality",
+      "targetId": "candidate-a",
+      "method": "expert",
+      "axis": "design-quality",
+      "category": "Usability",
+      "characteristic": "Recoverability",
+      "criterion": "Recovery is explicit in the proposal",
+      "result": "pass",
+      "score": null,
+      "evidenceIds": [
+        "ev-review"
+      ],
+      "uncertainty": "Static proposal review only. No causal effect or runtime conformance established.",
+      "revision": 2
+    },
+    {
+      "id": "evl-a-expert-feasibility",
+      "targetId": "candidate-a",
+      "method": "expert",
+      "axis": "feasibility",
+      "category": "Usability",
+      "characteristic": "Recoverability",
+      "criterion": "Integration effort on the actual authentication platform",
+      "result": "unknown",
+      "score": null,
+      "evidenceIds": [],
+      "uncertainty": "Static proposal review only. No causal effect or runtime conformance established.",
+      "revision": 2
+    },
+    {
+      "id": "evl-a-empirical-business-value",
+      "targetId": "candidate-a",
+      "method": "empirical",
+      "axis": "business-value",
+      "category": "Usability",
+      "characteristic": "Recoverability",
+      "criterion": "Registration completion compared with current experience",
+      "result": "unknown",
+      "score": null,
+      "evidenceIds": [],
+      "uncertainty": "Static proposal review only. No causal effect or runtime conformance established.",
+      "revision": 2
+    },
+    {
+      "id": "evl-b-rule-design-quality",
+      "targetId": "candidate-b",
+      "method": "rule",
+      "axis": "design-quality",
+      "category": "Accessibility",
+      "characteristic": "Recoverability",
+      "criterion": "Declared labels, keyboard/focus and text contrast",
+      "result": "pass",
+      "score": null,
+      "evidenceIds": [
+        "ev-standard",
+        "ev-declarations"
+      ],
+      "uncertainty": "Static proposal review only. No causal effect or runtime conformance established.",
+      "revision": 2
+    },
+    {
+      "id": "evl-b-expert-design-quality",
+      "targetId": "candidate-b",
+      "method": "expert",
+      "axis": "design-quality",
+      "category": "Usability",
+      "characteristic": "Recoverability",
+      "criterion": "Recovery is explicit in the proposal",
+      "result": "pass",
+      "score": null,
+      "evidenceIds": [
+        "ev-review"
+      ],
+      "uncertainty": "Static proposal review only. No causal effect or runtime conformance established.",
+      "revision": 2
+    },
+    {
+      "id": "evl-b-expert-feasibility",
+      "targetId": "candidate-b",
+      "method": "expert",
+      "axis": "feasibility",
+      "category": "Usability",
+      "characteristic": "Recoverability",
+      "criterion": "Integration effort on the actual authentication platform",
+      "result": "unknown",
+      "score": null,
+      "evidenceIds": [],
+      "uncertainty": "Static proposal review only. No causal effect or runtime conformance established.",
+      "revision": 2
+    },
+    {
+      "id": "evl-b-empirical-business-value",
+      "targetId": "candidate-b",
+      "method": "empirical",
+      "axis": "business-value",
+      "category": "Usability",
+      "characteristic": "Recoverability",
+      "criterion": "Registration completion compared with current experience",
+      "result": "unknown",
+      "score": null,
+      "evidenceIds": [],
+      "uncertainty": "Static proposal review only. No causal effect or runtime conformance established.",
+      "revision": 2
+    },
+    {
+      "id": "evl-label-fix",
+      "targetId": "a-login-action",
+      "method": "rule",
+      "axis": "design-quality",
+      "category": "Accessibility",
+      "characteristic": "Accessible name",
+      "criterion": "Sign-in button has an explicit name and adequate declared text contrast",
+      "result": "pass",
+      "score": null,
+      "evidenceIds": [
+        "ev-standard",
+        "ev-declarations"
+      ],
+      "uncertainty": "Live accessible tree untested",
+      "revision": 2
+    }
+  ],
+  "decisions": [],
+  "approvals": [
+    {
+      "id": "approval-a",
+      "scope": "design-adoption",
+      "targetIds": [
+        "candidate-a"
+      ],
+      "status": "pending",
+      "actor": null,
+      "source": null,
+      "recordedAt": null,
+      "authority": "unconfirmed"
+    },
+    {
+      "id": "approval-b",
+      "scope": "design-adoption",
+      "targetIds": [
+        "candidate-b"
+      ],
+      "status": "pending",
+      "actor": null,
+      "source": null,
+      "recordedAt": null,
+      "authority": "unconfirmed"
+    }
+  ],
+  "changes": [
+    {
+      "id": "change-label",
+      "fromRevision": 1,
+      "toRevision": 2,
+      "targetIds": [
+        "a-login-action"
+      ],
+      "reason": "改善前の無名・低コントラストのログインボタンを修正。保守的改善。Bは導線再構成の比較候補。",
+      "evaluationIds": [
+        "evl-label-fix"
+      ]
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "artifact-proposal",
+      "kind": "proposal",
+      "status": "generated",
+      "path": "proposal.md",
+      "sha256": "241f7fac7a551dc7d356267fae78f41dc586509643da0d46a34336cc3fc83044",
+      "candidateIds": [
+        "candidate-a",
+        "candidate-b"
+      ],
+      "entityIds": [],
+      "limitations": "Static proposal only; semantic and human validation pending."
+    },
+    {
+      "id": "artifact-diagram",
+      "kind": "diagram",
+      "status": "generated",
+      "path": "flow.mmd",
+      "sha256": "238f7c4e5bc5b37086d19661629d9be1a42cfd32e359813d19fd5133c3ed1d98",
+      "candidateIds": [
+        "candidate-a",
+        "candidate-b"
+      ],
+      "entityIds": [
+        "a-signup",
+        "a-login",
+        "a-recovery",
+        "a-success",
+        "b-signup",
+        "b-login",
+        "b-recovery",
+        "b-success"
+      ],
+      "limitations": "Static proposal only; semantic and human validation pending."
+    },
+    {
+      "id": "artifact-mockup",
+      "kind": "mockup",
+      "status": "generated",
+      "path": "mockup.svg",
+      "sha256": "ae28169f51929d712c4f7527fa066a0269d1716bd5367763a4610732cbadfa67",
+      "candidateIds": [
+        "candidate-a",
+        "candidate-b"
+      ],
+      "entityIds": [
+        "a-signup",
+        "a-login",
+        "a-recovery",
+        "a-success",
+        "b-signup",
+        "b-login",
+        "b-recovery",
+        "b-success"
+      ],
+      "limitations": "Static proposal only; semantic and human validation pending."
+    },
+    {
+      "id": "artifact-model",
+      "kind": "model",
+      "status": "generated",
+      "path": "design.json",
+      "sha256": null,
+      "candidateIds": [
+        "candidate-a",
+        "candidate-b"
+      ],
+      "entityIds": [],
+      "limitations": "Static proposal only; semantic and human validation pending."
+    }
+  ]
+}

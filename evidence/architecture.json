@@ -1,0 +1,12 @@
+{
+  "command": "npm run architecture -- <archmodel-checkout> <archmap-checkout>",
+  "diagnostics": [],
+  "entities": 32,
+  "edges": 53,
+  "rendered": [
+    "docs/architecture/dif.svg",
+    "docs/architecture/design-map.svg",
+    "examples/login/flow.svg"
+  ],
+  "boundary": "Canonical upstream parsers/renderers accepted the source. Visual readability and architectural correctness require review."
+}
