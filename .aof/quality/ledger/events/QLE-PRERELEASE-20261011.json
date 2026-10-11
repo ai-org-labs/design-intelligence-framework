@@ -1,0 +1,26 @@
+{
+  "artifact_type": "quality-ledger-event",
+  "ledger_format_version": 1,
+  "event_id": "QLE-PRERELEASE-20261011",
+  "recorded_at": "2026-10-11T04:59:21.754723+00:00",
+  "event_type": "evidence_added",
+  "quality_intent_ref": "QIN-EVIDENCE",
+  "work_item_ref": ".aof/tasks/open/TASK-001.json",
+  "claim": "User explicitly authorized a GitHub release of the current development preview.",
+  "evidence_refs": [
+    "docs/quality/release-status.md"
+  ],
+  "qif_refs": [
+    "docs/quality/dif.quality-gate.json"
+  ],
+  "prior_state": null,
+  "new_state": null,
+  "confidence": null,
+  "semantic_truth_claimed": false,
+  "operator_validated": false,
+  "governance_action": "review-required",
+  "source_task_id": "TASK-001",
+  "source_parent_session_id": null,
+  "source_decision_record_id": null,
+  "notes": "Publication authorization is recorded separately from design adoption, independent repeatability and Stable approval. Those remain unverified."
+}

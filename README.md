@@ -4,6 +4,8 @@
 
 **開発版 0.1.0-dev.0 / Apache-2.0。Public開発リポジトリ、Stable公開前。** 現在の縦断サンプルは会員登録・ログインUX/UI。認証基盤を実装する製品ではありません。[English](README.en.md)
 
+[GitHub開発版リリース](https://github.com/ai-org-labs/design-intelligence-framework/releases/tag/v0.1.0-dev.0)からSkills ZIPとサンプルZIPを取得できます。サンプルにはA4卓上メニューPDFと320×240の端末画面を含みます。
+
 ## すぐ見る
 
 - [比較提案](examples/login/proposal.md) / [モックアップ](examples/login/mockup.svg) / [フロー図](examples/login/flow.svg) / [設計データ](examples/login/design.json)
