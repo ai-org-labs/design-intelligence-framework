@@ -29,3 +29,5 @@ With no CLI/tools, deliver text review and mark numerical/mechanical checks unve
 When reviewing fonts or implementation choices, distinguish visual suitability, language coverage, loading/scaling, dependency compatibility and architecture fit. Check the actual versions and rendered behavior where available; library popularity, declared font names and passing dependency scans are not evidence of product usability. Record the recommendation and remaining checks without treating them as adoption.
 
 For component systems, inspect actual reuse, override boundaries and change impact. Verify that shared changes reach consumers without leaking across themes or losing feature state. A component catalogue or token file alone does not prove consistency or maintainability.
+
+Check medium fit before visual polish: is this the requested tabletop document, device display, webpage or app flow? A well-rendered promotional wrapper cannot compensate for the wrong primary artifact. Review physical-size print proofs or exact-pixel display states as applicable; wrappers and screenshots of introductions are not substitutes.

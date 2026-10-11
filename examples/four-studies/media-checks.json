@@ -1,0 +1,36 @@
+{
+  "results": [
+    {
+      "name": "A4 layout content stays above footer",
+      "pass": true,
+      "bounds": [
+        {
+          "w": 794,
+          "h": 1123,
+          "overflow": false,
+          "footer": 1081.078125,
+          "last": 1055.484375
+        },
+        {
+          "w": 794,
+          "h": 1123,
+          "overflow": false,
+          "footer": 2203.59375,
+          "last": 2127.9375
+        }
+      ]
+    },
+    {
+      "name": "Display-only bounds and interaction states",
+      "pass": true,
+      "bounds": {
+        "x": 0,
+        "y": 0,
+        "width": 320,
+        "height": 240
+      }
+    }
+  ],
+  "pass": true,
+  "boundary": "PDF layout and Web display prototype only. Physical print/color and M5 firmware, fonts, touch and performance are unverified."
+}

@@ -182,6 +182,15 @@
       "appliesTo": "Reusable UI and design-system maintenance",
       "principle": "Define shared semantic components, sanctioned token overrides, state ownership and migration boundaries; demonstrate change propagation across real consumers.",
       "boundary": "A catalogue or token file does not establish consistent use, accessibility or measured maintenance savings."
+    },
+    {
+      "id": "medium-fit",
+      "type": "expert-inference",
+      "version": "User feedback synthesis 2026-10-11",
+      "source": "DIF four-studies medium correction",
+      "appliesTo": "Design briefs across print, Web and hardware",
+      "principle": "Deliver the requested object in its use medium; confirm physical dimensions or native pixel canvas before selecting layout patterns.",
+      "boundary": "User rejected a Web treatment of a tabletop menu and hardware screen. This correction does not prove quality across other media."
     }
   ]
 }

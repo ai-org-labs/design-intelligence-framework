@@ -304,7 +304,8 @@
       "responsibilities": [
         "Compare design alternatives",
         "Compare typography, dependency and framework fit; retain proposed architecture decisions and evidence boundaries",
-        "Specify reusable component contracts, customization boundaries and change propagation"
+        "Specify reusable component contracts, customization boundaries and change propagation",
+        "Choose the actual delivery medium before layout: print, Web, embedded display or app flow"
       ],
       "interfaces": [
         "Local files"

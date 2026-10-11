@@ -1,0 +1,18 @@
+{
+  "pages": [
+    {
+      "page": 1,
+      "widthPt": 594.95996,
+      "heightPt": 841.91998,
+      "textExtracted": true
+    },
+    {
+      "page": 2,
+      "widthPt": 594.95996,
+      "heightPt": 841.91998,
+      "textExtracted": true
+    }
+  ],
+  "pass": true,
+  "boundary": "A4 page dimensions, extracted text and separately inspected Poppler renders. No physical printing/color proof or tagged-PDF accessibility audit."
+}

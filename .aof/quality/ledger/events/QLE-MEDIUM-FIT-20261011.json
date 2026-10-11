@@ -1,0 +1,29 @@
+{
+  "artifact_type": "quality-ledger-event",
+  "ledger_format_version": 1,
+  "event_id": "QLE-MEDIUM-FIT-20261011",
+  "recorded_at": "2026-10-11T02:37:00.932842+00:00",
+  "event_type": "evidence_added",
+  "quality_intent_ref": "QIN-EVIDENCE",
+  "work_item_ref": ".aof/tasks/open/TASK-001.json",
+  "claim": "User feedback identified wrong delivery media. A4 print menu and exact-pixel display-only outputs replace the prior primary samples.",
+  "evidence_refs": [
+    "output/pdf/casa-tutti-table-menu.pdf",
+    "examples/four-studies/pdf-checks.json",
+    "examples/four-studies/media-checks.json",
+    "docs/quality/medium-fit.md"
+  ],
+  "qif_refs": [
+    "docs/quality/dif.quality-gate.json"
+  ],
+  "prior_state": null,
+  "new_state": null,
+  "confidence": null,
+  "semantic_truth_claimed": false,
+  "operator_validated": false,
+  "governance_action": "review-required",
+  "source_task_id": "TASK-001",
+  "source_parent_session_id": null,
+  "source_decision_record_id": null,
+  "notes": "Previous menu/device wrappers were rejected by the user. Corrected artifacts still await user review; no adoption inferred."
+}

@@ -3,14 +3,14 @@
   "product": {
     "id": "four-studies",
     "name": "DIF Four Design Studies",
-    "purpose": "Review four concrete design hypotheses",
+    "purpose": "Review design artifacts in their intended media",
     "primary_users": [
       "Requester",
       "Reviewer"
     ],
     "user_value": "Inspect visual and interaction proposals with evidence limits",
     "scope": [
-      "Four fictional local Web studies"
+      "A4 tabletop print menu, device homepage, exact-pixel embedded screen, banking app flow"
     ],
     "out_of_scope": [
       "Real bank operations",
@@ -29,15 +29,15 @@
           "Fictional brief and sample data"
         ],
         "outputs": [
-          "Interactive Web study and explicit evidence limits"
+          "Fixed A4 front/back PDF and editable source"
         ],
         "behaviors": [
           {
             "id": "menu-behavior",
             "name": "Family groups choose dishes without losing price/category context",
-            "trigger": "Reviewer opens the study",
+            "trigger": "Reviewer opens the print artifact",
             "outcomes": [
-              "Review proposed states and visual treatment"
+              "Review dishes and prices at a physical document size"
             ],
             "failure_behaviors": [
               "Preserve unknown device and human outcomes; do not fabricate completion"
@@ -51,31 +51,6 @@
                 "name": "Evaluate the authored Casa Tutti menu",
                 "type": "gherkin",
                 "specification": "Given fictional study data\nWhen a reviewer exercises the sample\nThen expose relevant states and preserve evidence boundaries",
-                "verified_by": [
-                  "study-review"
-                ]
-              }
-            ]
-          },
-          {
-            "id": "shared-behavior",
-            "name": "Reuse presentation without mixing domain state",
-            "trigger": "A study renders repeated presentation",
-            "outcomes": [
-              "Shared presentation with feature-owned state"
-            ],
-            "failure_behaviors": [
-              "Do not infer shared business semantics from matching appearance"
-            ],
-            "realized_by": [
-              "shared"
-            ],
-            "scenarios": [
-              {
-                "id": "shared-scenario",
-                "name": "Shared presentation boundaries",
-                "type": "gherkin",
-                "specification": "Given different domain studies\nWhen common presentation is used\nThen keep banking and archive state in their own features",
                 "verified_by": [
                   "study-review"
                 ]
@@ -117,6 +92,31 @@
                 "name": "Evaluate the authored AER device homepage",
                 "type": "gherkin",
                 "specification": "Given fictional study data\nWhen a reviewer exercises the sample\nThen expose relevant states and preserve evidence boundaries",
+                "verified_by": [
+                  "study-review"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "shared-behavior",
+            "name": "Reuse presentation without mixing domain state",
+            "trigger": "A study renders repeated presentation",
+            "outcomes": [
+              "Shared presentation with feature-owned state"
+            ],
+            "failure_behaviors": [
+              "Do not infer shared business semantics from matching appearance"
+            ],
+            "realized_by": [
+              "shared"
+            ],
+            "scenarios": [
+              {
+                "id": "shared-scenario",
+                "name": "Shared presentation boundaries",
+                "type": "gherkin",
+                "specification": "Given different domain studies\nWhen common presentation is used\nThen keep banking and archive state in their own features",
                 "verified_by": [
                   "study-review"
                 ]
@@ -212,13 +212,13 @@
   "components": [
     {
       "id": "menu-ui",
-      "name": "Casa Tutti menu",
+      "name": "Casa Tutti A4 tabletop menu",
       "kind": "application",
       "responsibilities": [
-        "Family groups choose dishes without losing price/category context"
+        "Present dishes, order numbers and prices on a fixed two-sided A4 document"
       ],
       "interfaces": [
-        "Local HTML/CSS/JS"
+        "Print PDF and editable HTML/CSS source"
       ],
       "implemented_by": [
         "menu-source"
@@ -243,10 +243,10 @@
       "name": "FIELDNOTE archive",
       "kind": "application",
       "responsibilities": [
-        "Explore a 320 by 240 catalogue and preserve recording failure boundaries"
+        "Render only the 320x240 display and its interaction states"
       ],
       "interfaces": [
-        "Local HTML/CSS/JS"
+        "Exact-pixel Web display prototype; firmware unimplemented"
       ],
       "implemented_by": [
         "monster-source"
@@ -284,9 +284,9 @@
   "realizations": [
     {
       "id": "menu-source",
-      "name": "menu.html",
+      "name": "menu-print.html",
       "kind": "source",
-      "location": "examples/four-studies/menu.html"
+      "location": "examples/four-studies/menu-print.html"
     },
     {
       "id": "device-source",
@@ -327,12 +327,12 @@
     {
       "id": "menu-direction",
       "name": "Casa Tutti menu direction",
-      "context": "Family groups choose dishes without losing price/category context",
-      "decision": "Warm illustrated menu with category filters and shared dish cards",
+      "context": "User clarified a physical tabletop menu and rejected the promotional Web delivery",
+      "decision": "Fixed A4 front/back menu with food imagery, order numbers and visible prices",
       "alternatives": [
-        "Photography-led menu requiring real food imagery"
+        "Rejected: category-filtered restaurant promotional webpage"
       ],
-      "reason": "Make the primary task and its uncertainty visible",
+      "reason": "Deliver the object used at a restaurant table",
       "trade_off": [
         "Authored demonstration, not independent user or hardware evidence"
       ],
@@ -361,12 +361,12 @@
     {
       "id": "monster-direction",
       "name": "FIELDNOTE archive direction",
-      "context": "Explore a 320 by 240 catalogue and preserve recording failure boundaries",
-      "decision": "Readable field catalogue on a fixed 320x240 screen with local record feedback",
+      "context": "User requested the contents of the device display",
+      "decision": "Display-only 320x240 screens without an enclosing product webpage",
       "alternatives": [
-        "Dense dark game HUD"
+        "Rejected as primary deliverable: framed device on a promotional page"
       ],
-      "reason": "Make the primary task and its uncertainty visible",
+      "reason": "Expose the actual embedded UI instead of an introduction to it",
       "trade_off": [
         "Authored demonstration, not independent user or hardware evidence"
       ],
@@ -394,13 +394,6 @@
     }
   ],
   "relations": [
-    {
-      "id": "menu-shared",
-      "from": "menu-ui",
-      "to": "shared",
-      "type": "depends_on",
-      "label": "presentation only"
-    },
     {
       "id": "device-shared",
       "from": "device-ui",

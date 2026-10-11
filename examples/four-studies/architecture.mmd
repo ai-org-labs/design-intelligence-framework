@@ -4,11 +4,11 @@ flowchart LR
   s1["Casa Tutti menu"]
   s2["Family groups choose dishes without losing price/category context"]
   s3["Evaluate the authored Casa Tutti menu"]
-  s4["Reuse presentation without mixing domain state"]
-  s5["Shared presentation boundaries"]
-  s6["AER device homepage"]
-  s7["Explain a fictional device through form and purpose without invented specifications"]
-  s8["Evaluate the authored AER device homepage"]
+  s4["AER device homepage"]
+  s5["Explain a fictional device through form and purpose without invented specifications"]
+  s6["Evaluate the authored AER device homepage"]
+  s7["Reuse presentation without mixing domain state"]
+  s8["Shared presentation boundaries"]
   s9["FIELDNOTE archive"]
   s10["Explore a 320 by 240 catalogue and preserve recording failure boundaries"]
   s11["Evaluate the authored FIELDNOTE archive"]
@@ -19,12 +19,12 @@ flowchart LR
   s16["AER device homepage direction"]
   s17["FIELDNOTE archive direction"]
   s18["NAGI deposit flow direction"]
-  s19["Casa Tutti menu"]
+  s19["Casa Tutti A4 tabletop menu"]
   s20["AER device homepage"]
   s21["FIELDNOTE archive"]
   s22["NAGI deposit flow"]
   s23["Shared presentation helpers"]
-  s24["menu.html"]
+  s24["menu-print.html"]
   s25["device.html"]
   s26["monster.html"]
   s27["bank.html"]
@@ -35,13 +35,13 @@ flowchart LR
   s2 -->|"realizedBy"| s19
   s2 -->|"has"| s3
   s3 -->|"verifiedBy"| s29
-  s1 -->|"has"| s4
-  s4 -->|"realizedBy"| s23
+  s0 -->|"has"| s4
   s4 -->|"has"| s5
-  s5 -->|"verifiedBy"| s29
-  s0 -->|"has"| s6
-  s6 -->|"has"| s7
-  s7 -->|"realizedBy"| s20
+  s5 -->|"realizedBy"| s20
+  s5 -->|"has"| s6
+  s6 -->|"verifiedBy"| s29
+  s4 -->|"has"| s7
+  s7 -->|"realizedBy"| s23
   s7 -->|"has"| s8
   s8 -->|"verifiedBy"| s29
   s0 -->|"has"| s9
@@ -63,7 +63,6 @@ flowchart LR
   s21 -->|"implementedBy"| s26
   s22 -->|"implementedBy"| s27
   s23 -->|"implementedBy"| s28
-  s19 -->|"depends_on"| s23
   s20 -->|"depends_on"| s23
   s21 -->|"depends_on"| s23
   s22 -->|"depends_on"| s23
